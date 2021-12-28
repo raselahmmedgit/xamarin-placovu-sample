@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             Title="Microcharts"
+             x:Class="GraphDemo.GraphWithMicrochartPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <microcharts:ChartView x:Name="myChart"></microcharts:ChartView>
+        </StackLayout>
+    </ContentPage.Content>
+
+    
+    
+</ContentPage>
