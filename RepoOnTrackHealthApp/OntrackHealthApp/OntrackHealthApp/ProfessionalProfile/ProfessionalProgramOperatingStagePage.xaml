@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalProgramOperatingStagePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#D7D7D7">
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                        <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="1" x:Name="ContentStackLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <StackLayout x:Name="SurgicalConciergeStageStackLayout" HorizontalOptions="FillAndExpand" BackgroundColor="#D7D7D7" Padding="5">
+                                <ListView Margin="6" x:Name="SurgicalConciergeStageListView" 
+                              ItemsSource="{Binding OtherProcedurePageViewModels}" 
+                              CachingStrategy="RecycleElement" 
+                              SeparatorColor="#D7D7D7" 
+                              SeparatorVisibility="None" HasUnevenRows="True"
+                              ItemSelected="SurgicalConciergeStageListView_ItemSelected" 
+                              BackgroundColor="#D7D7D7" Footer="">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout>
+                                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5" BackgroundColor="#ffffff" Margin="0,0,0,15">
+                                                        <Grid ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="60"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <StackLayout Grid.Row="0" Grid.Column="0" Spacing="0" VerticalOptions="CenterAndExpand" Padding="5,0,0,0">
+                                                                <Label Text="{Binding ScgStageCount}" TextColor="#000" FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                                            </StackLayout>
+                                                            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="0" VerticalOptions="CenterAndExpand" Padding="10,0,0,0">
+                                                                <Label Text="{Binding ScgStageName}" TextColor="#000" FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                                            </StackLayout>
+                                                            <StackLayout Grid.Row="0" Grid.Column="2" Spacing="0" VerticalOptions="CenterAndExpand" Padding="5">
+                                                                <ImageButton x:Name="SurgicalConciergeStageIconImage" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Aspect="AspectFit" Source="{Binding ScgStageIcon}" ClassId="{Binding ScgStageId}" ></ImageButton>
+                                                            </StackLayout>
+                                                        </Grid>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                            <Label x:Name="NoStage" IsVisible="False" Text="No Stages Found"></Label>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.InternetConnectPage"
+             BackgroundColor="#28b1d0">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <Frame  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#f1f1f1" CornerRadius="10" Margin="20">
+                <Grid x:Name="ContentBody">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout x:Name="RefreshPageStackLayout" Grid.Row="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout Padding="10,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,0,20">
+                            <Label x:Name="messageRefreshLabel" FontSize="14" Text="No internet connect please try again." TextColor="#a94442" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <Button x:Name="btnRefresh" Text="Refresh" Clicked="OnRefreshButtonClickedAsync" BackgroundColor="#337ab7" BorderColor="#2e6da4" FontSize="14" TextColor="White" HeightRequest="50" VerticalOptions="Start"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

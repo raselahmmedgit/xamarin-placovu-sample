@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalBillingPage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" BackgroundColor="#ffffff" Padding="40,20">
+                <Label Text="Billing section comming soon."
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout Grid.Row="1" Style="{ StaticResource MainProfessionalPageButtonStackLayoutStyle}">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnHome" Image="home_nav_icon.png" Style="{ StaticResource MainProfessionalPageButtonStyle}" Clicked="BtnHome_ClickedAsync"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

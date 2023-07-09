@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePatientAttendeeAddPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <StackLayout Style="{StaticResource FormTitleStyleFour}">
+                        <Label Text="ADD RECIPIENT(S)" Style="{StaticResource FormTitleTextBoldStyle}"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10">
+                        <Label Text="" x:Name="LabelSelectedTypeName" Style="{StaticResource FormTitleTextStyle}"></Label>
+                    </StackLayout>
+
+                    <Grid Margin="0,0,0, 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Padding="10,0,0,0">
+                            <Label Text="1. Select contact" FontSize="13"></Label>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1">
+                            <Label Text="2. Enter cell phone and/or email" FontSize="13"></Label>
+                        </StackLayout>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0">
+                            <StackLayout x:Name="PatientAttendeeProfileTypeStackLayout" HorizontalOptions="FillAndExpand"  Padding="8" Orientation="Vertical">
+                                <input:SelectionView x:Name="AttendeeProfileType" Color="#337ab7" RowSpacing="10" ColumnNumber="1"  MinimumWidthRequest="70" HeightRequest="220"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1">
+                            <StackLayout BackgroundColor="#337ab7" Padding="4,0,0,0">
+                                <StackLayout BackgroundColor="#ebebeb">
+                                    <customInput:StackLayoutForm>
+                                        <customInput:StackLayoutFormGroup>
+                                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand">
+                                                    <Grid HorizontalOptions="FillAndExpand">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                                                            <customInput:MtiPicker HorizontalOptions="FillAndExpand" x:Name="CountryCodePicker"></customInput:MtiPicker>
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                                            <customInput:MtiEntry Placeholder="Type Cell Phone Number" Keyboard="Telephone" TextChanged="PhoneNumber_Validate" x:Name="PhoneNumber">
+                                                                <Entry.Behaviors>
+                                                                    <customInput:PhoneNumberMaskValidator x:Name="PhoneMask" />
+                                                                    <customInput:EntryLengthValidator MaxLength="12"/>
+                                                                </Entry.Behaviors>
+                                                            </customInput:MtiEntry>
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </StackLayout>
+                                                <Label Grid.Row="1" HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPhoneNumber" Text=""/>
+                                            </Grid>
+                                        </customInput:StackLayoutFormGroup>
+                                        <StackLayout Padding="10,20">
+                                            <Label Text="AND/OR" FontSize="18" HorizontalTextAlignment="Center"></Label>
+                                        </StackLayout>
+                                        <customInput:StackLayoutFormGroup>
+                                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                                    <customInput:MtiEntry Placeholder="Type Email Address" TextChanged="EmailAddres_Validate" HorizontalOptions="FillAndExpand" x:Name="EmailAddress" Keyboard="Keyboard.Email"></customInput:MtiEntry>
+                                                </StackLayout>
+                                            </Grid>
+                                        </customInput:StackLayoutFormGroup>
+
+                                    </customInput:StackLayoutForm>
+                                    <StackLayout x:Name="ErrorEmailAddressAndPhoneNumberStackLayout" IsVisible="False" Orientation="Horizontal" Padding="12,10">
+                                        <Label TextColor="Red" x:Name="ErrorEmailAddressAndPhoneNumber" Text=""/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="10,10,10,10" HeightRequest="60">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" BackgroundColor="#3498db" Margin="5,5,5,5" Text="Save" TextColor="White" x:Name="AddAttendeeButton" Clicked="AddAttendeeButton_Clicked" FontSize="16"></Button>
+                    <Button Grid.Column="1" BackgroundColor="#3498db" Margin="5,5,5,5" Text="Close" TextColor="White" x:Name="ModalCloseButton" Clicked="ModalCloseButton_Clicked" FontSize="16"></Button>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

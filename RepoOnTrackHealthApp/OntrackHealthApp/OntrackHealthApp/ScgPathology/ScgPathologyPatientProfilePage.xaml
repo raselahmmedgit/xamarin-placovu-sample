@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ScgPathology.ScgPathologyPatientProfilePage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="12" BackgroundColor="#0F4563" Margin="0">
+                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Patient Profile" FontSize="22" TextColor="#ffffff"></Label>
+                    <Button x:Name="btnAddNew" Clicked="btnAddNew_ClickedAsync" Grid.Column="1" Text="Add New" CornerRadius="18" HeightRequest="36" FontSize="13" TextColor="White" BackgroundColor="#8b9dc3" Margin="-5"></Button>
+                </Grid>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <ListView x:Name="ItemsListView" 
+                ItemsSource="{Binding PatientProfileWithProfessionalProcedures}"
+                VerticalOptions="FillAndExpand"
+                 HasUnevenRows="true"
+                 RefreshCommand="{Binding LoadPatientProfileWithProfessionalProceduresCommand}"
+                 IsPullToRefreshEnabled="true"
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                 CachingStrategy="RecycleElement"
+                 ItemSelected="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10">
+
+                                        <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Column="0">
+                                                <Label Text="{Binding PatientFullName}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                                                <Label Text="{Binding ProcedureName}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                                <Label Text="{Binding SurgeryDateTime}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                <Label Text="{Binding ProfessionalName}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="16" />
+                                            </StackLayout>
+                                        </Grid>                      
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

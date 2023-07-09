@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ProfessionalProfile.PatientReportedOutcomeSearchCompliancePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FFF">
+            <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="85"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0">
+                        <ScrollView Orientation="Both" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout x:Name="notificationButtonsStackLayout" Padding="10" Margin="0,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1">
+                        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Grid x:Name="patientSurveyActivityGrid" RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0,0,0,0"></Grid>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

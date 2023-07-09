@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalPatientBphComplianceProcedurePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff">
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" x:Name="ContentStackLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0">
+
+                            <customControls:AccordionRepeaterView x:Name="ProfessionalPatientBphComplianceProcedureTypeViewModelListView" KeepOnlyOneItemOpen="True" ItemsSource="{Binding ProfessionalPatientBphComplianceProcedureTypeViewModels}">
+                                <customControls:AccordionRepeaterView.AccordionItemTemplate >
+                                    <DataTemplate>
+                                        <customControls:AccordionItemView Border="1" FontSize="18" FontFamily="Fonts/georgia.ttf#georgia" BorderColor="#d9edf7" ButtonBackgroundColor="#d9edf7" ButtonActiveBackgroundColor="#5ba8ce" ActiveBorderColor="#5ba8ce" Text="{Binding ProcedureTypeName}" TextColor="#333" ActiveTextColor="#333" TextPosition="Left" RightImage="img_righ_arrow_bw.png" RotateImages="True" InnerPadding="10,0,0,0">
+                                            <customControls:AccordionItemView.ItemContent>
+                                                <StackLayout Padding="0" BackgroundColor="#f0fcfe">
+                                                    <customInput:RepeaterView ItemsSource="{Binding ProfessionalPatientBphComplianceProcedureViewModels}">
+                                                        <customInput:RepeaterView.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <ViewCell>
+                                                                    <StackLayout>
+                                                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10" Margin="0,5,0,5">
+                                                                            <Button x:Name="ProcedureNameButton" Text="{Binding ProcedureName}" ClassId="{Binding IdFormated}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0" Padding="10" FontSize="16" TextColor="#000" BackgroundColor="#D7D7D7" BorderColor="#D7D7D7" Clicked="ProcedureNameButton_ClickedAsync"></Button>
+                                                                        </StackLayout>
+                                                                    </StackLayout>
+                                                                </ViewCell>
+                                                            </DataTemplate>
+                                                        </customInput:RepeaterView.ItemTemplate>
+                                                    </customInput:RepeaterView>
+                                                </StackLayout>
+                                            </customControls:AccordionItemView.ItemContent>
+                                        </customControls:AccordionItemView>
+                                    </DataTemplate>
+                                </customControls:AccordionRepeaterView.AccordionItemTemplate>
+                            </customControls:AccordionRepeaterView>
+
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

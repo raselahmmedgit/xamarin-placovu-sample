@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePacuRecipientAddPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="#426276" VerticalOptions="StartAndExpand">
+                <StackLayout  Padding="12">
+                    <Label x:Name="lblPracticeTitle" FontSize="20" TextColor="#ffffff"></Label>
+                </StackLayout>
+                <StackLayout Padding="12" BackgroundColor="#004463">
+                    <Label x:Name="lblPateTitle" FontSize="20" Text="New Patient Attendee" TextColor="#ffffff"></Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Grid BackgroundColor="White" Padding="10, 20, 10, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Entry Grid.Row="0" TextChanged="EmailAddress_TextChanged" Placeholder="Email Address" x:Name="EmailAddress"></Entry>
+                    <Label Grid.Row="1" TextColor="Red" x:Name="ErrorEmailAddress" Text=""/>
+                    <StackLayout Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Picker Grid.Column="0" x:Name="countryCodePicker"></Picker>
+                            <Entry Grid.Column="1" Keyboard="Telephone"  TextChanged="PhoneNumber_TextChanged" Placeholder="Mobile Phone" x:Name="PhoneNumber"></Entry>
+                        </Grid>
+                    </StackLayout>
+
+                    <Label Grid.Row="3" TextColor="Red" x:Name="ErrorPhoneNumber" Text=""/>
+
+                    <StackLayout Grid.Row="4" HorizontalOptions="Start">
+                        <input:CheckBox Text="Email Send Allowed" Type="Check" HorizontalOptions="Start" x:Name="EmailAllow"/>
+                        <input:CheckBox Text="SMS Send Allowed" Type="Check"  HorizontalOptions="Start" x:Name="SmsAllow"/>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="EndAndExpand" Grid.Row="6" VerticalOptions="EndAndExpand" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Save" Clicked="AddAttendee"  BackgroundColor="#0F4563" TextColor="White" CornerRadius="24"></Button>
+                    <Button Grid.Column="1" Text="Cancel" Clicked="ModalClose" BackgroundColor="#0F4563" TextColor="White" CornerRadius="24"></Button>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

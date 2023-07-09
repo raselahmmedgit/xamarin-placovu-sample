@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             xmlns:plugin="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalProgramOperatingResourcePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff">
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                        <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="1" x:Name="ContentStackLayout" Padding="6" VerticalOptions="FillAndExpand">
+                    <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <customcontrols:AccordionRepeaterView x:Name="resourceListView" KeepOnlyOneItemOpen="False">
+                                <customcontrols:AccordionRepeaterView.AccordionItemTemplate >
+                                    <DataTemplate>
+                                        <customcontrols:AccordionItemView Border="1" FontSize="18" FontFamily="Fonts/georgia.ttf#georgia" BorderColor="#d9edf7" ButtonBackgroundColor="#d9edf7" ButtonActiveBackgroundColor="#5ba8ce" ActiveBorderColor="#5ba8ce" Text="{Binding ResourceTitle}" TextColor="#333" ActiveTextColor="#333" TextPosition="Left" RightImage="img_righ_arrow_bw.png" RotateImages="true" InnerPadding="10,0,0,0">
+                                            <customcontrols:AccordionItemView.ItemContent>
+                                                <StackLayout Padding="0">
+                                                    <plugin:HtmlLabel Text="{ Binding ResourceTextFormated}"></plugin:HtmlLabel>
+                                                </StackLayout>
+                                            </customcontrols:AccordionItemView.ItemContent>
+                                        </customcontrols:AccordionItemView>
+                                    </DataTemplate>
+                                </customcontrols:AccordionRepeaterView.AccordionItemTemplate>
+                            </customcontrols:AccordionRepeaterView>
+                            <Label x:Name="NoResource" IsVisible="False" Text="No Resources Found"></Label>
+                        </StackLayout>
+                        
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,1884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{96BFB9FC-38AB-47F3-8EB5-B91A42399847}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OntrackHealthApp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPatientPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ScgPathology\ScgPacuPatientProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\ApiExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Client\ApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Client\ClientBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Client\IApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Extensions\TypeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\HttpClientHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\HttpClientInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\ITokenContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Model\ApiModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Response\ApiResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\Response\ErrorStateResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\TempDataContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiHelper\TokenContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\ApplicationApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\DischargeNotificationClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\HospitalInfoClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\LocationClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\PatientSurveyClientNew.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\ProcedureClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\PatientSurveyClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\ProstateCancerSummaryClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\ReleaseHistoryClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\SurgicalConciergePathologyClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\ScheduleClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\ResourceClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\PhysicianClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Client\LoginClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\AppAndroidReleaseHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\AppIosReleaseHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\ApplicationSettingModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\GoogleGeoCodeClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\PatientDischargeNotificationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\PatientProfileDeviceToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\PatientProfileWithProfessionalProcedureView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\PatientProstateCancerSummary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\PatientShortProfileView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\ScgPathologyModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\DischargeNotificationResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\HospitalInfoPageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ProstateCancerSummaryResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ReleaseHistoryResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ResetPasswordResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientNotificationShortViewFromApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ScgPatientPathologyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\TokenResponseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\UserIdentityModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\UserModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ApplicationSettingResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\LocationPageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\PatientSurveyResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ResourceDetailContentPageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ResourceDetailPageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\PatientEmailNotificationHistoryResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\SchedulePageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ResourcePageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\PhysicianPageResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\SurgicalConciergePathologyResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\TokenResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\PatientProcedureDetailResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\ChangePasswordResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\UserPracticeResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Response\UserIdentityResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ChangePasswordViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\LocationIndexPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientEmailNotificationHistoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientPortalResourceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\Model\PatientProcedureDetailModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientProcedureLocationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientProcedureResourceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientResourceCategoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientScheduleHomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientSurveyPatientNotificationDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientSurveyPracticeLocationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientSurveyProcedureNotificationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientSurveyQuestionDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientSurveyQuestionSetViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PatientSurveyQuestionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PhysicianIndexPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioAssociation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioCustomSection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioEducation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioGenarelInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioInterest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioLicensureView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ProfessionalBioSection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\PSProcedureNotificationDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ResourceDetailContentPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ResourceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\SurgicalResourcePatientProstatectomyLibraryPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\ApiExecutionResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\AsyncHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\CrossLatestVersion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\DecimalValidationBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\EnumExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\ILatestVersion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\InternetConnectHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\IAppPermissionChecker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\LatestVersionException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\ToDoItemCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CancerSummaryGradePage.xaml.cs">
+      <DependentUpon>CancerSummaryGradePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CancerSummaryPage.xaml.cs">
+      <DependentUpon>CancerSummaryPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CancerSummaryStagePage.xaml.cs">
+      <DependentUpon>CancerSummaryStagePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CancerSummaryVolumePage.xaml.cs">
+      <DependentUpon>CancerSummaryVolumePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CanceSummarySummaryPage.xaml.cs">
+      <DependentUpon>CanceSummarySummaryPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\BackgroundRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\ChartConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\ChartDataModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\ChartExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\ChartGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\GraphProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\HomeMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\PatientDataModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\SeriesModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\Models\TooltipSeries.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\ViewModels\BooleanExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\ViewModels\ChartReportPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChartHelper\ViewModels\PatientProgressReportGraphRequestViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomContentPage.xaml.cs">
+      <DependentUpon>CustomContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomModalContentPage.xaml.cs">
+      <DependentUpon>CustomModalContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ContenPageBaseExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ImageExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\WebViewExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HospitalInfoPage.xaml.cs">
+      <DependentUpon>HospitalInfoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)InternetConnectPage.xaml.cs">
+      <DependentUpon>InternetConnectPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LoginPageNew.xaml.cs">
+      <DependentUpon>LoginPageNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ProcedureNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ProcedureNotificationDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ProcedureNotificationSurvey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SurveyQuestion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SurveyQuestionDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SurveyQuestionSet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewVersionPage.xaml.cs">
+      <DependentUpon>NewVersionPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationListPageN.xaml.cs">
+      <DependentUpon>NotificationListPageN.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationPageN.xaml.cs">
+      <DependentUpon>NotificationPageN.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationSurgeryDatePage.xaml.cs">
+      <DependentUpon>NotificationSurgeryDatePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientDischargeResourceViewPage.xaml.cs">
+      <DependentUpon>PatientDischargeResourceViewPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientDischargeSurveyPage.xaml.cs">
+      <DependentUpon>PatientDischargeSurveyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientMonitoringConsentPage.xaml.cs">
+      <DependentUpon>PatientMonitoringConsentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\ComparativeAnalysisGraphPage.xaml.cs">
+      <DependentUpon>ComparativeAnalysisGraphPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\NerhrectomyPatientReportPage.xaml.cs">
+      <DependentUpon>NerhrectomyPatientReportPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\PatientOutComeChartPage.xaml.cs">
+      <DependentUpon>PatientOutComeChartPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\ViewModel\GraphDataProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\ViewModel\MobileSurveyReportViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\ViewModel\OutcomePostOpReportViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientOutComeReport\ViewModel\ProfessionalSurveyReportMobileMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientPastMedicalSurveyPage.xaml.cs">
+      <DependentUpon>PatientPastMedicalSurveyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\PatientProgressReportGraphPage.xaml.cs">
+      <DependentUpon>PatientProgressReportGraphPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\RestApiService\PatientProgressReportApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\ViewModel\PatientProgressReportGraphHistoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\ViewModel\PatientProgressReportGraphPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\ViewModel\PatientProgressReportResourceHistoryView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\ViewModel\PatientProgressReportViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PhysicianProfilePage.xaml.cs">
+      <DependentUpon>PhysicianProfilePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\MainProfessionalPage.xaml.cs">
+      <DependentUpon>MainProfessionalPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\MenuProfessionalPage.xaml.cs">
+      <DependentUpon>MenuProfessionalPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\CompliancePatientProcedureDetailModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\CompliancePatientProfileModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\DivisionUnitStyleModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\PatientAggregateSurveyReportForBphViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\PatientAggregateSurveyReportModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\PatientPreviousMedicalHistoryView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\PatientSurveyActivityViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\ProcedureShortViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\ProfessionalPatientProfileComplianceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\ProProcedureViewModell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\ProfessionalPatientProfileComplianceDetailPainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\ProfessionalSurveyReportMenuShortView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\SpForCriticalResultsOfPatientSurvey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\OutcomeSearchFilterView.xaml.cs">
+      <DependentUpon>OutcomeSearchFilterView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientCalendarSearchModal.xaml.cs">
+      <DependentUpon>PatientCalendarSearchModal.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomeMonthPage.xaml.cs">
+      <DependentUpon>PatientReportedOutcomeMonthPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomePage.xaml.cs">
+      <DependentUpon>PatientReportedOutcomePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomePatientListPage.xaml.cs">
+      <DependentUpon>PatientReportedOutcomePatientListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomeSearchCompliancePage.xaml.cs">
+      <DependentUpon>PatientReportedOutcomeSearchCompliancePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomeSearchPage.xaml.cs">
+      <DependentUpon>PatientReportedOutcomeSearchPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientSearchFilterView.xaml.cs">
+      <DependentUpon>PatientSearchFilterView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientSearchView.xaml.cs">
+      <DependentUpon>PatientSearchView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalAddPage.xaml.cs">
+      <DependentUpon>ProfessionalAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalBillingPage.xaml.cs">
+      <DependentUpon>ProfessionalBillingPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalCancerLocationAddPage.xaml.cs">
+      <DependentUpon>ProfessionalCancerLocationAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalChangePassword.xaml.cs">
+      <DependentUpon>ProfessionalChangePassword.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalCommentView.xaml.cs">
+      <DependentUpon>ProfessionalCommentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalComparativeAnalyticsPage.xaml.cs">
+      <DependentUpon>ProfessionalComparativeAnalyticsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDischargeAdditionalCommentPage.xaml.cs">
+      <DependentUpon>ProfessionalDischargeAdditionalCommentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDischargeDetailPage.xaml.cs">
+      <DependentUpon>ProfessionalDischargeDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDischargePage.xaml.cs">
+      <DependentUpon>ProfessionalDischargePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDivisionUnitPageNew.xaml.cs">
+      <DependentUpon>ProfessionalDivisionUnitPageNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalFloorPage.xaml.cs">
+      <DependentUpon>ProfessionalFloorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalGenericSurveyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalNerveSparingSurvey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalNursingRoundPage.xaml.cs">
+      <DependentUpon>ProfessionalNursingRoundPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalOperatingPage.xaml.cs">
+      <DependentUpon>ProfessionalOperatingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDivisionUnitPage.xaml.cs">
+      <DependentUpon>ProfessionalDivisionUnitPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPacuAdditionalCommentPage.xaml.cs">
+      <DependentUpon>ProfessionalPacuAdditionalCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPacuFreeFormCommentPage.xaml.cs">
+      <DependentUpon>ProfessionalPacuFreeFormCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPacuPage.xaml.cs">
+      <DependentUpon>ProfessionalPacuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAdd.xaml.cs">
+      <DependentUpon>ProfessionalPatientAdd.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAddNew.xaml.cs">
+      <DependentUpon>ProfessionalPatientAddNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPathologyPage.xaml.cs">
+      <DependentUpon>ProfessionalPathologyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAttendeeAddPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientAttendeeAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAttendeeEditPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientAttendeeEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientBphComplianceProcedurePage.xaml.cs">
+      <DependentUpon>ProfessionalPatientBphComplianceProcedurePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientBphComplianceSearchDetailPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientBphComplianceSearchDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientComplianceSearchDetailPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientComplianceSearchDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientEmailAddPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientEmailAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientEmailEditPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientEmailEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientEmailPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientEmailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientPage.xaml.cs">
+      <DependentUpon>ProfessionalPatientPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryAddPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryAssessmentPlanPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryAssessmentPlanPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryXrayPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryXrayPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProfileNotificationPage.xaml.cs">
+      <DependentUpon>ProfessionalProfileNotificationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramDischargePage.xaml.cs">
+      <DependentUpon>ProfessionalProgramDischargePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramFloorPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramFloorPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramNotificationDetailPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramNotificationDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramNotificationListPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramNotificationListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramNursingRoundPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramNursingRoundPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramOperatingResourcePage.xaml.cs">
+      <DependentUpon>ProfessionalProgramOperatingResourcePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramOperatingStageContentPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramOperatingStageContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramOperatingStagePage.xaml.cs">
+      <DependentUpon>ProfessionalProgramOperatingStagePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramPacuPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramPacuPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramPatientSurveyPage.xaml.cs">
+      <DependentUpon>ProfessionalProgramPatientSurveyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalRecipientAddPage.xaml.cs">
+      <DependentUpon>ProfessionalRecipientAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalRecipientEditPage.xaml.cs">
+      <DependentUpon>ProfessionalRecipientEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalRecipientPage.xaml.cs">
+      <DependentUpon>ProfessionalRecipientPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryEditPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryPiradAddPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryPiradAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryPiradEditPage.xaml.cs">
+      <DependentUpon>ProfessionalPreSurgerySummaryPiradEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalResourceDetailContentPage.xaml.cs">
+      <DependentUpon>ProfessionalResourceDetailContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalResourcePage.xaml.cs">
+      <DependentUpon>ProfessionalResourcePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalSignOutPage.xaml.cs">
+      <DependentUpon>ProfessionalSignOutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\RestApiService\ProfessionalOutcomeRestApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\RestApiService\ProfessionalProfileRestApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\RestApiService\ProfessionalReportRestApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\NerveSparingSelectionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientComplianceSearchDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientPortalResource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientPortalResourceCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientPortalResourceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientProcedureResourceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientReportedOutcomeMonthPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientReportedOutcomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientReportedOutcomePatientViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientReportedOutcomeSearchPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\PatientResourceCategoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalComparativeAnalyticsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalPageOutComePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalPatientBphComplianceDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalPatientBphComplianceProcedurePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalPatientBphComplianceProcedureViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalPatientComplianceDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalProcedureViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalProfilePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProgramDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProgramProcedureViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProgramResourceDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProgramResourceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\RadicalNephrectomyTrendsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ScgNursingRoundTemplateCategoryApiViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScgPathology\ScgPathologyPage.xaml.cs">
+      <DependentUpon>ScgPathologyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ScgPathology\ScgPacuPatientProfilePage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ScgPacuPatientProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ScgPathology\ScgPathologyPatientProfilePage.xaml.cs">
+      <DependentUpon>ScgPathologyPatientProfilePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SignOutPage.xaml.cs">
+      <DependentUpon>SignOutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\AdminChangePassword.xaml.cs">
+      <DependentUpon>AdminChangePassword.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\AdminSignOutPage.xaml.cs">
+      <DependentUpon>AdminSignOutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\AppConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\FontAwesomeIcon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\LeonardoCommandProcessorer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\PlatformImageExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\SpeechHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\UtilHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Helper\ValidationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\HomeMenuPage.xaml.cs">
+      <DependentUpon>HomeMenuPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Interfaces\IMessageHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Interfaces\IOntrackSpeechRecognizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Interfaces\IToast.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\MainPracticePage.xaml.cs">
+      <DependentUpon>MainPracticePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\CancerLocationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\CountryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\LeonardoSpeechText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\NursePatientInfoPatientDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PatientAttendeeProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PatientPreSurgerySummaryAssessmentPlanViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PatientPreSurgerySummaryPiradViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PatientPreSurgerySummaryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PatientPreSurgerySummaryXrayViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PatientProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PracticeProcedureLocationDropDownViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PracticeProfileDropDownViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PracticeProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\Model\ProfessionalDashboardDivisionUnit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalDashboardDivisionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ProfessionalProcedureDropDownViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ProfessionalProfileDropDownViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ProfessionalProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\PracticeProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ProfessionaNotesToNurse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ReportTableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ReportTabularData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ScgNursingRoundTemplateCategoryApiViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ScgNursingRoundTemplateCategoryDetailApiViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ScgPacuTimeModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ScgStageCommentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SelectListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConceirgePatientEmailAddModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConceirgePracticeDivision.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConceirgePracticeDivisionUnit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeDischargeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeNursePatientSurveyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeNursingRoundViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergePacuCommentParamViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergePacuQuestionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergePatientCalendarViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergePatientDeleteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\WeekOneTwoPostOpGraphReport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NerveSparingSurvey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientInfoPatientSurvey.xaml.cs">
+      <DependentUpon>NursePatientInfoPatientSurvey.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientInfoPatientView.xaml.cs">
+      <DependentUpon>NursePatientInfoPatientView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientInfoPatientViewPageNew.xaml.cs">
+      <DependentUpon>NursePatientInfoPatientViewPageNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientSearchFilterView.xaml.cs">
+      <DependentUpon>NursePatientSearchFilterView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientSearchView.xaml.cs">
+      <DependentUpon>NursePatientSearchView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientCalendarSearchModal.xaml.cs">
+      <DependentUpon>PatientCalendarSearchModal.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientSearchFilterView.xaml.cs">
+      <DependentUpon>PatientSearchFilterView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientSearchView.xaml.cs">
+      <DependentUpon>PatientSearchView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergePacuViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeFloorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\RestApiService\AdministrationPatientProfileRestApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\RestApiService\SurgicalConciergeRestApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergePatientViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeStageCommentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeStageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalConciergeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\SurgicalPatientDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\Model\ValidationResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientAttendeeAddPage.xaml.cs">
+      <DependentUpon>PatientAttendeeAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientAttendeeEditPage.xaml.cs">
+      <DependentUpon>PatientAttendeeEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientAttendeeListPage.xaml.cs">
+      <DependentUpon>PatientAttendeeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalCommentView.xaml.cs">
+      <DependentUpon>SurgicalCommentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConceirgePatientAdd.xaml.cs">
+      <DependentUpon>SurgicalConceirgePatientAdd.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConceirgePatientAddNew.xaml.cs">
+      <DependentUpon>SurgicalConceirgePatientAddNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeGeneralSurgery.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientAttendeeAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientAttendeeAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeCancerLocationAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeCancerLocationAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDetail.xaml.cs">
+      <DependentUpon>SurgicalConciergeDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDischargeAdditionalCommentPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeDischargeAdditionalCommentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDischargeDetailPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeDischargeDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDischargePage.xaml.cs">
+      <DependentUpon>SurgicalConciergeDischargePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeFloorPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeFloorPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeNursingRoundPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeNursingRoundPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuAdditionalCommentPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuAdditionalCommentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuFreeFormCommentPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuFreeFormCommentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuNewPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuNewPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePastWeekDates.xaml.cs">
+      <DependentUpon>SurgicalConciergePastWeekDates.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePathologyPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePathologyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientAttendeeEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientAttendeeEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientAttendeePage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientAttendeePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuRecipientAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuRecipientAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuRecipientPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuRecipientPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientEmailAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientEmailAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientEmailEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientEmailEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientEmailPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientEmailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientView.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePracticeDivision.xaml.cs">
+      <DependentUpon>SurgicalConciergePracticeDivision.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePracticeDivisionUnit.xaml.cs">
+      <DependentUpon>SurgicalConciergePracticeDivisionUnit.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryAssessmentPlanPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryAssessmentPlanPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryPiradAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryPiradAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryPiradEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryPiradEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryXrayPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePreSurgerySummaryXrayPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeProfessionalAdd.xaml.cs">
+      <DependentUpon>SurgicalConciergeProfessionalAdd.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeRecipientAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeRecipientAddPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeRecipientEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeRecipientEditPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeRecipientPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeRecipientPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\UserControls\FontAwesomeLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\NursePatientInfoPatientViewPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\PatientAttendeeProfileTypeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergeDischargePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergeFloorPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergeNursingRoundPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergePacuPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergePatientEmailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergePatientViewPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergePracticeDivisionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergeRecipientPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SurgicalConcierge\ViewModel\SurgicalConciergeSidebarSearchViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\CalendarRoundButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\EntryLengthValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\HtmlButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\LayoutExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiLoginEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiDatePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiPicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\MtiTimePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\NumericEntryBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\PhoneNumberMaskValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\WebViewExtented.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\HospitalInfoPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MenuViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NotificationListPageViewModelN.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NotificationPageNViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PatientNoteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PracticeInformationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ViewModel\ProfessionalDashboardDivisionUnitViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProcedureViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ResetPasswordViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ResourceDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ResourceDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\ResourceIndexPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ResourcePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiService\ViewModel\UserPracticeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\AppConstant.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\IToast.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\MessageHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\NotificationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppCore\ToastHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ChangePasswordSuccessPage.xaml.cs">
+      <DependentUpon>ChangePasswordSuccessPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LocationPage.xaml.cs">
+      <DependentUpon>LocationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LocationPageNew.xaml.cs">
+      <DependentUpon>LocationPageNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPatientPage.xaml.cs">
+      <DependentUpon>MainPatientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\PatientNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationDetailPage.xaml.cs">
+      <DependentUpon>NotificationDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationListPage.xaml.cs">
+      <DependentUpon>NotificationListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)OtherProcedurePage.xaml.cs">
+      <DependentUpon>OtherProcedurePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientSurveyPage.xaml.cs">
+      <DependentUpon>PatientSurveyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PhysicianPage.xaml.cs">
+      <DependentUpon>PhysicianPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PhysicianPageNew.xaml.cs">
+      <DependentUpon>PhysicianPageNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ResourceDetailContentPage.xaml.cs">
+      <DependentUpon>ResourceDetailContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ResourcePage.xaml.cs">
+      <DependentUpon>ResourcePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SchedulePage.xaml.cs">
+      <DependentUpon>SchedulePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SettingsListPage.xaml.cs">
+      <DependentUpon>SettingsListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UpdateProfilePage.xaml.cs">
+      <DependentUpon>UpdateProfilePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\HtmlLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserControls\RepeaterView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LocationPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NotificationDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NotificationListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NotificationPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\OtherProcedurePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PatientSurveyPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ScgPathologyPatientProfilePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ScgStageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SurgicalConciergeDocumentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SurgicalResourceDocumentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PatientViews\Shared\PatientInfoDisplayContentView.xaml.cs">
+      <DependentUpon>PatientInfoDisplayContentView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PatientViews\UpdateProfilePageNew.xaml.cs">
+      <DependentUpon>UpdateProfilePageNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LocationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PhysicianPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ResourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SchedulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ChangePasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UpdateProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ResourceDetailContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NotificationListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SettingsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NotificationDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientSurveyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)OtherProcedurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PhysicianPageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LocationPageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ChangePasswordSuccessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PhysicianProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)InternetConnectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\MainPracticePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientAttendeeAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientAttendeeEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientAttendeeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalCommentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConceirgePatientAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeProfessionalAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\AdminChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePracticeDivisionUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePracticeDivision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePastWeekDates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientAttendeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientAttendeeEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ScgPathology\ScgPathologyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ScgPathology\ScgPathologyPatientProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuRecipientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuRecipientAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)OntrackHealthApp.projitems" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePathologyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeRecipientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeRecipientAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeFloorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuNewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeRecipientEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SignOutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\AdminSignOutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientEmailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientEmailAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientEmailEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDischargePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDischargeAdditionalCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeDischargeDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CancerSummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CancerSummaryGradePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CancerSummaryStagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CancerSummaryVolumePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CanceSummarySummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CancerSummaryGradePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CancerSummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CancerSummaryStagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CancerSummaryVolumePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CanceSummarySummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ChangePasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ChangePasswordSuccessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CustomContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)HospitalInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CustomModalContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)InternetConnectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)LocationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)LocationPageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoginPageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)MainPatientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NewVersionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)NotificationDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)NotificationListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NotificationListPageN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)NotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NotificationPageN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NotificationSurgeryDatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)OtherProcedurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientDischargeSurveyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientDischargeResourceViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientProgressReportGraph\PatientProgressReportGraphPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientOutComeReport\PatientOutComeChartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientOutComeReport\ComparativeAnalysisGraphPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientPastMedicalSurveyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientMonitoringConsentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientOutComeReport\NerhrectomyPatientReportPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)PatientSurveyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)PhysicianPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)PhysicianPageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)PhysicianProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\MenuProfessionalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\MainProfessionalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalSignOutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomeMonthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomePatientListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientComplianceSearchDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientBphComplianceSearchDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDischargePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDischargeAdditionalCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDischargeDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalRecipientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalRecipientAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalRecipientEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientEmailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientEmailEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientEmailAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientCalendarSearchModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientSearchFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAddNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPacuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPacuAdditionalCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPacuFreeFormCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalOperatingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalCommentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPathologyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryPiradEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryPiradAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalCancerLocationAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalFloorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAttendeeAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientAttendeeEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDivisionUnitPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalComparativeAnalyticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramNotificationListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProfileNotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalResourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalResourceDetailContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalNursingRoundPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramPacuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramDischargePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramNursingRoundPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramFloorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramNotificationDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramOperatingStagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramOperatingResourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramPatientSurveyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalBillingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomeSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalProgramOperatingStageContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\PatientReportedOutcomeSearchCompliancePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPatientBphComplianceProcedurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalGenericSurveyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalNerveSparingSurvey.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalDivisionUnitPageNew.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\OutcomeSearchFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryXrayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfessionalProfile\ProfessionalPreSurgerySummaryAssessmentPlanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)ResourceDetailContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ResourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)SchedulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)SettingsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)SignOutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuAdditionalCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePacuFreeFormCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientCalendarSearchModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientInfoPatientSurvey.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientInfoPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryPiradAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryPiradEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeCancerLocationAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConceirgePatientAddNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePatientAttendeeAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\HomeMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeNursingRoundPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientInfoPatientViewPageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\PatientSearchFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NursePatientSearchFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergeGeneralSurgery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\NerveSparingSurvey.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryXrayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SurgicalConcierge\SurgicalConciergePreSurgerySummaryAssessmentPlanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Page Include="$(MSBuildThisFileDirectory)UpdateProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientViews\Shared\PatientInfoDisplayContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PatientViews\UpdateProfilePageNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

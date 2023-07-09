@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.HospitalInfoPage">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+            <Grid ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                    <Image Source="resources_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                    <Label Text="Other Info" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                </StackLayout>
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" x:Name="ContentStackLayout" Padding="0">
+
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0">
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" BackgroundColor="#E6FFFF" Spacing="0" Padding="0" Margin="0">
+                            <StackLayout x:Name="SurgicalResourceDocumentStackLayout" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="6">
+
+                            </StackLayout>
+                            <StackLayout Padding="12" Style="{StaticResource PatientPageTitleStyleTwo}">
+                                <Label x:Name="SurgicalResourceDocumentDetailLabel" VerticalOptions="Center" Text="" Style="{StaticResource PatientPageTitleTextStyle}"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" x:Name="SurgicalResourceDocumentDetailStackLayout" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF" Padding="12">
+                                    <WebView x:Name="SurgicalResourceDocumentDetailWebView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                        <WebView.Source>
+                                            <HtmlWebViewSource Html="" />
+                                        </WebView.Source>
+                                    </WebView>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Style="{ StaticResource MainPatientPageButtonStackLayoutStyle}">
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnHome" Text="Home" Image="home_nav_icon_1.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnHomeButtonClickedAsync"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnResource" Text="Resources" Image="resources_nav_icon.png"  Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnResourceButtonClickedAsync"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnSchedule" Text="Schedule" Image="schedule_nav_icon.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnScheduleButtonClickedAsync"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

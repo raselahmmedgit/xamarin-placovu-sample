@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage   xmlns:local="clr-namespace:OntrackHealthApp"
+               xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+               xmlns:input="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+               x:Class="OntrackHealthApp.CancerSummaryStagePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout Padding="5,20,5,0">
+                        <StackLayout WidthRequest="180" HorizontalOptions="Center">
+                            <controls:CircleImage Source="pc_summary/stage_large.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="180">
+                            </controls:CircleImage>
+                        </StackLayout>                     
+                    </StackLayout>
+
+                    <StackLayout Padding="10,10,10,0">
+                        <input:HtmlLabel x:Name="LblCancerSummeryStageOne" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                    </StackLayout>
+                    <StackLayout Padding="10,0,10,0">
+                        <Image Source="pc_summary/patient_prostatecancersummarystage_t1.png"></Image>
+                    </StackLayout>
+                    <StackLayout Padding="10,10,10,0">
+                        <input:HtmlLabel x:Name="LblCancerSummeryStageTwo" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                        <!--<input:HtmlLabel x:Name="LblCancerSummeryStageTwo" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>-->
+                    </StackLayout>
+                    <StackLayout Padding="10,0,10,0" HorizontalOptions="Center">
+                        <Grid HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <controls:CircleImage Grid.Column="0" Grid.Row="0" Source="pc_summary/stage_ok_small.png" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center">
+                                <controls:CircleImage.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="Android, iOS">35</On>
+                                    </OnPlatform>
+                                </controls:CircleImage.WidthRequest>
+                                <controls:CircleImage.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="Android, iOS">35</On>
+                                    </OnPlatform>
+                                </controls:CircleImage.HeightRequest>
+                            </controls:CircleImage>
+                            <input:HtmlLabel Grid.Column="1" Grid.Row="0" x:Name="LblCancerSummeryStageTen" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                        </Grid>
+
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#cccccc" Margin="12">
+                        <StackLayout Padding="10,10,10,0">
+                            <input:HtmlLabel x:Name="LblCancerSummeryStageElaven"></input:HtmlLabel>
+                        </StackLayout>
+                        <StackLayout Padding="10,0,10,0">
+                            <Image Source="pc_summary/patient_prostatecancersummarystage_t2b.png"></Image>
+                        </StackLayout>
+
+                        <StackLayout Padding="10,10,10,0">
+                            <input:HtmlLabel x:Name="LblCancerSummeryStageThree"></input:HtmlLabel>
+                        </StackLayout>
+
+                        <StackLayout Padding="10,0,10,0">
+                            <Image Source="pc_summary/patient_prostatecancersummarystage_t3a.png"></Image>
+                        </StackLayout>
+
+                        <StackLayout Padding="10,10,10,0">
+                            <input:HtmlLabel x:Name="LblCancerSummeryStageThreeB"></input:HtmlLabel>
+                        </StackLayout>
+
+                        <StackLayout Padding="10,0,10,0">
+                            <Image Source="pc_summary/patient_prostatecancersummarystage_t3b.png"></Image>
+                        </StackLayout>
+
+                        <StackLayout Padding="10,10,10,0">
+                            <input:HtmlLabel x:Name="LblCancerSummeryStageFour"></input:HtmlLabel>
+                        </StackLayout>
+                        
+                        <StackLayout Padding="10,0,10,10">
+                            <Image Source="pc_summary/patient_prostatecancersummarystage_t4.png"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#cccccc" Margin="12">
+                        <StackLayout Padding="10,10,10,0">
+                            <input:HtmlLabel x:Name="LblCancerSummeryStageEight" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                        </StackLayout>
+                        <StackLayout Padding="10,0,10,10">
+                            <Image Source="pc_summary/patient_prostatecancersummarystage_n.png"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#cccccc" Margin="12" Padding="10">
+                        <input:HtmlLabel x:Name="LblCancerSummeryStageNine" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

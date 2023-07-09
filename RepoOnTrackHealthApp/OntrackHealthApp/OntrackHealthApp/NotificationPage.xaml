@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:html="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             x:Class="OntrackHealthApp.NotificationPage" BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+            
+            <StackLayout Grid.Row="1"  Style="{StaticResource ProcedureFormTitleStyle}">
+                <Label x:Name="NotificationTitle" Text="{Binding NotificationTitle}"  Style="{StaticResource ProcedureFormTitleTextStyle}"/>
+            </StackLayout>
+            <ScrollView  x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="10">
+                    <StackLayout>
+                        <html:HtmlLabel TextColor="#000000" Text="{Binding NotificationHeader}" FontFamily="Fonts/georgia.ttf#georgia"></html:HtmlLabel>
+                    </StackLayout>
+                    <StackLayout Padding="0,20,0,0" IsVisible="{Binding ShowCheckInButton}">
+                        <input:ButtonExtended x:Name="CheckInProgramButton" BackgroundColor="#ce4b4b" TextColor="#ffffff" Text="{Binding CheckinbuttonText}" FontSize="22" HorizontalOptions="FillAndExpand" Clicked="CheckInProgramButtonClickedAsync"></input:ButtonExtended>
+                    </StackLayout>
+                    <StackLayout  IsVisible="{Binding ShowNotificationButton}" Margin="0,30,0,0" VerticalOptions="Start" BackgroundColor="AliceBlue" Padding="5,10"  HorizontalOptions="FillAndExpand">
+                        <Label  Text="Today's Notifications" TextColor="#446377" FontSize="20" FontFamily="Fonts/georgia.ttf#georgia" />
+                    </StackLayout>
+
+                    <input:RepeaterView IsVisible="{Binding ShowNotificationButton}" x:Name="MainRepeater" EmptyText="No elements" ShowSeparator="true" SeparatorHeight="4" SeparatorColor="White"
+                            ItemsSource="{Binding PSProcedureNotificationDetails}">
+                        <input:RepeaterView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" BackgroundColor="#eeeeee">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                            <Label FontSize="16" FontFamily="Fonts/georgia.ttf#georgia" VerticalTextAlignment="Center" Text="{Binding NotificationDetailHeader}" ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                            <Button x:Name="ShowMoreButton" FontFamily="Fonts/georgia.ttf#georgia" ClassId="{Binding NotificationDetailId}" Clicked="ShowMoreButtonClickedAsync" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="#ffffff" BackgroundColor="#337ab7" FontSize="13" HeightRequest="36" WidthRequest="45" Image="external_link_icon.png"/>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </input:RepeaterView.ItemTemplate>
+                    </input:RepeaterView>
+                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="OntrackHealthApp.LocationPageNew"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                        <Image Source="location_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                        <Label Text="Location" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                    </StackLayout>
+                </Grid>
+                <StackLayout Grid.Row="1">
+                    <StackLayout Margin="10" VerticalOptions="Start">
+                        <Label  Text="Please find the address and directions below for your upcoming procedure." TextColor="Black" FontSize="16"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="LocationNameStackLayout" Margin="10,0,10,10" VerticalOptions="Start">
+                        <Label Text="{Binding LocationName}" TextColor="#900" FontSize="16"/>
+                        <Label Text="{Binding Address}" FontSize="16"/>
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <maps:Map x:Name="LocationMap" IsShowingUser="False" MapType="Street" MyLocationEnabled="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            <StackLayout Grid.Row="2" VerticalOptions="End"  HeightRequest="72" BackgroundColor="#D7D7D7" Spacing="0">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnHome" Text="Home" Image="home_nav_icon_1.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnHomeButtonClickedAsync"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnResource" Text="Resources" Image="resources_nav_icon.png"  Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnResourceButtonClickedAsync"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnSchedule" Text="Schedule" Image="schedule_nav_icon.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnScheduleButtonClickedAsync"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

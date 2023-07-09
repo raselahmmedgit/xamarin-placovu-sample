@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalDischargePage">
+    <ContentPage.Content>
+        <customInput:StackLayoutRootContent>
+            <customInput:StackLayoutFormTitle>
+                <customInput:StackLayoutFormTitleLabel Text="Discharge"/>
+            </customInput:StackLayoutFormTitle>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout x:Name="HeaderStackLayout" Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0, -6, 0, 0" BackgroundColor="#F8BA00" Padding="12">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0" Spacing="0">
+                            <Label x:Name="PatientFullName" Text="" TextColor="#FFFFFF" FontSize="20"  />
+                            <Label x:Name="ProcedureName" Text="" TextColor="#FFFFFF " FontSize="16" />
+                            <Label x:Name="ProfessionalName" Text="" TextColor="#FFFFFF " FontSize="16" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout x:Name="MainContainerCheckBox" Padding="12,6">
+                        <Label Text="Choose from the 3 templated emails or send a free text."></Label>
+                    </StackLayout>
+                    <StackLayout x:Name="MainContainer" Padding="10"></StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </customInput:StackLayoutRootContent>
+    </ContentPage.Content>
+</ContentPage>

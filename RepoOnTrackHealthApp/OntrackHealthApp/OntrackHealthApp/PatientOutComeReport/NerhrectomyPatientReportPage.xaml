@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:CustomContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:OntrackHealthApp"
+             x:Class="OntrackHealthApp.PatientOutComeReport.NerhrectomyPatientReportPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="NephrectomyTabularReportStackLayout" IsVisible="false">
+                <ScrollView>
+                    <StackLayout Grid.Row="1" x:Name="NephrectomyTabularReport" BackgroundColor="#FFFFFF" Padding="5">
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout x:Name="NephrectomyChartReportStackLayout" IsVisible="true">
+                <ScrollView>
+                    <StackLayout Grid.Row="1" x:Name="NephrectomyChartReport" BackgroundColor="#FFFFFF" Padding="5">
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</local:CustomContentPage>

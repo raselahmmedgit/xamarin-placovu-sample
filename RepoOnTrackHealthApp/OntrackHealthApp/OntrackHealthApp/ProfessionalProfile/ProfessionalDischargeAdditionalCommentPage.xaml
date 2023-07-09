@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                         xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+                                         x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalDischargeAdditionalCommentPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#426276" VerticalOptions="StartAndExpand">
+                <StackLayout  Padding="12">
+                    <Label x:Name="lblPracticeTitle" FontSize="20" TextColor="#ffffff"></Label>
+                </StackLayout>
+                <StackLayout Padding="12" BackgroundColor="#004463">
+                    <Label x:Name="lblPateTitle" FontSize="20" Text="Addtional Comment" TextColor="#ffffff"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Grid BackgroundColor="White" Padding="10, 20, 10, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Entry Grid.Row="0" Placeholder="Additional Comment" x:Name="AdditionalComment"></Entry>
+                    <Label Grid.Row="1" TextColor="Red" x:Name="ErrorAdditionalComment" Text=""/>
+                </Grid>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand" Grid.Row="6" VerticalOptions="EndAndExpand" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="ModalClose" Text="Cancel" Clicked="ModalClose_ClickedAsync" BackgroundColor="#0F4563" TextColor="White" CornerRadius="20" HeightRequest="40" FontSize="18"></Button>
+                    <Button Grid.Column="1" x:Name="AddComment" Text="Ok" Clicked="AddComment_ClickedAsync"  BackgroundColor="#0F4563" TextColor="White" CornerRadius="20" HeightRequest="40" FontSize="18"></Button>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

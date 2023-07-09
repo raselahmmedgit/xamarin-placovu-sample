@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns:local="clr-namespace:OntrackHealthApp"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:input="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             x:Class="OntrackHealthApp.CancerSummaryGradePage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="5,20,5,20">
+                    <StackLayout WidthRequest="180" HorizontalOptions="Center">
+                        <controls:CircleImage Source="pc_summary/grade_large.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="180">
+                        </controls:CircleImage>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Padding="10,0,10,0">
+                    <!--<input:WebViewExtented x:Name="WebViewExtBlockOne">
+                        </input:WebViewExtented>-->
+                    <input:HtmlLabel x:Name="LblCancerSummeryGradeOne" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                </StackLayout>
+                <StackLayout Padding="10,0,10,20">
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <controls:CircleImage Grid.Column="0" Grid.Row="0" Source="pc_summary/grade_ok_small.png" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center">
+                        </controls:CircleImage>
+                        <input:HtmlLabel Grid.Column="1" Grid.Row="0" VerticalOptions="Center" x:Name="LblCancerSummeryGradeResult" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" HorizontalOptions="Start" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Padding="10,0,10,20" HorizontalOptions="Center">
+                    <StackLayout Padding="20,20,20,20" HorizontalOptions="Center" BackgroundColor="#f1f1f1">
+                        <Grid HorizontalOptions="Center" WidthRequest="360">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0,0,20,0" Margin="0,0,0,0">
+                                <Label Text="Primary" FontSize="16" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="0" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" Margin="0,0,0,0">
+                                <Label Text="Secondary" FontSize="16" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                        </Grid>
+                        <Grid HorizontalOptions="Center" WidthRequest="360">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"></RowDefinition>
+                                <RowDefinition Height="60"></RowDefinition>
+                                <RowDefinition Height="60"></RowDefinition>
+                                <RowDefinition Height="60"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="1" Grid.Row="2" BackgroundColor="Transparent" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="+" FontSize="28" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="3" Grid.Row="2" BackgroundColor="Transparent" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="=" FontSize="28" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                            <StackLayout  Grid.Column="4" Grid.Row="2" BackgroundColor="Transparent" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label  x:Name="LblResult" Text="" FontSize="28" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#e83555"></Label>
+                            </StackLayout>
+
+                            <StackLayout x:Name="LblOneThree" Grid.Column="0" Grid.Row="1" BackgroundColor="#989898" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="3" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                            <StackLayout x:Name="LblTwoThree" Grid.Column="2" Grid.Row="1" BackgroundColor="#989898" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="3" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+
+                            <StackLayout x:Name="LblOneFour" Grid.Column="0" Grid.Row="2" BackgroundColor="#989898" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="4" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                            <StackLayout x:Name="LblTwoFour" Grid.Column="2" Grid.Row="2" BackgroundColor="#989898" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="4" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+
+                            <StackLayout x:Name="LblOneFive" Grid.Column="0" Grid.Row="3" BackgroundColor="#989898" HeightRequest="60" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="5" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                            <StackLayout x:Name="LblTwoFive" Grid.Column="2" Grid.Row="3" BackgroundColor="#989898" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                                <Label Text="5" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

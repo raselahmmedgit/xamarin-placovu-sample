@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.LoginPageNew">
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="640*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <ScrollView VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"></RowDefinition>
+                                <RowDefinition Height="8*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0"></StackLayout>
+                            <StackLayout Grid.Row="1">
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout x:Name="LogoStackLayout" Padding="0,0,0,60">
+                                        <Image  Aspect="AspectFit" HorizontalOptions="Center" BackgroundColor="Transparent" Source="ontrackhealth_logo_circle.png" WidthRequest="100" HeightRequest="100"></Image>
+                                    </StackLayout>
+                                    <StackLayout Padding="20,0,20,0">
+                                        <StackLayout x:Name="LoginMainBlock">
+                                            <StackLayout x:Name="MessageStackLayout" IsVisible="False" Padding="10,0,10,10" VerticalOptions="Center">
+                                                <Label x:Name="MessageLabel" FontSize="18" TextColor="#a94442" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout x:Name="StackLayoutLoginForm" IsVisible="True">
+                                                <StackLayout x:Name="EmailStackLayout" Padding="0,6">
+                                                    <input:MtiLoginEntry x:Name="EmailEntry" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Placeholder="Enter your email" PlaceholderColor="#bababa" BorderColor="#000" BorderWidth="1" CornerRadius="0" FontSize="18" Keyboard="Keyboard.Email" HeightRequest="48"></input:MtiLoginEntry>
+                                                </StackLayout>
+                                                <StackLayout x:Name="PasswordStackLayout" IsVisible="False" Padding="0,6">
+                                                    <input:MtiLoginEntry x:Name="PasswordEntry" IsSpellCheckEnabled="False" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa"  BorderColor="#000" BorderWidth="1" CornerRadius="0" FontSize="18" HeightRequest="48"></input:MtiLoginEntry>
+                                                </StackLayout>
+                                                <StackLayout x:Name="LoginStepOneNextStackLayout" Padding="0,20,0,0">
+                                                    <input:ButtonLoginExtended Text="Next" x:Name="BtnNextStepOne" Clicked="OnNextStepOneButtonClickedAsync" HorizontalOptions="FillAndExpand" FontSize="18" />
+                                                </StackLayout>
+                                                <StackLayout x:Name="LoginStepOneLoginStackLayout" IsVisible="False" Padding="0,20,0,0">
+                                                    <input:ButtonLoginExtended Text="Login" x:Name="BtnLoginStepOne" Clicked="OnLoginStepOneButtonClicked" HorizontalOptions="FillAndExpand" FontSize="18" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout x:Name="UserPracticeStackLayout" IsVisible="False">
+                                            <input:RepeaterView x:Name="UserPracticeListView" BackgroundColor="Transparent">
+                                                <input:RepeaterView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <ViewCell>
+                                                            <StackLayout Padding="0,0,0,5">
+                                                                <input:ButtonLoginExtended x:Name="BtnUserPractice" Clicked="OnBtnUserPracticeClickedAsync" ClassId="{Binding UserName}" Text="{Binding PracticeName}" FontSize="18"/>
+                                                            </StackLayout>
+                                                        </ViewCell>
+                                                    </DataTemplate>
+                                                </input:RepeaterView.ItemTemplate>
+                                            </input:RepeaterView>
+                                        </StackLayout>
+
+                                        <StackLayout x:Name="LoginStepTwoStackLayout" IsVisible="False">
+                                            <input:RepeaterView x:Name="UserRoleListView">
+                                                <input:RepeaterView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <ViewCell>
+                                                            <StackLayout Padding="0,0,0,5">
+                                                                <input:ButtonLoginExtended x:Name="BtnLoginStepTwo" Clicked="OnLoginStepTwoButtonClickedAsync" ClassId="{Binding UserName}" Text="{Binding RoleName}" FontSize="18"/>
+                                                            </StackLayout>
+                                                        </ViewCell>
+                                                    </DataTemplate>
+                                                </input:RepeaterView.ItemTemplate>
+                                            </input:RepeaterView>
+                                        </StackLayout>
+
+                                        <StackLayout x:Name="GridResetPasswordFirstForm" IsVisible="False">
+                                            <StackLayout x:Name="ResetPasswordFirstMessageStackLayout" IsVisible="False" Padding="10,6" VerticalOptions="Center">
+                                                <Label x:Name="ResetPasswordFirstMessageLabel" FontSize="18" TextColor="#a94442" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout x:Name="ResetPasswordFirstEmailStackLayout" Padding="0,6">
+                                                <input:MtiLoginEntry x:Name="ResetPasswordFirstEmailEntry" IsEnabled="False" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Placeholder="Email" PlaceholderColor="#bababa" BorderColor="#000" BorderWidth="1" CornerRadius="0" FontSize="18" Keyboard="Keyboard.Email" HeightRequest="48"></input:MtiLoginEntry>
+                                            </StackLayout>
+                                            <StackLayout x:Name="ResetPasswordFirstPasswordStackLayout" Padding="0,6">
+                                                <input:MtiLoginEntry x:Name="ResetPasswordFirstCodeEntry"  BorderColor="#000" BorderWidth="1" CornerRadius="0" IsVisible="False" HeightRequest="48"></input:MtiLoginEntry>
+                                                <input:MtiLoginEntry x:Name="ResetPasswordFirstOldPasswordEntry"  BorderColor="#000" BorderWidth="1" CornerRadius="0" IsVisible="False" HeightRequest="48"></input:MtiLoginEntry>
+                                                <input:MtiLoginEntry x:Name="ResetPasswordFirstPasswordEntry" IsSpellCheckEnabled="False" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" BorderColor="#000" BorderWidth="1" CornerRadius="0" FontSize="18" HeightRequest="48"></input:MtiLoginEntry>
+                                            </StackLayout>
+                                            <StackLayout x:Name="ResetPasswordFirstPasswordConfirmStackLayout" Padding="0,6">
+                                                <input:MtiLoginEntry x:Name="ResetPasswordFirstPasswordConfirmEntry" IsSpellCheckEnabled="False" IsPassword="True" Placeholder="Confirm Password" PlaceholderColor="#bababa" BorderColor="#000" BorderWidth="1" CornerRadius="0" FontSize="18"  HeightRequest="48" />
+                                            </StackLayout>
+                                            <StackLayout x:Name="LoginStepResetPasswordFirstStackLayout" Padding="0,20,0,0">
+                                                <input:ButtonLoginExtended Text="Reset" x:Name="BtnLoginStepResetPasswordFirst" Clicked="OnLoginStepResetPasswordFirstButtonClicked" FontSize="18"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

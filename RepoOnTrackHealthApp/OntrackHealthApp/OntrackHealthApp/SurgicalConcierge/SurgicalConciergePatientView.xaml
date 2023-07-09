@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+             xmlns:markupExtensions="clr-namespace:OntrackHealthApp.SurgicalConcierge.Helper"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             Title = "Ontrack Health"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePatientView">
+    <ContentPage.Content>
+
+        <StackLayout Margin="0" Padding="0" BackgroundColor="#F1F2F7">
+            <Grid VerticalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="2"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="2"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5" Spacing="0">
+                    <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                            <input:ButtonMenuBottom x:Name="AddTopButton" Text="Add pt" Image="add_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowAddPatientModal"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                            <input:ButtonMenuBottom x:Name="AddTopTwoButton" Text="Filter" Image="filter_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowPatientSearchFilterModal"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                            <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <input:ButtonMenuBottom Grid.Column="0" Grid.Row="0" x:Name="AddTopThreeButton" HorizontalOptions="CenterAndExpand" Text="Today" Image="calendar_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowPatientSearchCalendar"/>
+                                <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" Margin="0" Padding="0,22,0,0" Spacing="0">
+                                    <Label x:Name="AddTopThreeTodayLabel" FontSize="14" />
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout Grid.Column="3" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                            <input:ButtonMenuBottom x:Name="AddTopFourButton" Text="Search" Image="search_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowPatientSearchModal"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#d7d7d7"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5" Spacing="0">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="74"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="18"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout x:Name="PreviousStackLayout" Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0" Padding="0,0,0,0">
+                                <Button VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Image="previous_left_icon.png" BackgroundColor="Transparent" Padding="2,0" Clicked="PatientSearchCalendarPrevButton_Clicked" WidthRequest="18"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout x:Name="WeekStackLayout" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                        </StackLayout>
+                        <StackLayout x:Name="NextStackLayout" Grid.Column="2" Grid.Row="0" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0" Padding="0,0,0,0">
+                                <Button VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Image="next_right_icon.png" BackgroundColor="Transparent" Padding="2,0" Clicked="PatientSearchCalendarNextButton_Clicked" WidthRequest="18"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#d7d7d7"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Margin="0" Padding="0">
+                    <ListView x:Name="PatientView" 
+                            HasUnevenRows="True"                       
+                            ItemsSource="{Binding SurgicalConciergePatientViewModeslInfiniteScroll}" 
+                            CachingStrategy="RecycleElement"
+                            SeparatorColor="Transparent" BackgroundColor="Transparent"
+                            SeparatorVisibility="None" SelectedItem="{Binding SelectedSurgicalConciergePatientViewModel}" ItemSelected="PatientViewSelected">
+                        <ListView.Behaviors>
+                            <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                        </ListView.Behaviors>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <ViewCell>
+                                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10,10,10,0" Padding="0" Spacing="0" BackgroundColor="#FFFFFF">
+                                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="86"></ColumnDefinition>
+                                                <ColumnDefinition Width="4"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5,0,5,0" Spacing="0">
+                                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding SurgeryTimeFormated}" FontSize="14"></Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0,10" Spacing="0">
+                                                <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ItemBackgroundColor}"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5,10,0,10" Spacing="0">
+                                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding PatientFullName}" FontSize="14" FontAttributes="Bold"></Label>
+                                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding ProfessionalName}" FontSize="14"></Label>
+                                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding ProcedureName}" FontSize="14"></Label>
+                                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding SurgeryDateFormated}" FontSize="14"></Label>
+                                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                                                    <input:ButtonExtended VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" Image="update_icon.png" SelectedDataItem="{Binding SelectedSurgicalConciergePatientViewModel}" Clicked="ButtonEditExtended_Clicked"></input:ButtonExtended>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Style="{ StaticResource MainProfessionalPageButtonStackLayoutStyle}">
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Spacing="0" Padding="0" Margin="0">
+                            <input:ButtonMenuBottom x:Name="BtnHome" Image="home_nav_icon.png" Style="{ StaticResource MainProfessionalPageButtonStyle}" Clicked="BtnHome_ClickedAsync"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

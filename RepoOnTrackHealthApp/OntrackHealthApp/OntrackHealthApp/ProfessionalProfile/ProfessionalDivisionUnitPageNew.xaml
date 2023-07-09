@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalDivisionUnitPageNew" BackgroundColor="#ffffff">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView  Grid.Row="0" BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                    <Grid  BackgroundColor="#FFFFFF" VerticalOptions="StartAndExpand" ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#FFFFFF" HorizontalOptions="StartAndExpand"  VerticalOptions="CenterAndExpand" Padding="10"  HeightRequest="60">
+                            <Label x:Name="ProfessionalName" Text="{Binding ProfessionalProfileName, StringFormat='Welcome {0}'}" FontFamily="Fonts/georgia.ttf#georgia"  FontSize="20" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="#000"></Label>
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout BackgroundColor="#ffffff" Orientation="Vertical" x:Name="practiceDivisionUnitStackLayout" VerticalOptions="CenterAndExpand">
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Grid.Row="1" Style="{ StaticResource MainProfessionalPageButtonStackLayoutStyle}">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="0" Padding="0" Margin="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnHome" Image="home_nav_icon.png" Style="{ StaticResource MainProfessionalPageButtonStyle}" Clicked="BtnHome_ClickedAsync"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

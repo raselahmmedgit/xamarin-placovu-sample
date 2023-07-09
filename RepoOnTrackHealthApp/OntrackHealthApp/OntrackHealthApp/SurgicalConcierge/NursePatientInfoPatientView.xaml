@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.NursePatientInfoPatientView"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+             xmlns:markupExtensions="clr-namespace:OntrackHealthApp.SurgicalConcierge.Helper"
+             Title = "Ontrack Health">
+    
+    <ContentPage.Content>
+      
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+           
+          <StackLayout BackgroundColor="#00829E" Margin="0" Spacing="0">
+            <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="56"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="55"></ColumnDefinition>
+                        <ColumnDefinition Width="55"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Padding="12" Grid.Column="0">
+                        <Label Text="Patient Profile" FontSize="22" TextColor="#ffffff"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="AddTopTwoButton" Clicked="ShowPatientSearchFilterModal" Image="filter_icon_white.png" BackgroundColor="Transparent"></Button>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="AddTopThreeButton" Clicked="ShowPatientSearchModal" Image="find_icon_white.png" BackgroundColor="Transparent"></Button>
+                    </StackLayout>
+                </Grid>
+          </StackLayout>
+          
+            <ListView x:Name="PatientView" 
+                    SeparatorColor="#bababa"
+                    SeparatorVisibility="None"
+                    HasUnevenRows="True" 
+                    VerticalOptions="FillAndExpand"                    
+                    ItemSelected="PatientView_ItemSelected" 
+                    IsPullToRefreshEnabled="True" 
+                    Refreshing="PatientView_Refreshing" 
+                    ItemsSource="{Binding Items}" 
+                    CachingStrategy="RecycleElement">
+                <ListView.Behaviors>
+                    <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsLoadingMore}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="#F8BA00" Padding="10" Margin="6,4">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Start">
+                                    <Label HorizontalOptions="Start" Text="{Binding PatientFullName}" TextColor="#ffffff" FontSize="18" FontAttributes="Bold" ></Label>
+                                    <Label HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding ProfessionalName}" TextColor="#0F4563" FontSize="16"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                    <Label HorizontalOptions="End" Text="{Binding ProcedureName}" TextColor="#0F4563" FontSize="16"></Label>
+                                    <Label HorizontalOptions="End" Text="{Binding SurgeryDateTimeFormated}" TextColor="#0F4563" FontSize="16"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <Grid Padding="15" IsVisible="{Binding IsLoadingCompleted}">
+                        <!--Footer HeightRequest must be 0 when not visible-->
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <Label Text="Loading..." TextColor="Crimson" FontSize="Large"
+                           VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
+                </ListView.Footer>
+            </ListView>
+
+        </StackLayout>
+
+        <!--</AbsoluteLayout>-->
+    </ContentPage.Content>
+</ContentPage>

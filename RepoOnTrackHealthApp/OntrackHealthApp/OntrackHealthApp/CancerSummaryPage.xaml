@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns:local="clr-namespace:OntrackHealthApp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    x:Class="OntrackHealthApp.CancerSummaryPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+
+            <Grid MinimumHeightRequest="40" ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                    <Image Source="resources_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                    <Label Text="Cancer Summary" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                </StackLayout>
+            </Grid>
+
+            <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="5,5,5,5">
+                        <StackLayout WidthRequest="220" HorizontalOptions="Center">
+                            <controls:CircleImage Source="pc_summary/baner_ProstateCancerSummary.png" Aspect="AspectFill" HeightRequest="220" WidthRequest="220">
+                            </controls:CircleImage>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Understanding Your Pathology Report" HorizontalTextAlignment="Center" FontSize="22"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="5,20,5,20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" Grid.Row="0" Padding="10">
+                                <Button x:Name="BtnStage" Clicked="BtnStage_ClickedAsync" Text="Stage" WidthRequest="130" HorizontalOptions="Center" HeightRequest="130" BackgroundColor="#61d0d4" BorderColor="#61d0d4" TextColor="#ffffff" FontSize="16" BorderRadius="65" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="0" Padding="10">
+                                <Button x:Name="BtnGrade" Clicked="BtnGrade_ClickedAsync" Text="Grade" WidthRequest="130" HorizontalOptions="Center" HeightRequest="130" BackgroundColor="#e83556" BorderColor="#e83556" TextColor="#ffffff" FontSize="16" BorderRadius="65" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="0" Grid.Row="1" Padding="10">
+                                <Button x:Name="BtnVolume" Clicked="BtnVolume_ClickedAsync" Text="Margins/Volume" WidthRequest="130" HorizontalOptions="Center" HeightRequest="130" BackgroundColor="#d1c926" BorderColor="#d1c926" TextColor="#ffffff" FontSize="16" BorderRadius="65" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="1" Padding="10">
+                                <Button x:Name="BtnSummary" Clicked="BtnSummary_ClickedAsync" Text="Summary" WidthRequest="130" HorizontalOptions="Center" HeightRequest="130" BackgroundColor="#221F64" BorderColor="#221F64" TextColor="#ffffff" FontSize="16" BorderRadius="65" />
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Padding="10,5">
+                        <Label Text="When your prostate is removed, it is removed whole with two small glands called the seminal vesicles still attached to it. The specimen is coated with ink in order for the pathologist to determine where the outside, or surgical margin, is located." FontSize="18"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10,5">
+                        <Label Text="Most of the time pelvic lymph nodes, a common site of spread of prostate cancer, are also removed. After undergoing special processing and staining, the tissue is then reviewed by the pathologist." FontSize="18"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10,5">
+                        <Label Text="Click on the highlighted circles to help you understand your pathology report." FontSize="18"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

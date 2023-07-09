@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalProgramDischargePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <custom:StackLayoutFormTitle>
+                <custom:StackLayoutFormTitleLabel Text="Discharge"/>
+            </custom:StackLayoutFormTitle>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <StackLayout Padding="12,6,12,6">
+                          <Grid VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                              <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                          </Grid>
+                          <Label Grid.Row="0" Text="Highlighted Boxes have been preselected by treating physician. Please deselect information that does not apply or add information by clicking on the icon. Please double click on the icon to show detail information."></Label>
+                        </StackLayout>
+                        <StackLayout x:Name="MainContainer" Padding="12,6,12,6" HorizontalOptions="EndAndExpand">
+                            <StackLayout x:Name="MainContainer2" HorizontalOptions="EndAndExpand">
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+                <custom:ButtonExtended x:Name="SendDischargeComment" Text="Send"></custom:ButtonExtended>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

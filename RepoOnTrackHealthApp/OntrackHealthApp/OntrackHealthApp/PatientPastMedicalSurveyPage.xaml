@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="OntrackHealthApp.PatientPastMedicalSurveyPage">
+        <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+            <Grid ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                    <Image Source="question_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                    <Label Text="Questionnaires" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                </StackLayout>
+            </Grid>
+
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <StackLayout  x:Name="SurveyDesc" VerticalOptions="Start" Padding="10"  HorizontalOptions="FillAndExpand"></StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout x:Name="StackLayoutMainBlock" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.UpdateProfilePage">
+
+    <StackLayout  BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+            <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+        </StackLayout>
+        <Grid ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                <Image Source="userprofile_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                <Label Text="Update Profile" Style="{ StaticResource PatientPageTitleTextStyle}" />
+            </StackLayout>
+        </Grid>
+        <StackLayout>
+            <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout>
+                    <StackLayout Style="{StaticResource PatientPageTitleStyleTwo}">
+                        <Label Text="General Info" Style="{StaticResource PatientPageTitleTextStyle}"></Label>
+                    </StackLayout>
+                    
+                    <customInput:StackLayoutForm>
+
+                        <customInput:StackLayoutFormGroup>
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="Practice"></Label>
+                                <StackLayout Grid.Row="1">
+                                    <customInput:MtiPicker x:Name="PracticeProfilePicker" HorizontalOptions="FillAndExpand" Title="Select..." ItemDisplayBinding="{Binding Text}" />
+                                    <Label HorizontalOptions="CenterAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPracticeProfilePicker" Text=""/>
+                                </StackLayout>
+                            </Grid>
+                        </customInput:StackLayoutFormGroup>
+
+                        <customInput:StackLayoutFormGroup ShowBorderTop="True">
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="First Name"></Label>
+                                <StackLayout Grid.Row="1">
+                                    <Entry HorizontalOptions="FillAndExpand" x:Name="PatientProfileIdTextBox" IsVisible="False"></Entry>
+                                    <customInput:MtiEntry TextChanged="FirstNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="FirstNameTextBox"></customInput:MtiEntry>
+                                    <Label HorizontalOptions="CenterAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorFirstNameTextBox" Text=""/>
+                                </StackLayout>
+                            </Grid>
+                        </customInput:StackLayoutFormGroup>
+
+                        <customInput:StackLayoutFormGroup ShowBorderTop="True">
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="Last Name"></Label>
+                                <StackLayout Grid.Row="1">
+                                    <customInput:MtiEntry TextChanged="LastNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="LastNameTextBox"></customInput:MtiEntry>
+                                    <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorLastNameTextBox" Text=""/>
+                                </StackLayout>
+                            </Grid>
+                        </customInput:StackLayoutFormGroup>
+
+                        <customInput:StackLayoutFormGroup ShowBorderTop="True">
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="Date of Birth"></Label>
+                                <StackLayout Grid.Row="1">
+                                    <customInput:MtiDatePicker x:Name="DateOfBirthDatePicker" HorizontalOptions="FillAndExpand" ></customInput:MtiDatePicker>
+                                </StackLayout>
+                            </Grid>
+                        </customInput:StackLayoutFormGroup>
+
+                        <customInput:StackLayoutFormGroup ShowBorderTop="True">
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Mobile" TextColor="Black"></Label>
+                                <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                                            <customInput:MtiPicker x:Name="CountryCodePicker"></customInput:MtiPicker>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                            <customInput:MtiEntry Keyboard="Keyboard.Telephone" TextChanged="PhoneNumberTextBox_TextChanged" x:Name="PhoneNumberTextBox" Placeholder="Mobile Phone"  Text="{Binding PrimaryPhone}">
+                                                <Entry.Behaviors>
+                                                    <customInput:PhoneNumberMaskValidator x:Name="PhoneMask" />
+                                                    <customInput:EntryLengthValidator MaxLength="12"/>
+                                                </Entry.Behaviors>
+                                            </customInput:MtiEntry>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                                <Label Grid.Row="2" HorizontalOptions="CenterAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPhoneNumberTextBox" Text=""/>
+                            </Grid>
+                        </customInput:StackLayoutFormGroup>
+
+                    </customInput:StackLayoutForm>
+
+                    <StackLayout>
+                        <StackLayout Style="{StaticResource PatientPageTitleStyleTwo}">
+                            <Label Text="User Info" Style="{StaticResource PatientPageTitleTextStyle}"></Label>
+                        </StackLayout>
+                        <customInput:StackLayoutForm>
+                            <customInput:StackLayoutFormGroup>
+                                <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="Email"></Label>
+                                    <StackLayout Grid.Row="1">
+                                        <customInput:MtiEntry TextChanged="EmailTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="EmailTextBox"></customInput:MtiEntry>
+                                        <Label HorizontalOptions="CenterAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorEmailTextBox" Text=""/>
+                                    </StackLayout>
+                                </Grid>
+                            </customInput:StackLayoutFormGroup>
+                        </customInput:StackLayoutForm>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        
+        <StackLayout Style="{ StaticResource BottomCommandPanelStyle }">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <customInput:ButtonExtended Grid.Column="0" Text="Update" x:Name="PatientAddButton" Clicked="PatientUpdateButton_Clicked"></customInput:ButtonExtended>
+                <customInput:ButtonExtended Grid.Column="1" Text="Cancel" x:Name="PatientCancelButton" Clicked="PatientCancelButton_Clicked"></customInput:ButtonExtended>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

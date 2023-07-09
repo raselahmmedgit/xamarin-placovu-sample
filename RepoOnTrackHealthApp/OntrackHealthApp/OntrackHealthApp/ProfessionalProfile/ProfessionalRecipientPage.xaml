@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:controls="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalRecipientPage">
+    <ContentPage.Content>
+        <StackLayout Style="{ StaticResource RootContent}"  BackgroundColor="#F1F2F7">
+
+            <Grid x:Name="RecipientPageTopHeader" ColumnSpacing="0" RowSpacing="0" Margin="0,40,0,20" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                    <input:ButtonMenuBottom x:Name="AddTopButton" Text="Add pt" Image="add_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowAddPatientModal"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                    <input:ButtonMenuBottom x:Name="AddTopTwoButton" Text="Filter" Image="filter_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowPatientSearchFilterModal"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                    <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <input:ButtonMenuBottom Grid.Column="0" Grid.Row="0" x:Name="AddTopThreeButton" HorizontalOptions="CenterAndExpand" Text="Today" Image="calendar_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="PatientListTodayClicked"/>
+                        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" Margin="0" Padding="0,22,0,0" Spacing="0">
+                            <Label x:Name="AddTopThreeTodayLabel" FontSize="14" />
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Column="3" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                    <input:ButtonMenuBottom x:Name="AddTopFourButton" Text="Search" Image="search_icon_new.png" Style="{ StaticResource PatientViewPageTopButtonStyle}" Clicked="ShowPatientSearchModal"/>
+                </StackLayout>
+            </Grid>
+
+            <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="#F1F2F7">
+                <StackLayout>
+                    <StackLayout HeightRequest="60" BackgroundColor="#531b93" Margin="0,10,0,30">
+                        <Label Text="UPDATE RECIPIENT(S)" TextColor ="White" HorizontalTextAlignment = "Center" VerticalTextAlignment = "Center" FontSize = "20" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" Margin = "0, 0, 0, 0"></Label>
+                    </StackLayout>
+
+                    <StackLayout x:Name="PatientContactStackLayout" IsVisible ="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10,10,10,0" Padding="0" Spacing="0" BackgroundColor="#FFF">
+                        <Grid  BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="180"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="86"></ColumnDefinition>
+                                <ColumnDefinition Width="4"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5,0,5,0" Spacing="0">
+                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="Patient" TextColor="#0F4563" FontSize="18"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0,10" Spacing="0">
+                                <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="#61CFD3"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5,10,0,10" Spacing="0">
+                                <StackLayout Margin="0,30,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <StackLayout x:Name="PatientContactExist">
+                                        <controls:CheckBox x:Name="PatientEmailAddress" Type="Check" IsEnabled="False" Color="#000" BoxSizeRequest="24" TextFontSize="12" IsChecked="True" MinimumHeightRequest="50">
+                                        </controls:CheckBox>
+                                        <controls:CheckBox x:Name="PatientMobilePhoneWithCountryCode" Type="Check" IsEnabled="False" Color="#000" BoxSizeRequest="24" TextFontSize="12">
+                                        </controls:CheckBox>
+                                    </StackLayout>
+                                    <StackLayout x:Name="PatientContactNotExist">
+                                        <Label Text="No record(s) found." BackgroundColor="#fcf8e3" TextColor="#8a6d3b"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                                    <input:ButtonExtended x:Name="btnEditPatientContact" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" Image="update_icon.png"></input:ButtonExtended>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+
+                    <input:RepeaterView x:Name="MainRepeater" ShowSeparator="true" SeparatorHeight="1" SeparatorColor="White" ItemsSource="{Binding PatientAttendeeProfileViewModels}">
+                        <input:RepeaterView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10,10,10,0" Padding="0" Spacing="0" BackgroundColor="#FFF">
+                                        <Grid  BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="180"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="86"></ColumnDefinition>
+                                                <ColumnDefinition Width="4"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5,0,5,0" Spacing="0">
+                                                <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="{Binding AttendeeProfileTypeName}" TextColor="#0F4563" FontSize="14"></Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0,10" Spacing="0">
+                                                <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="#00a2ff"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="5,10,0,10" Spacing="0">
+                                                <StackLayout Margin="0,30,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                    <controls:CheckBox Text="{Binding EmailAddressFormatted}" Type="Check" IsEnabled="False" Color="#000" BoxSizeRequest="24" TextFontSize="12" IsChecked="{Binding EmailAllowed}" MinimumHeightRequest="50">
+                                                    </controls:CheckBox>
+                                                    <controls:CheckBox Text="{Binding MobilePhoneWithCountryCode}" Type="Check" IsEnabled="False" Color="#000" BoxSizeRequest="24" TextFontSize="12" IsChecked="{Binding SmsAllowed}">
+                                                    </controls:CheckBox>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Spacing="0">
+                                                    <input:ButtonExtended x:Name="btnEditRecipient" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" Image="update_icon.png" SelectedDataItem="{Binding SelectedSurgicalConciergePatientViewModel}" ClassId="{Binding AttendeeProfileId}" Clicked="ShowEditDialogAsync"></input:ButtonExtended>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+                                    <!--<StackLayout VerticalOptions="CenterAndExpand">
+                                        <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0" VerticalOptions="CenterAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="56"></ColumnDefinition>
+                                                <ColumnDefinition Width="56"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout  Grid.Column="0" HeightRequest="80" Padding="12,6">
+                                                <StackLayout VerticalOptions="CenterAndExpand" IsVisible="{ Binding IsEmailProvided }">
+                                                    <Label Text="{Binding EmailAddress}" FontSize="14"></Label>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="CenterAndExpand" IsVisible="{ Binding IsPhoneProvided }">
+                                                    <Label Text="{Binding MobilePhoneWithCountryCode}" FontSize="14"></Label>
+                                                </StackLayout>
+                                            </StackLayout>
+
+                                            <StackLayout Grid.Column="1" Padding="4" Margin="0" VerticalOptions="Center">
+                                                <Button x:Name="btnEditRecipient" ClassId="{Binding AttendeeProfileId}" Clicked="ShowEditDialogAsync" Image="mti_edit_icon_round.png" BackgroundColor="#31b0d5" BorderColor="#269abc" HeightRequest="48" WidthRequest="48" CornerRadius="24"></Button>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="2" Padding="4" Margin="0" VerticalOptions="Center">
+                                                <Button x:Name="btnDeleteRecipient" ClassId="{Binding AttendeeProfileId}" Clicked="ShowDeleteDialogAsync" Image="mti_delete_icon_round.png" BackgroundColor="#31b0d5" BorderColor="#269abc" HeightRequest="48" WidthRequest="48" CornerRadius="24"></Button>
+                                            </StackLayout>
+                                        </Grid>
+                                        <BoxView HeightRequest="1" BackgroundColor="White"></BoxView>
+                                    </StackLayout>-->
+                                </ViewCell>
+                            </DataTemplate>
+                        </input:RepeaterView.ItemTemplate>
+                    </input:RepeaterView>
+
+                    <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                        <Image Margin="5,5,5,5" HeightRequest="30" WidthRequest="30" Source="plus_icon_black.png" x:Name="SurgicalConciergePatientAttendeeAddButton" BackgroundColor="Transparent"></Image>
+                        <Label Margin="5,5,5,5" FontSize="18" Text="Add Contact" TextColor="Black"></Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="AddRecipientButton_ClickedAsync"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+                <input:ButtonExtended x:Name="ContinueToProgramButton" Clicked="ContinueToProgramButton_ClickedAsync" Text="Continue to Program"></input:ButtonExtended>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

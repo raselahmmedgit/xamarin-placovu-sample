@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalDivisionUnitPage" BackgroundColor="#ffffff">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView  Grid.Row="0" BackgroundColor="#ffffff" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                    <Grid  BackgroundColor="#d6f7fe" VerticalOptions="StartAndExpand" ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10"  HeightRequest="100" WidthRequest="100">
+                            <controls:CircleImage Source="{Binding ProfessionalProfilePicture}" 
+                                                      Aspect="AspectFill" BorderThickness="1" BorderColor="#436276"
+                                                      HeightRequest="100" WidthRequest="100">
+                            </controls:CircleImage>
+                        </StackLayout>
+                        <StackLayout  Grid.Column="1" Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <StackLayout Padding="2" BackgroundColor="#d6f7fe" HorizontalOptions="FillAndExpand" >
+                                <Label x:Name="ProfessionalName" Text="{Binding ProfessionalProfileName}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="2" HorizontalOptions="FillAndExpand" >
+                                <Label x:Name="ProfessionalPracticeName" Text="{Binding ProfessionalPracticeName}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="2" HorizontalOptions="FillAndExpand" >
+                                <Label x:Name="ProfessionalTotalPatient" Text="{Binding ProfessionalTotalPatientCount}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout BackgroundColor="#ffffff" Orientation="Vertical" x:Name="practiceDivisionUnitStackLayout" VerticalOptions="CenterAndExpand">
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Grid.Row="1" Style="{ StaticResource MainProfessionalPageButtonStackLayoutStyle}">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnHome" Image="home_nav_icon.png" Style="{ StaticResource MainProfessionalPageButtonStyle}" Clicked="BtnHome_ClickedAsync"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

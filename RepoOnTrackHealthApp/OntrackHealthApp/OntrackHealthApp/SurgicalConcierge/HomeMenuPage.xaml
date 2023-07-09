@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.HomeMenuPage"
+             Title = "Ontrack Health" BackgroundColor="#EEF6F2">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+            <StackLayout Padding="15">
+                <Button x:Name="BtnSurgicalConcierge" Text="Surgical Concierge" Clicked="BtnSurgicalConcierge_Clicked" TextColor="White" BackgroundColor="#0F4563" FontSize="26" CornerRadius="25" HeightRequest="80"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.NewVersionPage" BackgroundImage="mti_ontrackhealth_blank_screan.png">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="mti_ontrackhealth_logo_circle.png" HeightRequest="140" WidthRequest="140" VerticalOptions="Center"></Image>
+                <Frame Grid.Row="1" VerticalOptions="Center" Margin="20" CornerRadius="16" Padding="20">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label VerticalOptions="CenterAndExpand" Text="Thank you for using Ontrack Health App. A new version has been released. Please update application." VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  Style="{StaticResource LabelStyleMediuum}"></Label>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <StackLayout Padding="0,10,0,0" VerticalOptions="FillAndExpand">
+                                <Label x:Name="CurrentVersion" HorizontalTextAlignment="Center" Style="{StaticResource LabelStyleMediuum}"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="0,10,0,0" VerticalOptions="FillAndExpand">
+                                <Label x:Name="ReleasedVersion" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  Style="{StaticResource LabelStyleMediuum}"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Grid.Row="2" Padding="20">
+                    <Button Text="Update" Clicked="Button_ClickedAsync" Style="{StaticResource ButtonStyle}"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

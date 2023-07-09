@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:OntrackHealthApp.SurgicalConcierge.UserControls"
+             xmlns:markupExtensions="clr-namespace:OntrackHealthApp.SurgicalConcierge.Helper"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePatientAttendeePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" BackgroundColor="#0F4563" Padding="10" MinimumHeightRequest="200">
+                <Label Text="{Binding PatientFullName}" FontSize="20" TextColor="#FFF"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Procedure: " FontSize="15" TextColor="#FFF" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ProcedureName}" FontSize="15" TextColor="#FFF"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Professional: " FontSize="15" TextColor="#FFF" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ProfessionalName}" FontSize="15" TextColor="#FFF"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Padding="10">
+                <Label Text="Registered Recipients" HorizontalTextAlignment="Center" FontSize="20" TextColor="#0F4563"></Label>
+                <StackLayout x:Name="recipientContainerStackLayout" Orientation="Vertical" Padding="10">
+                    <!--<StackLayout Orientation="Horizontal" HeightRequest="40">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="1" TextColor="#FFF" BackgroundColor="#0F4563" WidthRequest="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                            <Label Text="nahidur@placovu.com" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" TextColor="#0F4563"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Image Source="{markupExtensions:PlatformImageExtension SourceImage='icon_edit.png'}" WidthRequest="30" HeightRequest="30"></Image>
+                            <Image Source="{markupExtensions:PlatformImageExtension SourceImage='icon_delete.png'}" WidthRequest="30" HeightRequest="30"></Image>
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HeightRequest="40">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="2" TextColor="#FFF" BackgroundColor="#0F4563" WidthRequest="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                            <Label Text="nahid@placovu.com" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" TextColor="#0F4563"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Image Source="{markupExtensions:PlatformImageExtension SourceImage='icon_edit.png'}" WidthRequest="30" HeightRequest="30"></Image>
+                            <Image Source="{markupExtensions:PlatformImageExtension SourceImage='icon_delete.png'}" WidthRequest="30" HeightRequest="30"></Image>
+                        </StackLayout>
+
+                    </StackLayout>-->
+                    <!--<StackLayout Orientation="Horizontal" HeightRequest="40">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="3" TextColor="#FFF" BackgroundColor="#0F4563" WidthRequest="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                            <Entry HorizontalOptions="FillAndExpand" Placeholder="type cell phone or email" FontSize="18" TextColor="#0F4563"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Button Text="Save" BackgroundColor="#0F4563" FontSize="Small"  TextColor="#FFF"></Button>                            
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Margin="10">
+                        <Button Text="Continue to program" BackgroundColor="#0F4563" FontSize="Small"  TextColor="#FFF"></Button>
+                    </StackLayout>-->
+                   
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

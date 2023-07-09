@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls" BackgroundColor="#FFFFFF"
+                        x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalAddPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <customInput:StackLayoutPageTitle>
+                <customInput:StackLayoutPageTitleLabel x:Name="LabelPracticeTitle"/>
+            </customInput:StackLayoutPageTitle>
+            <customInput:StackLayoutFormTitle>
+                <customInput:StackLayoutFormTitleLabel Text="Add New Professional"/>
+            </customInput:StackLayoutFormTitle>
+
+            <customInput:StackLayoutForm VerticalOptions="FillAndExpand">
+
+                <customInput:StackLayoutFormGroup>
+                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="First Name" TextColor="Black"></Label>
+                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                            <customInput:MtiEntry TextChanged="FirstNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="FirstNameTextBox"></customInput:MtiEntry>
+                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorFirstNameTextBox" Text=""/>
+                        </StackLayout>
+                    </Grid>
+                </customInput:StackLayoutFormGroup>
+
+                <customInput:StackLayoutFormGroup ShowBorderTop="True">
+                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Last Name" TextColor="Black"></Label>
+                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                            <customInput:MtiEntry TextChanged="LastNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="LastNameTextBox"></customInput:MtiEntry>
+                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorLastNameTextBox" Text=""/>
+                        </StackLayout>
+                    </Grid>
+                </customInput:StackLayoutFormGroup>
+
+                <customInput:StackLayoutFormGroup ShowBorderTop="True">
+                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Doctor Email" TextColor="Black"></Label>
+                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                            <customInput:MtiEntry TextChanged="EmailAddress_TextChanged" HorizontalOptions="FillAndExpand" x:Name="EmailTextBox" Keyboard="Keyboard.Email"></customInput:MtiEntry>
+                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorEmailTextBox" Text=""/>
+                        </StackLayout>
+                    </Grid>
+                </customInput:StackLayoutFormGroup>
+
+            </customInput:StackLayoutForm>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <customInput:ButtonExtended Grid.Column="0" HorizontalOptions="FillAndExpand" Clicked="SaveButton_Clicked" Text="Save" x:Name="SaveButton"></customInput:ButtonExtended>
+                    <customInput:ButtonExtended Grid.Column="1" HorizontalOptions="FillAndExpand" Clicked="CancelButton_Clicked" Text="Cancel" x:Name="CancelButton"></customInput:ButtonExtended>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

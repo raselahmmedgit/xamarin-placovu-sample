@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalComparativeAnalyticsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <customInput:StackLayoutForm>
+                    <customInput:StackLayoutFormGroup Padding="0,10,0,20">
+                        <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Grid.Column="0" BackgroundColor="GreenYellow" HeightRequest="20"></BoxView>
+                            <Label  Text="Comparative Analytics" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" TextColor="Black"></Label>
+                        </Grid>
+                        <StackLayout HorizontalOptions="FillAndExpand" Padding="0,10,0,0">
+                            <customInput:MtiPicker x:Name="ProcedurePicker"></customInput:MtiPicker>
+                        </StackLayout>
+                    </customInput:StackLayoutFormGroup>
+
+                    <customInput:StackLayoutFormGroup x:Name="ChooseFilterGroup" Padding="0,10,0,20">
+                        <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Grid.Column="0" BackgroundColor="GreenYellow" HeightRequest="20"></BoxView>
+                            <Label  Text="Choose Filter" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" TextColor="Black"></Label>
+                        </Grid>
+                        <StackLayout HorizontalOptions="FillAndExpand" Padding="0,10,0,0">
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <customInput:ButtonExtended x:Name="MyPatient" Grid.Column="0" BackgroundColor="#61d836" Image="professionaldashboard/check_mark_not_white.png" PressedImage="professionaldashboard/check_mark_white.png" Text="My Patient" TextColor="White" ContentLayout="Top,10" FontSize="14" CornerRadius="4" HeightRequest="90" Clicked="ButtonExtended_Clicked"/>
+                                <customInput:ButtonExtended x:Name="PracticePatient" Grid.Column="1" BackgroundColor="#961204" Image="professionaldashboard/check_mark_not_white.png" PressedImage="professionaldashboard/check_mark_white.png" Text="Minnesota Urology" TextColor="White" ContentLayout="Top,10" FontSize="14"  CornerRadius="4" HeightRequest="90" Clicked="ButtonExtended_Clicked" />
+                            </Grid>
+                        </StackLayout>
+                    </customInput:StackLayoutFormGroup>
+
+                    <customInput:StackLayoutFormGroup x:Name="PlotFilterGroup" Padding="0,10,0,20">
+                        <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <BoxView Grid.Column="0" BackgroundColor="GreenYellow" HeightRequest="20"></BoxView>
+                            <Label  Text="What do you want to plot?" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" TextColor="Black"></Label>
+                        </Grid>
+                        <StackLayout HorizontalOptions="FillAndExpand" Padding="0,10,0,0">
+                            <customInput:MtiPicker x:Name="PlotPicker"></customInput:MtiPicker>
+                        </StackLayout>
+                    </customInput:StackLayoutFormGroup>
+                    
+                </customInput:StackLayoutForm>
+            </StackLayout>
+            <StackLayout Padding="5" Margin="0,20,0,0" VerticalOptions="EndAndExpand">
+                <customInput:ButtonExtended Text="Show Graph" x:Name="ButtonShowGraph" Clicked="ButtonShowGraph_ClickedAsync" FontSize="18" TextColor="White" BackgroundColor="#0F4563"></customInput:ButtonExtended>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

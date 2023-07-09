@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergeNursingRoundPage" BackgroundColor="#EEF6F2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="0" ColumnSpacing="0" Padding="0" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="StackLayoutMain" IsVisible="False">
+                        <!--<StackLayout Style="{StaticResource FormTitleStyleTwo}">
+                            <Label HorizontalTextAlignment="Center" FontSize="Small" Text="Click on text boxes below to create message to send to family contacts. Or create your own message" LineBreakMode="WordWrap" Style="{ StaticResource LabelStyleDesc}"></Label>
+                        </StackLayout>-->
+                        <StackLayout Orientation="Vertical" x:Name="NursingRoundStackView"></StackLayout>
+                        <StackLayout Orientation="Vertical" Padding="12" BackgroundColor="#47BCDC">
+                            <Label FontSize="16" FontAttributes="Bold" TextColor="#FFFFFF" Text="Enter floor phone number"></Label>
+                        </StackLayout>
+                        <custom:StackLayoutForm>
+                            <custom:StackLayoutFormGroup>
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                                        <custom:MtiPicker x:Name="CountryCodePicker"></custom:MtiPicker>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                        <custom:MtiEntry x:Name="FloorPhoneNumber" Keyboard="Telephone"  Placeholder="Mobile Phone" TextChanged="FloorPhoneNumber_TextChanged">
+                                            <Entry.Behaviors>
+                                                <custom:PhoneNumberMaskValidator x:Name="PhoneMask" />
+                                                <custom:EntryLengthValidator MaxLength="12"/>
+                                            </Entry.Behaviors>
+                                        </custom:MtiEntry>
+                                    </StackLayout>
+                                </Grid>
+                            </custom:StackLayoutFormGroup>
+                        </custom:StackLayoutForm>
+                        <!--<StackLayout Orientation="Vertical" Padding="12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Picker Grid.Column="0" x:Name="CountryCodePicker"></Picker>
+                            <Entry Grid.Column="1" x:Name="FloorPhoneNumber" Keyboard="Telephone" Placeholder="Mobile Phone" TextChanged="FloorPhoneNumber_TextChanged">
+                                <Entry.Behaviors>
+                                    <custom:PhoneNumberMaskValidator x:Name="PhoneMask" />
+                                    <custom:EntryLengthValidator MaxLength="12"/>
+                                </Entry.Behaviors>
+                            </Entry>
+                        </Grid>
+
+                    </StackLayout>-->
+                        <StackLayout Orientation="Vertical" Padding="12" BackgroundColor="#3DA7C4">
+                            <Label FontSize="16" FontAttributes="Bold" TextColor="#FFFFFF" Text="Generated Message"></Label>
+                        </StackLayout>
+                        <StackLayout Padding="12">
+                            <StackLayout Padding="0,15" x:Name="StackLayoutEditorGmChooseSalutation" IsVisible="False">
+                                <Label FontSize="13"  LineBreakMode="WordWrap" x:Name="EditorGmChooseSalutation" Style="{ StaticResource LabelStyleDesc}"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="0,15" x:Name="StackLayoutEditorGmProgressUpdate" IsVisible="False">
+                                <Label FontSize="13"  LineBreakMode="WordWrap" x:Name="EditorGmProgressUpdate" Style="{ StaticResource LabelStyleDesc}"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="0,15" x:Name="StackLayoutEditorGmTodaysPlan" IsVisible="False">
+                                <Label FontSize="13"  LineBreakMode="WordWrap"  x:Name="EditorGmTodaysPlan" Style="{ StaticResource LabelStyleDesc}"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="0,15" x:Name="StackLayoutGmFloorPhoneNumber" IsVisible="False">
+                                <Label FontSize="13" LineBreakMode="WordWrap" x:Name="EditorGmFloorPhoneNumber" Style="{ StaticResource LabelStyleDesc}"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="0,15">
+                                <Label FontSize="13" LineBreakMode="WordWrap" x:Name="EditorGmSigneture" Style="{ StaticResource LabelStyleDesc}"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <custom:ButtonExtended Grid.Column="0" Text="Send Message" x:Name="ButtonSendMessage" Clicked="ButtonSendMessage_ClickedAsync"></custom:ButtonExtended>
+                        <custom:ButtonExtended Grid.Column="1" Text="Reset" x:Name="ButtonReset" Clicked="ButtonReset_Clicked"></custom:ButtonExtended>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

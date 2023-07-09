@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:inputHtml="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             x:Class="OntrackHealthApp.PhysicianProfilePage"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+
+            <Grid VerticalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                        <Image Source="physician_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                        <Label Text="Physician" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout Grid.Row="1" x:Name="ContentStackLayout" Padding="0" VerticalOptions="Center">
+                    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                        <StackLayout x:Name="MainStackLayout" IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                            <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10"  HeightRequest="210" WidthRequest="210">
+                                <!--<Image x:Name="xfImage" Source="{Binding ProfessionalProfilePicture}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
+                                <controls:CircleImage Source="{Binding ProfessionalProfilePicture}" 
+                                                      Aspect="AspectFill" BorderThickness="1" BorderColor="#436276"
+                                                      HeightRequest="210" WidthRequest="210">
+                                </controls:CircleImage>
+                            </StackLayout>
+                            <StackLayout BackgroundColor="#f0fcfe" Margin="5" Padding="2" IsVisible="{Binding ShowBioSections}" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                                <StackLayout Padding="10" BackgroundColor="#d6f7fe">
+                                    <Label x:Name="ProfessionalName" Text="{Binding ProfessionalProfileName}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                                </StackLayout>
+                                <StackLayout IsVisible="{Binding ShowYearBoardCertifiedSince}">
+                                    <StackLayout Padding="10,5">
+                                        <Label x:Name="YearBoardCertified" Text="{Binding YearBoardCertifiedSince}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="2" BackgroundColor="#fff"></BoxView>
+                                </StackLayout>
+                                <StackLayout Padding="10,5" IsVisible="{Binding ShowYearJoinedCurrentPractice}">
+                                    <Label x:Name="YearJoinedCurrentPractice" Text="{Binding YearJoinedCurrentPractice}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                                </StackLayout>
+                                <StackLayout IsVisible="{Binding ShowCurrentPracticeLocation}">
+                                    <BoxView HeightRequest="2" BackgroundColor="#fff"></BoxView>
+                                    <StackLayout Padding="10,5">
+                                        <Label Text="Clinic location:" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="#333"></Label>
+                                        <Label x:Name="CurrentPracticeLocation" Text="{Binding CurrentPracticeLocation}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#333"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout BackgroundColor="#f0fcfe" Margin="5" Padding="2"  IsVisible="{Binding ShowCareerSummary}">
+                                <!--<input:WebViewExtented x:Name="NotificationHeaderCustomWve">
+                            <input:WebViewExtented.Source>
+                                <HtmlWebViewSource Html="{ Binding CareerSummaryHtml}"/>
+                            </input:WebViewExtented.Source>
+                        </input:WebViewExtented>-->
+                                <inputHtml:HtmlLabel x:Name="CareerSummary" TextColor="#333" Text="{Binding CareerSummaryHtml}" FontFamily="Fonts/georgia.ttf#georgia" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Start"></inputHtml:HtmlLabel>
+                            </StackLayout>
+
+                            <StackLayout Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowEdicationSection}">
+                                <StackLayout Padding="10" BackgroundColor="#d6f7fe">
+                                    <Label x:Name="EducationLabel" Text="Education" FontFamily="Fonts/georgia.ttf#georgia" FontSize="20" HorizontalOptions="Center" TextColor="#333"></Label>
+                                </StackLayout>
+                                <input:RepeaterView x:Name="ProfessionalBioEducations" ShowSeparator="true" SeparatorColor="#fff" ItemsSource="{Binding ProfessionalBioSections}">
+                                    <input:RepeaterView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Margin="0,0,0,15" Padding="10"  BackgroundColor="#f0fcfe">
+
+                                                    <Grid ColumnSpacing="0" RowSpacing="0">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="100"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+
+                                                        <Image x:Name="ImageEducationSchoolLogo" Grid.Row="0" Source="{Binding EducationSchoolLogo}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+                                                        <StackLayout Grid.Row="1" Orientation="Vertical">
+
+                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                                                <Label Text="{Binding BioEducationProgramName}" HorizontalOptions="CenterAndExpand" FontSize="18" HorizontalTextAlignment="Center"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                                                <Label Text="{Binding BioEducationDepartmentName}" HorizontalOptions="CenterAndExpand" FontSize="18" HorizontalTextAlignment="Center"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                                                <Label Text="{Binding SchoolName}" HorizontalOptions="CenterAndExpand" FontSize="18" HorizontalTextAlignment="Center"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                                                <Label Text="Location: " HorizontalOptions="CenterAndExpand" FontSize="18" HorizontalTextAlignment="Center"></Label>
+                                                                <Label Text="{Binding SchoolLocation}" HorizontalOptions="CenterAndExpand" FontSize="18" HorizontalTextAlignment="Center"></Label>
+                                                            </StackLayout>
+
+                                                        </StackLayout>
+                                                    </Grid>
+
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </input:RepeaterView.ItemTemplate>
+                                </input:RepeaterView>
+                            </StackLayout>
+
+                            <StackLayout Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0fcfe"  IsVisible="{Binding ShowBioAssociations}">
+                                <StackLayout Padding="10" BackgroundColor="#d6f7fe">
+                                    <Label Text="Directorship / Associations" FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="#333"></Label>
+                                </StackLayout>
+                                <StackLayout  BackgroundColor="#f0fcfe">
+                                    <input:RepeaterView x:Name="ProfessionalAssociation" ShowSeparator="False" SeparatorHeight="0">
+                                        <input:RepeaterView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <StackLayout>
+                                                        <StackLayout Padding="10">
+                                                            <Label Text="{Binding AssociationName}" HorizontalOptions="CenterAndExpand" FontSize="17" HorizontalTextAlignment="Center"></Label>
+                                                        </StackLayout>
+                                                        <BoxView HeightRequest="2" BackgroundColor="#fff"></BoxView>
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </input:RepeaterView.ItemTemplate>
+                                    </input:RepeaterView>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0fcfe" IsVisible="{Binding ShowBioInterests}">
+                                <StackLayout Padding="10" BackgroundColor="#d6f7fe">
+                                    <Label Text="Clinical Interests" FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="#333"></Label>
+                                </StackLayout>
+                                <StackLayout  BackgroundColor="#f0fcfe">
+                                    <input:RepeaterView x:Name="ProfessionalBioInterests" ShowSeparator="False" SeparatorHeight="0">
+                                        <input:RepeaterView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <StackLayout>
+                                                        <StackLayout Padding="10">
+                                                            <Label Text="{Binding InterestName}" HorizontalOptions="CenterAndExpand" FontSize="17" HorizontalTextAlignment="Center"></Label>
+                                                        </StackLayout>
+                                                        <BoxView HeightRequest="2" BackgroundColor="#fff"></BoxView>
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </input:RepeaterView.ItemTemplate>
+                                    </input:RepeaterView>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout IsVisible="{Binding ShowCustomSection}" Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <input:RepeaterView x:Name="ProfessionalBioCustomSections" ShowSeparator="true" SeparatorColor="#fff">
+                                    <input:RepeaterView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout HorizontalOptions="FillAndExpand"  BackgroundColor="#f0fcfe">
+                                                    <StackLayout Padding="10" BackgroundColor="#d6f7fe">
+                                                        <Label Text="{Binding ProfessionalBioSectionTitle}" FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="#333"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout HorizontalOptions="FillAndExpand" Padding="10,15">
+                                                        <input:WebViewExtented HorizontalOptions="FillAndExpand">
+                                                            <input:WebViewExtented.Source>
+                                                                <HtmlWebViewSource Html="{ Binding SectionContentHtml}"/>
+                                                            </input:WebViewExtented.Source>
+                                                        </input:WebViewExtented>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </input:RepeaterView.ItemTemplate>
+                                </input:RepeaterView>
+                            </StackLayout>
+
+                            <StackLayout Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0fcfe" IsVisible="{Binding ShowBioLicensureViews}">
+                                <StackLayout Padding="10" BackgroundColor="#d6f7fe">
+                                    <Label Text="Licensures" FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="#333"></Label>
+                                </StackLayout>
+                                <input:RepeaterView x:Name="ProfessionalBioLicensures" ShowSeparator="False" SeparatorColor="#fff">
+                                    <input:RepeaterView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Margin="0,10,0,10">
+                                                    <StackLayout WidthRequest="250" HorizontalOptions="CenterAndExpand" BackgroundColor="#fff">
+                                                        <Frame Padding="0,10,0,0" Margin="0">
+                                                            <StackLayout>
+                                                                <StackLayout HeightRequest="100">
+                                                                    <Image x:Name="ImageStateName" Source="{Binding StateImageImageSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                                                                </StackLayout>
+                                                                <StackLayout BackgroundColor="#e2e2e2" Padding="15">
+                                                                    <Label Text="{Binding StateName}" HorizontalOptions="CenterAndExpand" FontSize="17"></Label>
+                                                                </StackLayout>
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </StackLayout>
+                                                </StackLayout>
+
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </input:RepeaterView.ItemTemplate>
+                                </input:RepeaterView>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </ScrollView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Style="{ StaticResource MainPatientPageButtonStackLayoutStyle}">
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnHome" Text="Home" Image="home_nav_icon_1.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnHomeButtonClickedAsync"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnResource" Text="Resources" Image="resources_nav_icon.png"  Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnResourceButtonClickedAsync"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnSchedule" Text="Schedule" Image="schedule_nav_icon.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnScheduleButtonClickedAsync"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

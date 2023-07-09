@@ -1,0 +1,1194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1578C1B7-9C38-4CB3-93D3-BD9062499DD1}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OntrackHealthApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>OntrackHealthApp.iOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ProvisioningType>manual</ProvisioningType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>OntrackHealthAppStoreProfile</CodesignProvision>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <CodesignEntitlements />
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <OptimizePNGs>true</OptimizePNGs>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchSdkVersion>14.4</MtouchSdkVersion>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>OntrackHealthAppStoreProfile</CodesignProvision>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignProvision>OntrackHealthAppStoreProfile</CodesignProvision>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <OptimizePNGs>true</OptimizePNGs>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchExtraArgs>--linkskip=OntrackHealthApp.iOS --linkskip=Xamarin.CustomControls.AccordionView --linkskip=Xamarin.CustomControls.StateButton</MtouchExtraArgs>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchFloat32>true</MtouchFloat32>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: ONTRACKHEALTH, LLC (PBQXT3L3UY)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>OntrackHealthAppStoreProfile</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <OptimizePNGs>true</OptimizePNGs>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>false</MtouchFloat32>
+    <IpaPackageName>OntrackHealth</IpaPackageName>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchExtraArgs>--linkskip=OntrackHealthApp.iOS</MtouchExtraArgs>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <BuildIpa>false</BuildIpa>
+    <CodesignProvision>OntrackHealth AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution: ONTRACKHEALTH, LLC (PBQXT3L3UY)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IpaMetadata>Entitlements.plist</IpaMetadata>
+    <IpaPackageName>OntrackHealth</IpaPackageName>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <IpaIncludeArtwork>false</IpaIncludeArtwork>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="HtmlLabelRenderer.cs" />
+    <Compile Include="iOSToast.cs" />
+    <Compile Include="LatestVersionImplementation.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="NotificationDelegate.cs" />
+    <Compile Include="NotificationService.cs" />
+    <Compile Include="Renderers\CustomButtonRenderer.cs" />
+    <Compile Include="Renderers\CustomNavigationRenderer.cs" />
+    <Compile Include="Renderers\HtmlButtonRenderer.cs" />
+    <Compile Include="Renderers\MtiViewCellRenderer.cs" />
+    <Compile Include="Renderers\GradiantFrameRenderer.cs" />
+    <Compile Include="Renderers\GradiantStackLayoutRenderer.cs" />
+    <Compile Include="Renderers\MitDatePickerRenderer.cs" />
+    <Compile Include="Renderers\MitEditorRenderer.cs" />
+    <Compile Include="Renderers\MitEntryRenderer.cs" />
+    <Compile Include="Renderers\MitPickerRenderer.cs" />
+    <Compile Include="Renderers\MitTimePickerRenderer.cs" />
+    <Compile Include="Renderers\WebViewExtentedAndroidRenderer.cs" />
+    <Compile Include="Renderers\WebViewExtentedRenderer.cs" />
+    <Compile Include="UserNotificationCenterDelegate.cs" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1024x768.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2048.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\2048x1536.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x960.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\fa-regular-400.ttf" />
+    <BundleResource Include="Resources\georgia.ttf" />
+    <BundleResource Include="Resources\Fonts\fa-regular-400.ttf" />
+    <BundleResource Include="Resources\Fonts\georgia.ttf" />
+    <BundleResource Include="Resources\fa_regular_400.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Toast.iOS">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Toasts.Forms.Plugin">
+      <Version>3.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.DeviceInfo">
+      <Version>4.0.0.13</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.HtmlLabel">
+      <Version>3.0.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.CustomControls.AccordionView">
+      <Version>1.1.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
+    <PackageReference Include="Xamarin.Forms.Extended.InfiniteScrolling">
+      <Version>1.0.0-preview2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.GoogleMaps">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.InputKit">
+      <Version>2.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.iOS.Maps">
+      <Version>2.5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="XLabs.Forms">
+      <Version>2.0.5782</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete_icon_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\external_link_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\find_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_righ_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list_icon_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\location_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\menu_close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\menu_open_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\next_icon_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\no_user_image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\otherprocedure_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\physician_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pre_icon_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radioborder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radiocheckedbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radiocheckmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\resources_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\schedule_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\xamarin_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\xamarin_one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\otherprocedure_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\physician_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\resources_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\schedule_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\signout_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\changepassword_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\location_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_activity_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_biofeedback_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_bladder_training_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_catheter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_contact_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_diet_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_drain_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_faq_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_hospital_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_irritants_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_kagels_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_medications_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_penile_rehab_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\steps_for_urgency_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_hospital-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\baner_ProstateCancerSummary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\grade_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\margins_ok_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\stage_ok_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\grade_ok_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarymargins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t2a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t2b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t2c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t3a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\patient_prostatecancersummarystage_t3b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\volume_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\stage_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\summary_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\margins_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgical_pacu_wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgical_pacu_additional_comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgical_pacu_going_well.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgical_pacu_room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_ontrackhealth_blank_screan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_add_icon_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_delete_icon_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_edit_icon_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_gynecology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_stent_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userprofile_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_ontrackhealth_splash_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\margins_volume_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\grade_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\margins_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\margins_volume_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\stage_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\summary_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pc_summary\volume_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background_ios375.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background_ios320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background_ios414.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background_ios_w414.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mobile_background_ios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_righ_arrow_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_righ_arrow_bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sun_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rounded_list_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sun_yellow_fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slideone_davinci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\schedule_nav_icon_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_nav_icon_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\resources_nav_icon_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\question_nav_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_patient_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_patient_registration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_discharge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_nursing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_operation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_pacu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_pathology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_pre_surgery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_urology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chart_bundle.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filter_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_gray_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_green_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_green_dark_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_green_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_red_flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_yellow_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\billing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\comparative-analytics-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\discharge-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\floor-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\nursing-rounds-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\operation-room-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\pacu-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\pathology-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\patient-info-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\patient-outcome-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\patient-registration-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\pre-surgery-summary-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\sc-tracker-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_icons\urology-unit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\division_icon_one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\division_icon_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\division_icon_four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\division_icon_three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\circle_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\comparative_analytics_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\patient_outcome_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\discharge_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\floor_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\operation_room_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\pacu_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\billing_component_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\pathology_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\pre_surgery_summary_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\program_component_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\bullet-compliance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patientreportedoutcome\search-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\check_mark_not_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\professionaldashboard\check_mark_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_down_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_up_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\playstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_patient_registration_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_patientreportedoutcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus_icon_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\update_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add_icon_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\all_patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\calendar_icon_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_in_old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\comment_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\continue_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete_icon_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_colorectal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_customize_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_discharge_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_operation_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_pathology_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\division_unit_pre_surgery_summary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dot_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit_icon_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filter_icon_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_icon_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_nav_icon_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mit_ontrackhealth_blank_screan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mob_patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mob_red_flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mob_surveycompleted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mob_surveypending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_ontrack_health_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_ontrackhealth_logo_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_ontrackhealth_splash_screan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\next_right_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ontrackhealth_logo_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\open_menu_icon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pathology_division_unit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_bullet_compliance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_gray_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_green_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_green_dark_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_green_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_red_flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_circle_yellow_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_filter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_search_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\patient_outcome_tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\previous_left_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_billing_component_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_check_mark_not_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_check_mark_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_comparative_analytics_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_discharge_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_division_icon_four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_division_icon_one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_division_icon_three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_division_icon_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_floor_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_operation_room_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_pacu_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_pathology_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_patient_outcome_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_pre_surgery_summary_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_dash_program_component_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_discharge_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_floor_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_notes_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_operation_room_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_pacu_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_pathology_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pro_patient_outcome_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\recipient_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_billing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_comparative_analytics_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_floor_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_operation_room_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_pacu_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_pathology_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_patient_info_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_patient_outcome_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_patient_registration_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_pre_surgery_summary_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_sc_tracker_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_unit_urology_unit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search_icon_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scg_dischrarge\scg_urgency_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mti_ontrackhealth_logo_circle-60%403x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\OntrackHealthApp\OntrackHealthApp.projitems" Label="Shared" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarOntrackHealthAppiOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

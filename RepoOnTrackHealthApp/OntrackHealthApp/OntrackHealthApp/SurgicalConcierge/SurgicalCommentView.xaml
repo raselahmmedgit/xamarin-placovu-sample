@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalCommentView"
+             xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls" BackgroundColor="#EEF6F2"
+             Title="Surgical Comment">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <customInput:StackLayoutPageTitle>
+                <customInput:StackLayoutPageTitleLabel x:Name="LabelPracticeTitle"/>
+            </customInput:StackLayoutPageTitle>
+            <customInput:StackLayoutFormTitle>
+                <customInput:StackLayoutFormTitleLabel Text="Surgical Comment"/>
+            </customInput:StackLayoutFormTitle>
+
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout Style="{StaticResource FormTitleStyleTwo}">
+                        <Label HorizontalTextAlignment="Center" Text="Please select comment(s) from below list or add your own:" LineBreakMode="WordWrap" Style="{ StaticResource LabelStyleDesc}"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="12">
+                        <StackLayout Padding="0,12" x:Name="radioComment"></StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label FontAttributes="Bold" Text="Addition Comment:"></Label>
+                            <StackLayout Padding="0,0,0,12">
+                                <customInput:MtiEditor CornerRadius="6" FontSize="16"  HeightRequest="160" Text="{Binding ScgStageAdditionalComment}" x:Name="AdditionalComment"></customInput:MtiEditor>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>           
+            <StackLayout VerticalOptions="EndAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <customInput:ButtonExtended Grid.Column="0" Clicked="ModalCloseButton_ClickedAsync" Text="Close"></customInput:ButtonExtended>
+                    <customInput:ButtonExtended Grid.Column="1" Clicked="PostSurgicalComment" Text="Submit"></customInput:ButtonExtended>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

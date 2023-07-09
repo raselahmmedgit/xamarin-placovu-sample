@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergeDischargeDetailPage">
+
+    <custom:StackLayoutRootContent>
+        <ScrollView>
+            <StackLayout  Margin="0,20,0,0">
+                <Grid BackgroundColor="#521B92" VerticalOptions="StartAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35*"></ColumnDefinition>
+                        <ColumnDefinition Width="65*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout BackgroundColor="#521B92" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"  Style="{ StaticResource FormTitleStyle}">
+                        <Label Margin="5,0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#FFFFFF" Text="Discharge" Style="{ StaticResource FormTitleTextStyle }"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" Margin="10" Style="{ StaticResource PatientInfoTopOuterStyle }">
+                        <StackLayout Style="{ StaticResource PatientInfoTopInnerStyle }">
+                            <Label x:Name="PatientFullName" Style="{StaticResource LabelStylePatientInfoPatientFullName}"  />
+                            <Label x:Name="ProcedureName" Style="{StaticResource LabelStylePatientInfoProcedureName}"  />
+                            <Label x:Name="ProfessionalName" Style="{StaticResource LabelStylePatientInfoProfessionalName}"  />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Padding="12,6,12,6">
+                    <Grid VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Highlighted Boxes have been preselected by treating physician. Please deselect information that does not apply or add information by clicking on the icon. Please double click on the icon to show detail information."></Label>
+                    </Grid>
+                </StackLayout>
+                <StackLayout x:Name="MainContainer" Padding="12,6,12,6" HorizontalOptions="EndAndExpand">
+                    <StackLayout x:Name="MainContainer2" HorizontalOptions="EndAndExpand">
+
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+            <custom:ButtonExtended x:Name="SendDischargeComment" Clicked="SendDischargeComment_ClickedAsync" Text="Send"></custom:ButtonExtended>
+        </StackLayout>
+    </custom:StackLayoutRootContent>
+</ContentPage>

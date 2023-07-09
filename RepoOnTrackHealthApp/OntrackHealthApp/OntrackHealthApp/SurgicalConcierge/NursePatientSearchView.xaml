@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.NursePatientSearchView"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+             NavigationPage.HasBackButton="True">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primaryBackgroundColor">#0F4563</Color>
+            <Style x:Key="SurgicalPrimaryButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource primaryBackgroundColor}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <input:StackLayoutFormTitle Style="{StaticResource FormTitleStyle}">
+                <input:StackLayoutFormTitleLabel Text="Search Patient"></input:StackLayoutFormTitleLabel>
+            </input:StackLayoutFormTitle>
+
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout Spacing="1">
+
+                    <input:StackLayoutForm Margin="0">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" Text="Professional Name" TextColor="Black"></Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <input:MtiEntry HorizontalOptions="FillAndExpand" x:Name="ProfessionalName"></input:MtiEntry>
+                        </StackLayout>
+                    </input:StackLayoutForm>
+
+                    <input:StackLayoutForm Margin="0">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" Text="Patient Name" TextColor="Black"></Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <input:MtiEntry HorizontalOptions="FillAndExpand" x:Name="PatientName"></input:MtiEntry>
+                        </StackLayout>
+                    </input:StackLayoutForm>
+
+                    <input:StackLayoutForm Margin="0">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" Text="Surgery Date" TextColor="Black"></Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <input:MtiDatePicker x:Name="SurgeryDate" HorizontalOptions="FillAndExpand"></input:MtiDatePicker>
+                        </StackLayout>
+                    </input:StackLayoutForm>
+
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="20,10,20,10">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource SurgicalPrimaryButton}" Text="Search" x:Name="PatientSearchSumbitButton" Clicked="PatientSearchSumbitButtonClicked" TextColor="#FFF" CornerRadius="24" FontSize="16"></Button>
+                    <Button Grid.Column="1" Style="{StaticResource SurgicalPrimaryButton}" Text="Cancel" x:Name="PatientSearchCancelButton" Clicked="PatientSuearchCancelButtonClicked" TextColor="#FFF" CornerRadius="24" FontSize="16"></Button>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

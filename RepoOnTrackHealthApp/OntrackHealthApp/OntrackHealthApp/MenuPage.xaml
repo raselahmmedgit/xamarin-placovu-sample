@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="OntrackHealthApp.MenuPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Icon="menu_open_icon.png" >
+            <StackLayout Margin="0,0,0,0" Spacing="0">
+                <StackLayout x:Name="MenuPageStackLayoutStyle" Style="{ StaticResource MenuPageStackLayoutStyle}">
+                    <Label x:Name="PracticeName" Text="" Style="{ StaticResource MenuPagePracticeLabelStyle}" />
+                </StackLayout>
+                <BoxView BackgroundColor="#ddd" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
+                <ListView x:Name="navigationDrawerList" HasUnevenRows="True" SeparatorVisibility="None"  ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="0" BackgroundColor="#fff">
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="15,10" Spacing="0">
+                                        <Image Source="{Binding Icon}" WidthRequest="40" HeightRequest="34" VerticalOptions="Center" />
+                                        <Label Text="{Binding Title}" Margin="6,0,0,0" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                                    </StackLayout>
+                                    <BoxView BackgroundColor="#ddd" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

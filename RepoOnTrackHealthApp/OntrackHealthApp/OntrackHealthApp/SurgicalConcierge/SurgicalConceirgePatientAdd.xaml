@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="True"
+             xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConceirgePatientAdd">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Color x:Key="primaryBackgroundColor">#0F4563</Color>
+      <Style x:Key="SurgicalPrimaryButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource primaryBackgroundColor}" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+      <StackLayout BackgroundColor="#436276" Margin="0">
+        <StackLayout Padding="12">
+          <Label Grid.Column="0" Text="Patient Profile" FontSize="22" TextColor="#ffffff"></Label>
+        </StackLayout>
+        <StackLayout BackgroundColor="#0f4563" Padding="12">
+          <Label HorizontalTextAlignment="Start" Text="Add New Patient" FontSize="22" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" TextColor="White"></Label>
+        </StackLayout>
+      </StackLayout>
+      <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+          <StackLayout Padding="12">
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="First Name" TextColor="Black"></Label>
+              <StackLayout HorizontalOptions="FillAndExpand">
+                <Entry TextChanged="FirstNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="FirstNameTextBox"></Entry>
+                <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorFirstNameTextBox" Text=""/>
+              </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Last Name" TextColor="Black"></Label>
+              <StackLayout HorizontalOptions="FillAndExpand">
+                <Entry TextChanged="LastNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="LastNameTextBox"></Entry>
+                <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorLastNameTextBox" Text=""/>
+              </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Email" TextColor="Black"></Label>
+              <StackLayout HorizontalOptions="FillAndExpand">
+                <Entry TextChanged="EmailTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="EmailTextBox"></Entry>
+                <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorEmailTextBox" Text=""/>
+              </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Practice" TextColor="Black"></Label>
+              <Entry IsEnabled="False" TextColor="Black" HorizontalOptions="FillAndExpand" x:Name="PracticeProfileNameTextBox"></Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Procedure" TextColor="Black"></Label>
+              <StackLayout HorizontalOptions="FillAndExpand">
+                <Picker x:Name="PracticeProcedurePicker" HorizontalOptions="FillAndExpand"
+            Title="Select..."
+            ItemDisplayBinding="{Binding Text}"
+            SelectedIndexChanged="PracticeProcedurePicker_SelectedIndexChanged"/>
+                <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPracticeProcedurePicker" Text=""/>
+              </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Professional" TextColor="Black"></Label>
+              <StackLayout HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                  <Picker x:Name="PracticeProfessionalPicker" HorizontalOptions="FillAndExpand"
+          Title="Select..."
+          ItemDisplayBinding="{Binding Text}"
+          SelectedIndexChanged="PracticeProfessionalPicker_SelectedIndexChanged"/>
+                  <Button x:Name="ProfessionalAddButton" Clicked="ProfessionalAddButton_Clicked" HeightRequest="20" WidthRequest="15" FontSize="18" Text="+" Style="{StaticResource SurgicalPrimaryButton}" CornerRadius="5"></Button>
+                </StackLayout>
+                <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPracticeProfessionalPicker" Text=""/>
+              </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Surgery Date" TextColor="Black"></Label>
+              <DatePicker x:Name="SurgeryDateDatePicker" HorizontalOptions="FillAndExpand"></DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+              <Label HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" Text="Surgery Time" TextColor="Black"></Label>
+              <TimePicker x:Name="SurgeryTimeTimePicker" HorizontalOptions="FillAndExpand"></TimePicker>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="10,10,10,10">
+            <Grid HorizontalOptions="FillAndExpand">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"></ColumnDefinition>
+                <ColumnDefinition Width="40*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Button Grid.Column="0" Style="{StaticResource SurgicalPrimaryButton}" Text="Save and Continue" x:Name="SurgicalConciergePatientAddButton" Clicked="SurgicalConciergePatientAddButton_Clicked" FontSize="18" CornerRadius="5"></Button>
+              <Button Grid.Column="1" Style="{StaticResource SurgicalPrimaryButton}" Text="Cancel" x:Name="SurgicalConciergePatientCancelButton" Clicked="SurgicalConciergePatientCancelButton_Clicked" FontSize="18" CornerRadius="5"></Button>
+            </Grid>
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+    </StackLayout>
+  </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

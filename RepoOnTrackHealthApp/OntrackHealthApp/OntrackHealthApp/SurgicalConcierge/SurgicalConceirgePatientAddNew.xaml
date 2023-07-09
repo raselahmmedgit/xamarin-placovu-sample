@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+                        NavigationPage.HasBackButton="True" BackgroundColor="#FFFFFF"
+                        x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConceirgePatientAddNew"
+                        xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                        xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+                        ios:Page.ModalPresentationStyle="FormSheet" Title="Patient Information">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid RowSpacing="0" ColumnSpacing="0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <StackLayout>
+                            <input:StackLayoutForm>
+                                <input:StackLayoutFormGroup>
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="First Name" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <Entry HorizontalOptions="FillAndExpand" x:Name="PatientProfileIdTextBox" IsVisible="False"></Entry>
+                                            <input:MtiEntry TextChanged="FirstNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="FirstNameTextBox"></input:MtiEntry>
+                                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorFirstNameTextBox" Text=""/>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Last Name" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiEntry TextChanged="LastNameTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="LastNameTextBox"></input:MtiEntry>
+                                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorLastNameTextBox" Text=""/>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Practice" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiPicker x:Name="PracticeProfilePicker" HorizontalOptions="FillAndExpand" Title="Select..." ItemDisplayBinding="{Binding Text}" SelectedIndexChanged="PracticeProfilePicker_SelectedIndexChangedAsync"/>
+                                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPracticeProfilePicker" Text=""/>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Professional" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <Grid HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="80"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                                                    <input:MtiPicker x:Name="PracticeProfessionalPicker" HorizontalOptions="FillAndExpand" Title="Select..." ItemDisplayBinding="{Binding Text}" SelectedIndexChanged="PracticeProfessionalPicker_SelectedIndexChanged"/>
+                                                    <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPracticeProfessionalPicker" Text=""/>
+                                                </StackLayout>
+                                                <input:ButtonExtended x:Name="ProfessionalAddButton"  Grid.Column="1" Clicked="SurgicalConciergeAddButton_Clicked" HeightRequest="40" WidthRequest="80" FontSize="18" Text="+" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"></input:ButtonExtended>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+
+                                <input:StackLayoutFormGroup  >
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="10" Padding="20,0" x:Name="PracticeDivisionList">
+                                    </StackLayout>
+                                </input:StackLayoutFormGroup>
+
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Procedure" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiPicker x:Name="PracticeProcedurePicker" HorizontalOptions="FillAndExpand" Title="Select..." ItemDisplayBinding="{Binding Text}" SelectedIndexChanged="PracticeProcedurePicker_SelectedIndexChanged"/>
+                                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPracticeProcedurePicker" Text=""/>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Surgery Date" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiDatePicker x:Name="SurgeryDateDatePicker" HorizontalOptions="FillAndExpand"></input:MtiDatePicker>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Surgery Date" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiTimePicker x:Name="SurgeryTimeTimePicker" HorizontalOptions="FillAndExpand"></input:MtiTimePicker>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+                                <input:StackLayoutFormGroup ShowBorderTop="True" IsVisible="False">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Operating Room" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiEntry HorizontalOptions="FillAndExpand" x:Name="SurgicalConceirgeRoomTextBox"></input:MtiEntry>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+                            </input:StackLayoutForm>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Style="{StaticResource FormTitleStyleTwo}" Orientation="Horizontal">
+                                <Label Text="Recipients of text and/or email" Style="{StaticResource FormTitleTextStyle}"></Label>
+                            </StackLayout>
+                            <StackLayout BackgroundColor="#E6FFFF" Orientation="Vertical">
+                                <StackLayout x:Name="SurgicalConciergePatientAttendeeListStackLayout" IsVisible="False" Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                    <StackLayout x:Name="SurgicalConciergePatientAttendeeList" HorizontalOptions="FillAndExpand" >
+
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                    <ImageButton Margin="5,5,5,5" BackgroundColor="#E6FFFF" HeightRequest="30" WidthRequest="30" CornerRadius="20" Source="plus_icon_black.png" x:Name="SurgicalConciergePatientAttendeeAddButton" Clicked="SurgicalConciergePatientAttendeeAddButton_Clicked"></ImageButton>
+                                    <Label Margin="5,5,5,5" Text="Add Contact" TextColor="Black"></Label>
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+                        <StackLayout IsVisible="False">
+                            <StackLayout Style="{StaticResource FormTitleStyleTwo}">
+                                <Label Text="Recipients of text and/or email" Style="{StaticResource FormTitleTextStyle}"></Label>
+                            </StackLayout>
+                            <input:StackLayoutForm IsVisible="False">
+                                <input:StackLayoutFormGroup>
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Patient Email Address" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <input:MtiEntry TextChanged="EmailTextBox_TextChanged" HorizontalOptions="FillAndExpand" x:Name="EmailTextBox" Keyboard="Keyboard.Email"></input:MtiEntry>
+                                            <Label HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorEmailTextBox" Text=""/>
+                                        </StackLayout>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+                                <input:StackLayoutFormGroup ShowBorderTop="True">
+                                    <Grid HorizontalOptions="FillAndExpand" RowSpacing="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Text="Patient Mobile Phone" TextColor="Black"></Label>
+                                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
+                                            <Grid HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                                                    <input:MtiPicker x:Name="countryCodePicker"></input:MtiPicker>
+                                                </StackLayout>
+                                                <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                                    <input:MtiEntry Keyboard="Telephone" TextChanged="PhoneNumber_TextChanged" x:Name="PhoneNumber">
+                                                        <Entry.Behaviors>
+                                                            <input:PhoneNumberMaskValidator x:Name="PhoneMask" />
+                                                            <input:EntryLengthValidator MaxLength="12"/>
+                                                        </Entry.Behaviors>
+                                                    </input:MtiEntry>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                        <Label Grid.Row="2" HorizontalOptions="FillAndExpand" IsVisible="False" TextColor="Red" x:Name="ErrorPhoneNumber" Text=""/>
+                                    </Grid>
+                                </input:StackLayoutFormGroup>
+
+                                <!--<StackLayout x:Name="SurgicalConciergePatientAttendeeListStackLayout" IsVisible="False" Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                                    <StackLayout x:Name="SurgicalConciergePatientAttendeeList" HorizontalOptions="FillAndExpand" >
+
+                                    </StackLayout>
+                                </StackLayout>-->
+                                <input:StackLayoutFormGroup x:Name="SurgicalConciergePatientAttendeeAddStackLayout" HorizontalOptions="FillAndExpand">
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <Grid Padding="12" HorizontalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <input:ButtonExtended Grid.Row="0" BackgroundColor="#04b898" Text="Add Relative's Contact" Clicked="SurgicalConciergePatientAttendeeAddButton_Clicked"></input:ButtonExtended>
+                                            <!-- x:Name="SurgicalConciergePatientAttendeeAddButton"  -->
+                                        </Grid>
+                                    </StackLayout>
+                                </input:StackLayoutFormGroup>
+                            </input:StackLayoutForm>
+
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Style="{ StaticResource BottomCommandPanelStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" BackgroundColor="#3498db" Margin="5,5,5,5" Text="Save" TextColor="White" x:Name="SurgicalConciergePatientAddButton" Clicked="SurgicalConciergePatientAddButton_Clicked" FontSize="16"></Button>
+                        <Button Grid.Column="1" BackgroundColor="#3498db" Margin="5,5,5,5" Text="Back" TextColor="White" x:Name="SurgicalConciergePatientCancelButton" Clicked="SurgicalConciergePatientCancelButton_Clicked" FontSize="16"></Button>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

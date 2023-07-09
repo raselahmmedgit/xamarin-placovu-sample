@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ProfessionalProfile.MainProfessionalPage"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:inputHtml="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <Grid x:Name="GridProfile" IsVisible="False" BackgroundColor="#FFFFFF" VerticalOptions="StartAndExpand" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="230"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#FFFFFF" HorizontalOptions="StartAndExpand"  VerticalOptions="CenterAndExpand" Padding="10"  HeightRequest="60">
+                        <Label x:Name="ProfessionalName" Text="{Binding ProfessionalProfileName, StringFormat='Welcome {0}'}" FontFamily="Fonts/georgia.ttf#georgia"  FontSize="20" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="#000"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#E4E5FF" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10"  HeightRequest="230">
+                        <Grid Padding="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150"></RowDefinition>
+                                <RowDefinition Height="60"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#531B93" CornerRadius="5" Margin="5" HeightRequest="150" HasShadow="False">
+                                <Image Source="pro_patient_outcome_unit_icon.png" ClassId="{Binding ProfessionalDivisionOutcome}" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="BtnDivisionUnit_Clicked" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#531B93" CornerRadius="5" Margin="5" HeightRequest="150" HasShadow="False">
+                                <Image Source="pro_notes_unit_icon.png" ClassId="{Binding ProfessionalDivisionNotesOrPathology}" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="BtnDivisionUnit_Clicked" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            <StackLayout Grid.Row="1" Grid.Column="0" Margin="5" HorizontalOptions="Center">
+                                <Label TextColor="#000" ClassId="{Binding ProfessionalDivisionOutcome}"  FontSize="14" Text="Outcomes">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="BtnDivisionUnit_Clicked" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Grid.Column="1" Margin="5" HorizontalOptions="Center">
+                                <Label TextColor="#000" ClassId="{Binding ProfessionalDivisionNotesOrPathology}"  FontSize="14" Text="Notes/Pathology">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="BtnDivisionUnit_Clicked" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+                <StackLayout BackgroundColor="#ffffff" Orientation="Vertical" x:Name="practiceDivisionUnitStackLayout" VerticalOptions="CenterAndExpand">
+                </StackLayout>
+                <Frame x:Name="OtherLink" IsVisible="False" Margin="5" BorderColor="#0096ff"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" >
+                    <Label Text="Other Links" ClassId="{Binding ProfessionalDivisionOthersDivision}" TextColor="#000">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BtnDivisionUnit_Clicked" NumberOfTapsRequired="1" ></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

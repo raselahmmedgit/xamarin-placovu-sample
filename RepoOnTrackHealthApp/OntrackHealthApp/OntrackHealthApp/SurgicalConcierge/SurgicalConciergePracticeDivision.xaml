@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePracticeDivision" BackgroundColor="#EEF6F2">
+   
+
+    <ContentPage.Content>
+        <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="15, 0, 15, 15" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <BoxView Grid.Row="1" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Black"></BoxView>
+                        <StackLayout Grid.Row="1" HorizontalOptions="Center"  VerticalOptions="Center" BackgroundColor="#F0F8FF" Padding="20,0">
+                            <Label Text="Select Surgical Specialty" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="24"></Label>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout x:Name="practiceDivisionStackLayout" VerticalOptions="Center">
+
+                </StackLayout>
+                <StackLayout Padding="15, 35, 15, 15" HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="OR" HorizontalTextAlignment="Center" TextColor="Black" FontSize="24"></Label>
+                        <BoxView Grid.Row="1" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Black"></BoxView>
+                        <StackLayout Grid.Row="1" HorizontalOptions="Center"  VerticalOptions="Center"  BackgroundColor="#F0F8FF" Padding="20,0">
+                            <Label Text="Register Patient" HorizontalTextAlignment="Center" HorizontalOptions="Center"  VerticalOptions="Center" TextColor="Black" FontSize="24"></Label>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout x:Name="practiceDivisionStackLayoutLast" VerticalOptions="Center">
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

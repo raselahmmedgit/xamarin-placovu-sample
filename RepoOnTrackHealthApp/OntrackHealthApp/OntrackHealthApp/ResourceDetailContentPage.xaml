@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ResourceDetailContentPage"
+             xmlns:local="clr-namespace:OntrackHealthApp">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+
+            <Grid Style="{ StaticResource PatientPageTitleGridStyle2}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                    <Image Source="resources_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                    <Label Text="Resources" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                </StackLayout>
+            </Grid>
+            
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="10,10,10,0">
+                <Grid ColumnSpacing="10" RowSpacing="0" Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="42"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Back" Image="list_icon_34.png" ContentLayout="Left,4" Grid.Column="0" TextColor="#ffffff" BackgroundColor="#337ab7" FontSize="16" BorderRadius="4" x:Name="MoveList" Clicked="MoveListClickedAsync"></Button>
+                    <Button Text="Prev" Image="pre_icon_34.png" ContentLayout="Left,4" Grid.Column="2" TextColor="#ffffff" BackgroundColor="#337ab7" FontSize="16" BorderRadius="4" x:Name="MovePrev" Clicked="MovePrevClickedAsync"></Button>
+                    <Button Text="Next" Image="next_icon_34.png" ContentLayout="Right,4" Grid.Column="3" TextColor="#ffffff" BackgroundColor="#337ab7" FontSize="16" BorderRadius="4" x:Name="MoveNext" Clicked="MoveNextClickedAsync"></Button>
+                </Grid>
+            </StackLayout>     
+            
+            <StackLayout Padding="10">
+                <WebView x:Name="ResourceDetailContentPageWebView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="600">
+                </WebView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

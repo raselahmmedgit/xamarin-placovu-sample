@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalProgramNotificationListPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand">
+                    <ListView Margin="6" x:Name="NotificationListView" CachingStrategy="RecycleElement"  SeparatorColor="#d7d7d7" SeparatorVisibility="Default"  ItemSelected="NotificationListView_ItemSelected" BackgroundColor="#ffffff" Footer="">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="#f8f8f8" Margin="0,0,0,6">
+                                            <Grid ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="48"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="34"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <StackLayout Grid.Row="0" Grid.Column="0" Spacing="0" Padding="0">
+                                                    <!--<Image HorizontalOptions="Center" VerticalOptions="Center"  Aspect="AspectFit" Source="{ Binding NotificationDayBackgroundImage}"></Image>-->
+                                                </StackLayout>
+                                                <StackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
+                                                    <Label Text="{Binding NotificationTitle}" TextColor="#333333" FontSize="16" HorizontalOptions="StartAndExpand"  VerticalOptions="Center" VerticalTextAlignment="Center" Margin="5,0,0,0" />
+                                                </StackLayout>
+                                                <StackLayout Grid.Column="2" Spacing="0" Padding="0" VerticalOptions="Center">
+                                                    <Image HorizontalOptions="Center" VerticalOptions="Center"  Aspect="AspectFit" Margin="0" Source="img_righ_arrow_2.png"></Image>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

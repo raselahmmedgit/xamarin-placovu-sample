@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:CustomContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:OntrackHealthApp"
+             x:Class="OntrackHealthApp.MainPage" 
+             BackgroundImage="mobile_background.png">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Icon="menu_open_icon.png" Order="Primary" />-->
+        <ToolbarItem Text="Physician" x:Name="toolbarItemPhysician" Priority="1" Order="Secondary" Clicked="OnPhysicianButtonClickedAsync" />
+        <ToolbarItem Text="Location" x:Name="toolbarItemLocation" Priority="2" Order="Secondary" Clicked="OnLocationButtonClickedAsync" />
+        <ToolbarItem Text="Other Info" x:Name="toolbarItemOtherInfo" Priority="3" Order="Secondary" Clicked="OnOtherInfoButtonClicked" />
+        <ToolbarItem Text="Change Password" x:Name="toolbarItemChangePassword" Priority="4" Order="Secondary" Clicked="OnChangePasswordButtonClicked" />
+        <ToolbarItem Text="Update Profile" x:Name="toolbarItemUpdatePatientProfile" Priority="5" Order="Secondary" Clicked="OnUpdatePatientProfileClicked" />
+        <ToolbarItem Text="Sign Out" x:Name="toolbarItemSignOut" Priority="6" Order="Secondary" Clicked="OnSignOutButtonClicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout BackgroundColor="Transparent">
+        <!-- Place new controls here -->
+        <StackLayout Margin="0,30,0,0" HorizontalOptions="Center">
+            <Button x:Name="btnCheckin" 
+                    Text="" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                    FontSize="80" Image="check_in.png" CornerRadius="60" BackgroundColor="Transparent"
+                    Clicked="OnCheckinButtonClickedAsync">
+            </Button>
+        </StackLayout>
+
+        <StackLayout Margin="0" VerticalOptions="EndAndExpand">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="46"></RowDefinition>
+                    <RowDefinition x:Name="gridRowDefinitionButton" Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="mobile_background_over.png" Grid.Row="0" Aspect="Fill">
+                </Image>
+                <StackLayout Grid.Row="1" Margin="0" BackgroundColor="#073f5d">
+                    <StackLayout x:Name="stackLayout5Button" IsVisible="True" BackgroundColor="#073f5d" Padding="5,0,5,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="83" />
+                                <RowDefinition Height="83" />
+                                <RowDefinition Height="83" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Row="0" Grid.Column="0">
+                                <Button x:Name="btnSchedule" BackgroundColor="#fdfdf6" FontSize="15"
+                                Text="SCHEDULE" ContentLayout="Top,2"
+                                Image="schedule_icon.png"
+                                Clicked="OnScheduleButtonClickedAsync"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                                <Button x:Name="btnPhysician" BackgroundColor="#fdfdf6"  FontSize="15" 
+                                Text="PHYSICIAN" ContentLayout="Top,2"
+                                Image="physician_icon.png"
+                                Clicked="OnPhysicianButtonClickedAsync"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="0" Spacing="5">
+                                <Button x:Name="btnResources" BackgroundColor="#fdfdf6"  FontSize="15"
+                                Text="RESOURCES" ContentLayout="Top,2"
+                                Image="resources_icon.png"
+                                Clicked="OnResourceButtonClickedAsync"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="1" Spacing="5">
+                                <Button x:Name="btnLocation" BackgroundColor="#fdfdf6"  FontSize="15"
+                                Text="LOCATION" ContentLayout="Top,2"
+                                Image="location_icon.png"
+                                Clicked="OnLocationButtonClickedAsync"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Spacing="5">
+                                <Button x:Name="btnOtherProcedure" BackgroundColor="#fdfdf6"  FontSize="15"
+                                Text="OTHER PROCEDURE" ContentLayout="Top,2"
+                                Image="otherprocedure_icon.png"
+                                Clicked="OnOtherProcedureButtonClickedAsync"/>
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout x:Name="stackLayout3Button" IsVisible="False" BackgroundColor="#073f5d" Padding="5,0,5,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="83" />
+                                <RowDefinition Height="83" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Row="0" Grid.Column="0">
+                                <Button x:Name="btnSchedule2" BackgroundColor="#fdfdf6" FontSize="15"
+                                Text="SCHEDULE" ContentLayout="Top,2"
+                                Image="schedule_icon.png"
+                                Clicked="OnScheduleButtonClickedAsync"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                                <Button x:Name="btnResources2" BackgroundColor="#fdfdf6"  FontSize="15"
+                                Text="RESOURCES" ContentLayout="Top,2"
+                                Image="resources_icon.png"
+                                Clicked="OnResourceButtonClickedAsync"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="5">
+                                <Button x:Name="btnOtherProcedure2" BackgroundColor="#fdfdf6"  FontSize="15"
+                                Text="OTHER PROCEDURE" ContentLayout="Top,2"
+                                Image="otherprocedure_icon.png"
+                                Clicked="OnOtherProcedureButtonClickedAsync"/>
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</local:CustomContentPage>

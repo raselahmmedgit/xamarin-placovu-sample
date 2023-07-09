@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.CancerSummaryVolumePage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:input="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="5,20,5,20">
+                    <StackLayout WidthRequest="180" HorizontalOptions="Center">
+                        <controls:CircleImage Source="pc_summary/margins_large.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="180">
+                        </controls:CircleImage>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Padding="10,20,10,0">
+                    <input:HtmlLabel Text="If the surgical margin is identified as positive, it means that under the microscope the cancer is seen at the inked outer edge of the specimen. A positive margin may increase your risk of requiring further treatment." x:Name="LblCancerSummeryStageThree" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                </StackLayout>
+                <StackLayout Padding="10,0,10,10">
+                    <Image Source="pc_summary/patient_prostatecancersummarymargins.png"></Image>
+                </StackLayout>
+                <StackLayout Padding="10,20,10,10">
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--<Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>-->
+                        <controls:CircleImage Grid.Column="0" Source="pc_summary/margins_ok_small.png" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Start"  HeightRequest="35" WidthRequest="35">
+                        </controls:CircleImage>
+                        <input:HtmlLabel Grid.Column="1" x:Name="LblIsInvolved" Text="" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Padding="5,40,5,20">
+                    <StackLayout WidthRequest="180" HorizontalOptions="Center">
+                        <controls:CircleImage Source="pc_summary/volume_large.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="180">
+                        </controls:CircleImage>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Padding="10,20,10,20">
+                    <input:HtmlLabel Text="This tells us the percentage of the prostate that is replaced by cancer. For example, 10% of the total volume means that 10% of the prostate was replaced by cancer. A higher volume of cancer may increase your risk of requiring further treatment." TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontSize="22" HorizontalOptions="Center" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                </StackLayout>
+
+                <StackLayout Padding="10,0,10,10">
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--<Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>-->
+                        <controls:CircleImage Grid.Column="0" Source="pc_summary/margins_ok_small.png" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="35" WidthRequest="35">                           
+                        </controls:CircleImage>
+                        <input:HtmlLabel Grid.Column="1" x:Name="LblVolume" Text="" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"></input:HtmlLabel>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

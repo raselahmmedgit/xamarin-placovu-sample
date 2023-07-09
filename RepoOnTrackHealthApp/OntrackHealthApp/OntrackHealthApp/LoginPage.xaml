@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.LoginPage" BackgroundImage="mti_ontrackhealth_blank_screan.png">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Grid VerticalOptions="Center" x:Name="GridContainer">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout VerticalOptions="Center" Grid.Row="0">
+                    <Image  Aspect="AspectFit" BackgroundColor="Transparent" Source="mti_ontrack_health_logo.png" ></Image>
+                </StackLayout>
+                <StackLayout x:Name="MessageStackLayout" Grid.Row="1" IsVisible="False" Padding="10,0,10,10" VerticalOptions="Center">
+                    <Label x:Name="MessageLabel" FontSize="18" TextColor="#a94442" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout x:Name="StackLayoutLoginForm" Grid.Row="2" IsVisible="True" VerticalOptions="Center">
+                    <StackLayout x:Name="EmailStackLayout" Padding="0,6">
+                        <input:MtiEntry x:Name="EmailEntry" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Placeholder="Email" PlaceholderColor="#bababa" FontSize="18" Keyboard="Keyboard.Email"></input:MtiEntry>
+                    </StackLayout>
+                    <StackLayout x:Name="PasswordStackLayout" IsVisible="False" Padding="0,6">
+                        <input:MtiEntry x:Name="PasswordEntry" IsSpellCheckEnabled="False" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" FontSize="18"></input:MtiEntry>
+                    </StackLayout>
+                    <StackLayout x:Name="LoginStepOneNextStackLayout" Padding="0,20,0,0">
+                        <Button Text="Next" x:Name="BtnNextStepOne" Clicked="OnNextStepOneButtonClicked" HorizontalOptions="FillAndExpand"  Style="{StaticResource ButtonStyle}"/>
+                    </StackLayout>
+                    <StackLayout x:Name="LoginStepOneLoginStackLayout" IsVisible="False" Padding="0,20,0,0">
+                        <Button Text="Login" x:Name="BtnLoginStepOne" Clicked="OnLoginStepOneButtonClicked" HorizontalOptions="FillAndExpand"  Style="{StaticResource ButtonStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            <Grid VerticalOptions="Center" x:Name="GridForm" IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" VerticalOptions="EndAndExpand">
+                    <Image  Aspect="AspectFit" BackgroundColor="Transparent" Source="mti_ontrack_health_logo.png" ></Image>
+                </StackLayout>
+                <StackLayout x:Name="StackLayoutUserPractice" Grid.Row="1" VerticalOptions="Center">
+                    <StackLayout x:Name="UserPracticeStackLayout">
+                        <ListView x:Name="UserPracticeListView" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Padding="0,0,0,5">
+                                            <Button x:Name="BtnUserPractice" Clicked="OnBtnUserPracticeClickedAsync" ClassId="{Binding UserName}" Text="{Binding PracticeName}"  Style="{StaticResource ButtonStyle}"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout x:Name="LoginStepTwoStackLayout" Padding="0,20,0,0" IsVisible="False">
+                        <ListView x:Name="UserRoleListView" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Padding="0,0,0,5">
+                                            <Button x:Name="BtnLoginStepTwo" Clicked="OnLoginStepTwoButtonClicked" ClassId="{Binding UserName}" Text="{Binding RoleName}"  Style="{StaticResource ButtonStyle}"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <Grid VerticalOptions="Center" x:Name="GridResetPasswordFirstForm" IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" VerticalOptions="EndAndExpand">
+                    <Image  Aspect="AspectFit" BackgroundColor="Transparent" Source="mti_ontrack_health_logo.png" ></Image>
+                </StackLayout>
+                <StackLayout x:Name="StackLayoutLoginResetPasswordFirstForm" Grid.Row="1" VerticalOptions="Center">
+                    <StackLayout x:Name="ResetPasswordFirstMessageStackLayout" IsVisible="False" Padding="10,6" VerticalOptions="Center">
+                        <Label x:Name="ResetPasswordFirstMessageLabel" FontSize="18" TextColor="#a94442" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <StackLayout x:Name="ResetPasswordFirstEmailStackLayout" Padding="0,6">
+                        <input:MtiEntry x:Name="ResetPasswordFirstEmailEntry" IsEnabled="False" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Placeholder="Email" PlaceholderColor="#bababa" FontSize="18" Keyboard="Keyboard.Email"></input:MtiEntry>
+                    </StackLayout>
+                    <StackLayout x:Name="ResetPasswordFirstPasswordStackLayout" Padding="0,6">
+                        <input:MtiEntry x:Name="ResetPasswordFirstCodeEntry" IsVisible="False"></input:MtiEntry>
+                        <input:MtiEntry x:Name="ResetPasswordFirstOldPasswordEntry" IsVisible="False"></input:MtiEntry>
+                        <input:MtiEntry x:Name="ResetPasswordFirstPasswordEntry" IsSpellCheckEnabled="False" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" FontSize="18"></input:MtiEntry>
+                    </StackLayout>
+                    <StackLayout x:Name="ResetPasswordFirstPasswordConfirmStackLayout" Padding="0,6">
+                        <input:MtiEntry x:Name="ResetPasswordFirstPasswordConfirmEntry" IsSpellCheckEnabled="False" IsPassword="True" Placeholder="Confirm Password" PlaceholderColor="#bababa" FontSize="18"></input:MtiEntry>
+                    </StackLayout>
+                    <StackLayout x:Name="LoginStepResetPasswordFirstStackLayout" Padding="0,20,0,0">
+                        <Button Text="Reset" x:Name="BtnLoginStepResetPasswordFirst" IsVisible="False" Clicked="OnLoginStepResetPasswordFirstButtonClicked" Style="{StaticResource ButtonStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

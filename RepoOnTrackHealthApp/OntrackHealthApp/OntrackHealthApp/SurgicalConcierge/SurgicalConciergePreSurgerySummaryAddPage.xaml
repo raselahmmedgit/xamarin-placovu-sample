@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePreSurgerySummaryAddPage">
+    <ContentPage.Content>
+        <StackLayout Margin="0, 20, 0, 0">
+            <ScrollView>
+                <StackLayout Orientation="Vertical" Padding="10" BackgroundColor="#ECECEC">
+                    <Grid BackgroundColor="#521B92" VerticalOptions="StartAndExpand" ColumnSpacing="0" RowSpacing="0"  Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35*"></ColumnDefinition>
+                            <ColumnDefinition Width="65*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackLayout BackgroundColor="#521B92" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"  Style="{ StaticResource FormTitleStyle}">
+                            <Label Margin="15,0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#FFFFFF" Text="Summary" Style="{ StaticResource FormTitleTextStyle }"></Label>
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="1" Margin="5" Style="{ StaticResource PatientInfoTopOuterStyle }">
+                            <StackLayout Style="{ StaticResource PatientInfoTopInnerStyle }">
+                                <Label x:Name="PatientFullName" Style="{StaticResource LabelStylePatientInfoPatientFullName}"  />
+                                <Label x:Name="ProcedureName" Style="{StaticResource LabelStylePatientInfoProcedureName}"  />
+                                <Label x:Name="ProfessionalName" Style="{StaticResource LabelStylePatientInfoProfessionalName}"  />
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <Label Text="Preop PSA" FontSize="20" TextColor="#000"></Label>
+                        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                            <input:MtiEntry x:Name="PreopPsaTextBox" BackgroundColor="#FFF" BorderColor="#1d47ff" BorderWidth="4" CornerRadius="0" HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="20" TextColor="#000"></input:MtiEntry>
+                            <Label Text="%" FontSize="22" TextColor="#000"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <Label Text="Grade" FontSize="20" TextColor="#000"></Label>
+                        <StackLayout x:Name="gradeOneStackLayout" Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="0,10,0,0">
+                            <Button ClassId="Grade_One_3" Clicked="Grade_Clicked" Text="3" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" HeightRequest="50" WidthRequest="80" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button ClassId="Grade_One_4" Clicked="Grade_Clicked" Text="4" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" HeightRequest="50" WidthRequest="80" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button ClassId="Grade_One_5" Clicked="Grade_Clicked" Text="5" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" HeightRequest="50" WidthRequest="80" TextColor="#007ACC" FontSize="22"></Button>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="128,5,0,5">
+                            <Label Text="+" FontSize="30" TextColor="#000"></Label>
+                        </StackLayout>
+                        <StackLayout x:Name="gradeTwoStackLayout" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            <Button ClassId="Grade_Two_3" Clicked="Grade_Clicked" Text="3" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" HeightRequest="50" WidthRequest="80" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button ClassId="Grade_Two_4" Clicked="Grade_Clicked" Text="4" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" HeightRequest="50" WidthRequest="80" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button ClassId="Grade_Two_5" Clicked="Grade_Clicked" Text="5" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" HeightRequest="50" WidthRequest="80" TextColor="#007ACC" FontSize="22"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <Label Text="Stage" FontSize="20" TextColor="#000"></Label>
+                        <StackLayout x:Name="stageStackLayoutOne" Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="0,10,0,0">
+                            <Button Text="T1c" ClassId="T1c" Clicked="Stage_Clicked" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" WidthRequest="130" HeightRequest="50" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button Text="T2a" ClassId="T2a" Clicked="Stage_Clicked" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" WidthRequest="130" HeightRequest="50" TextColor="#007ACC" FontSize="22"></Button>
+                        </StackLayout>
+                        <BoxView HeightRequest="15" Color="#FFF" />
+                        <StackLayout x:Name="stageStackLayoutTwo" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            <Button Text="T2b" ClassId="T2b" Clicked="Stage_Clicked" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" WidthRequest="130" HeightRequest="50" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button Text="T2c" ClassId="T2c" Clicked="Stage_Clicked" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" WidthRequest="130" HeightRequest="50" TextColor="#007ACC" FontSize="22"></Button>
+                        </StackLayout>
+                        <BoxView HeightRequest="15" Color="#FFF" />
+                        <StackLayout x:Name="stageStackLayoutThree" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            <Button Text="T3a" ClassId="T3a" Clicked="Stage_Clicked" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" WidthRequest="130" HeightRequest="50" TextColor="#007ACC" FontSize="22"></Button>
+                            <BoxView HeightRequest="50" WidthRequest="10" Color="#FFF" />
+                            <Button Text="T3b" ClassId="T3b" Clicked="Stage_Clicked" BackgroundColor="#FFF" CornerRadius="5" BorderColor="#007ACC" BorderWidth="2" WidthRequest="130" HeightRequest="50" TextColor="#007ACC" FontSize="22"></Button>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <Label Text="Volume" FontSize="20" TextColor="#000"></Label>
+                        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                            <input:MtiEntry x:Name="VolumeTextBox" BackgroundColor="#FFF" BorderColor="#1d47ff" BorderWidth="4" CornerRadius="0" HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="20" TextColor="#000"></input:MtiEntry>
+                            <Label Text="%" FontSize="22" TextColor="#000"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <Label Text="IIEF-5" FontSize="20" TextColor="#000"></Label>
+                        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                            <input:MtiEntry x:Name="IIEF5TextBox" BackgroundColor="#FFF" BorderColor="#1d47ff" BorderWidth="4" CornerRadius="0" HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="20" TextColor="#000"></input:MtiEntry>
+                            <Label Text="%" FontSize="22" TextColor="#000"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <Label Text="IPSS" FontSize="20" TextColor="#000"></Label>
+                        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                            <input:MtiEntry x:Name="IPSSTextBox" BackgroundColor="#FFF" BorderColor="#1d47ff" BorderWidth="4" CornerRadius="0" HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="20" TextColor="#000"></input:MtiEntry>
+                            <Label Text="%" FontSize="22" TextColor="#000"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout BackgroundColor="#610094" Padding="10,5,10,5">
+                        <Label Text="Cancer Location" FontSize="20" TextColor="#fff"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <StackLayout>
+                            <Label HorizontalTextAlignment="Center" Text="Tap on template to enter volume(%)"></Label>
+                            <StackLayout x:Name="cancerLocationTemplateTypeStackLayout" Orientation="Horizontal" Margin="0,10,0,0">
+                                <Button Text="12" ClassId="12" Clicked="OnCancerLocationTemplateTypeButton_Clicked" TextColor="#FFF" FontSize="24" WidthRequest="80" BackgroundColor="#610094" BorderColor="#007ACC" BorderWidth="2"></Button>
+                                <Button Text="6" ClassId="6" Clicked="OnCancerLocationTemplateTypeButton_Clicked" TextColor="#007ACC" FontSize="24" WidthRequest="80" BackgroundColor="#FFF" BorderColor="#007ACC" BorderWidth="2"></Button>
+                                <Button Text="2" ClassId="2" Clicked="OnCancerLocationTemplateTypeButton_Clicked" TextColor="#007ACC" FontSize="24" WidthRequest="80" BackgroundColor="#FFF" BorderColor="#007ACC" BorderWidth="2"></Button>
+                            </StackLayout>
+                            <Grid x:Name="cancerLocationGridFor16Items" BackgroundColor="#ECECEC" Margin="0,20,0,0" Padding="2">
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout BackgroundColor="#610094" Padding="10,5,10,5">
+                        <Label Text="PIRAD LESION" FontSize="20" TextColor="#fff"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <StackLayout x:Name="piradListContainerStackLayout" IsVisible="False" Orientation="Vertical" BackgroundColor="#ECECEC" Padding="10">
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,15">
+                            <Button x:Name="AddPiradButton" Grid.Column="0" Text="Add PiRAD" Clicked="OnAddPiradButton_Clicked" BackgroundColor="#610094" TextColor="#FFF" CornerRadius="5" HeightRequest="50" WidthRequest="120"  FontSize="18"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout BackgroundColor="#610094" Padding="10,5,10,5">
+                        <Label Text="Note" FontSize="20" TextColor="#fff"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFF" Padding="10">
+                        <StackLayout x:Name="noteStackLayout" Orientation="Horizontal">
+                            <input:MtiEntry x:Name="NoteTextBox" BackgroundColor="#FFF" BorderColor="#1d47ff" BorderWidth="4" CornerRadius="0" HorizontalOptions="FillAndExpand" FontSize="20" TextColor="#000"></input:MtiEntry>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView HeightRequest="15" Color="#ECECEC" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,5,0,5">
+                        <Button x:Name="FinishedButton" Grid.Column="1" Text="Finished" Clicked="OnFinishedButton_Clicked" BackgroundColor="#610094" TextColor="#FFF" CornerRadius="5" HeightRequest="50" WidthRequest="120"  FontSize="18"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

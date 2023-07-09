@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalPatientComplianceSearchDetailPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <StackLayout Grid.Row="0" x:Name="ContentHeaderStackLayout" IsVisible="False">
+                                <Grid BackgroundColor="#521B92" VerticalOptions="StartAndExpand" ColumnSpacing="0" RowSpacing="0"  Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="35*"></ColumnDefinition>
+                                        <ColumnDefinition Width="65*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="120"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout x:Name="HeaderLeftContent" BackgroundColor="#521B92" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"  Style="{ StaticResource FormTitleStyle}">
+                                        <Image Source="mob_patient.png" Aspect="AspectFit" VerticalOptions="Center" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Margin="5" Style="{ StaticResource PatientInfoTopOuterStyle }">
+                                        <StackLayout Style="{ StaticResource PatientInfoTopInnerStyle }">
+                                            <Label x:Name="PatientFullNameLabel" FontAttributes="Bold" TextColor="#000" Style="{StaticResource LabelStylePatientInfoPatientFullName}"  />
+                                            <Label x:Name="ProcedureNameLabel" FontSize="12" TextColor="#000" Style="{StaticResource LabelStylePatientInfoProcedureName}"  />
+                                            <Label x:Name="SurgeryDateLabel" FontSize="12" TextColor="#000" Style="{StaticResource LabelStylePatientInfoProfessionalName}"  />
+                                            <Label x:Name="LocationLabel" FontSize="12" TextColor="#000" Style="{StaticResource LabelStylePatientInfoProfessionalName}"  />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                                <!--<StackLayout x:Name="HeaderStackLayout" Padding="10,5">
+                                    <Label x:Name="PatientFullNameLabel" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="" TextColor="#000" FontSize="14" Margin="0,5" />
+                                    <Label x:Name="DateOfBirthLabel" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="" TextColor="#000" FontSize="14" Margin="0,5" />
+                                    <Label x:Name="ProcedureNameLabel" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="" TextColor="#000" FontSize="14" Margin="0,5" />
+                                    <Label x:Name="SurgeryDateLabel" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="" TextColor="#000" FontSize="14" Margin="0,5" />
+                                    <Label x:Name="NotificationDateLabel" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="" TextColor="#000" FontSize="14" Margin="0,5" IsVisible="False" />
+                                    <Label x:Name="LocationLabel" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Text="" TextColor="#000" FontSize="14" Margin="0,5" />
+                                </StackLayout>-->
+
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Spacing="0" x:Name="ContentStackLayout" Padding="10,5" IsVisible="False">
+                                <Frame CornerRadius="0"  OutlineColor="#00a0ff" Padding="10">
+                                    <Grid ColumnSpacing="0" RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Grid.Row="0" Spacing="0" Padding="0,0,0,0" x:Name="CriticalSurveysStackLayout" IsVisible="False">
+                                            <StackLayout x:Name="CriticalSurveysResultStackLayout" Spacing="0" Margin="0,0,0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Spacing="0" Padding="5,0,0,0" x:Name="SurveysStackLayout" IsVisible="False">
+                                            <Grid ColumnSpacing="0" RowSpacing="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <StackLayout Grid.Row="0" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,0,10">
+                                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+                                                        <Label Text="Completed Surveys :" TextColor="#000" FontAttributes="Bold" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" Margin="0,5" />
+                                                    </StackLayout>
+                                                    <StackLayout x:Name="CompletedSurveysStackLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="1" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,0,10">
+                                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+                                                        <Label Text="Upcoming Surveys :" TextColor="#000" FontAttributes="Bold" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" Margin="0,5" />
+                                                    </StackLayout>
+                                                    <StackLayout x:Name="UpcomingSurveysStackLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="2" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,0,10">
+                                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+                                                        <Label Text="Not Completed Surveys :" TextColor="#000" FontAttributes="Bold" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" Margin="0,5" />
+                                                    </StackLayout>
+                                                    <StackLayout x:Name="NotCompletedSurveysStackLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Row="2" Spacing="0" x:Name="PatientNoteContentStackLayout" Padding="10,5" IsVisible="true">
+                                <Frame CornerRadius="0"  OutlineColor="#00a0ff" Padding="10">
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+                                            <Label Text="Note" TextColor="#000" FontAttributes="Bold" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center" Margin="0,5" />
+                                        </StackLayout>
+                                        <StackLayout x:Name="PatientNoteStackLayout" Spacing="0" Margin="0,0,0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Grid.Row="3" Spacing="0" x:Name="FooterStackLayout" Padding="10,5" IsVisible="true">
+                                <StackLayout HorizontalOptions="Center" Grid.Column="0" Spacing="0">
+                                    <customInput:ButtonMultiLine Clicked="BtnOutComeReport_Clicked" x:Name="BtnChart" Text="View Results" FontSize="18" FontAttributes="Bold" Style="{ StaticResource ProfessionalPatientComplianceSearchDetailPageButtonStyle}"/>
+                                    <!--<customInput:ButtonMultiLine Clicked="BtnOutComeCompliance_Clicked" x:Name="BtnCompliance" IsVisible="False" Text="Press to View Results"  FontSize="18" FontAttributes="Bold" Style="{ StaticResource ProfessionalPatientComplianceSearchDetailPageButtonStyleTwo}"/>-->
+                                </StackLayout>
+                            </StackLayout>
+
+                        </Grid>
+                    </ScrollView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Style="{ StaticResource MainProfessionalPageButtonStackLayoutStyle}">
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Spacing="0" Padding="0" Margin="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnHome" Image="home_nav_icon.png" Style="{ StaticResource MainProfessionalPageButtonStyle}" Clicked="OnHomeButtonClickedAsync"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

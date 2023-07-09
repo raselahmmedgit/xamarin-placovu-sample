@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalPreSurgerySummaryPage">
+    <ContentPage.Content>
+        <StackLayout Margin="0, 20, 0, 0">
+            <ScrollView>
+                <StackLayout Orientation="Vertical">
+                    <Frame Margin="1,20" Padding="10" BackgroundColor="#610094" CornerRadius="10">
+                        <StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="120"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Margin="0,5" Style="{ StaticResource PreSurgerySummaryTopOuterStyle }">
+                                        <StackLayout Style="{ StaticResource PreSurgerySummaryTopInnerStyle }">
+                                            <Label x:Name="PatientFullName" Style="{StaticResource LabelStylePreSurgerySummaryPatientFullName}"  />
+                                            <Label x:Name="ProcedureName" Style="{StaticResource LabelStylePreSurgerySummaryProcedureName}"  />
+                                            <Label x:Name="ProfessionalName" Style="{StaticResource LabelStylePreSurgerySummaryProfessionalName}"  />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical" Margin="0,10">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0" BackgroundColor="#F8F5FA">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"></RowDefinition>
+                                        <RowDefinition Height="300"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Padding="0,20" Margin="0">
+                                        <Label FontSize="18" FontAttributes="Bold" TextColor="#610094" HorizontalOptions="Center" Text="Summary" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Padding="0,5" Margin="0" HorizontalOptions="CenterAndExpand">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="85"></RowDefinition>
+                                                <RowDefinition Height="85"></RowDefinition>
+                                                <RowDefinition Height="85"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="65"></ColumnDefinition>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                                <ColumnDefinition Width="65"></ColumnDefinition>
+                                                <ColumnDefinition Width="75"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Grid.Row="0" Grid.Column="0" Text="PSA:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#000" FontSize="18"></Label>
+                                            <Button Grid.Row="0" Grid.Column="1" x:Name="PreopPsa" CornerRadius="10" BackgroundColor="#FFF" HeightRequest="50" WidthRequest="80" BorderColor="#54F854" BorderWidth="1" TextColor="#000" FontSize="18"></Button>
+                                            <Label Grid.Row="0" Grid.Column="2" Text="IIEF-5:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#000" FontSize="20"></Label>
+                                            <Button Grid.Row="0" Grid.Column="3" x:Name="IntIndexErectileFunction5" CornerRadius="10" BackgroundColor="#FFF" HeightRequest="50" WidthRequest="80" BorderColor="#54F854" BorderWidth="1" TextColor="#000" FontSize="18" Margin="5"></Button>
+
+                                            <Label Grid.Row="1" Grid.Column="0" Text="Grade:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#000" FontSize="18"></Label>
+                                            <Button Grid.Row="1" Grid.Column="1" x:Name="GleasonScore" CornerRadius="10" BackgroundColor="#FFF" HeightRequest="50" WidthRequest="80" BorderColor="#54F854" BorderWidth="1" TextColor="#000" FontSize="18"></Button>
+                                            <Label Grid.Row="1" Grid.Column="2" Text="IPSS:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#000" FontSize="18"></Label>
+                                            <Button Grid.Row="1" Grid.Column="3" x:Name="IntProstateSymptomScore" CornerRadius="10" BackgroundColor="#FFF" HeightRequest="50" WidthRequest="80" BorderColor="#54F854" BorderWidth="1" TextColor="#000" FontSize="18" Margin="5"></Button>
+
+                                            <Label Grid.Row="2" Grid.Column="0" Text="Stage:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#000" FontSize="18"></Label>
+                                            <Button Grid.Row="2" Grid.Column="1" x:Name="StageScore" CornerRadius="10" BackgroundColor="#FFF" HeightRequest="50" WidthRequest="80" BorderColor="#54F854" BorderWidth="1" TextColor="#000" FontSize="18"></Button>
+                                            <Label Grid.Row="2" Grid.Column="2" Text="Volume:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#000" FontSize="18"></Label>
+                                            <Button Grid.Row="2" Grid.Column="3" x:Name="Volume" CornerRadius="10" BackgroundColor="#FFF" HeightRequest="50" WidthRequest="80" BorderColor="#54F854" BorderWidth="1" TextColor="#000" FontSize="18" Margin="5"></Button>
+
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Margin="0,10">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0" BackgroundColor="#F8F5FA">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="200*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Padding="0,5" Margin="0">
+                                        <Label FontSize="18" FontAttributes="Bold" TextColor="#610094" HorizontalOptions="Center" Text="Standard mapping Biopsy" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Padding="15" Margin="0">
+                                        <Grid x:Name="cancerLocationGridFor16Items" BackgroundColor="#D5D5D5" Margin="5" Padding="2">
+
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Margin="0,10" x:Name="piradLesionListStackLayout">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0" BackgroundColor="#F8F5FA">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="200*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Padding="0,5" Margin="0">
+                                        <Label FontSize="18" FontAttributes="Bold" TextColor="#610094" HorizontalOptions="Center" Text="MRI Lesion(s)" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Padding="0,5" Margin="0">
+                                        <Grid x:Name="piradLesionListGrid" Padding="10">
+                                        
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Margin="0,10" x:Name="AdditionalInfoStackLayout">
+                                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0" BackgroundColor="#F8F5FA">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="120*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Padding="0,5" Margin="0">
+                                        <Label FontSize="18" FontAttributes="Bold" TextColor="#610094" HorizontalOptions="Center" Text="Additional Information" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Padding="0,5" Margin="0">
+                                        <Grid x:Name="AdditionalInfoGrid" Padding="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="45"></RowDefinition>
+                                                <RowDefinition Height="45"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="25*"></ColumnDefinition>
+                                                <ColumnDefinition Width="75*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Button Text="View" Grid.Row="0" Grid.Column="0" BackgroundColor="#e4e5ff" FontSize="14" MinimumHeightRequest="20" Clicked="OnXrayButton_Clicked" TextColor="#000000" />
+                                            <Button Text="View" Grid.Row="1" Grid.Column="0" BackgroundColor="#e4e5ff" FontSize="14" MinimumHeightRequest="20" Clicked="OnAssessmentPlanButton_Clicked" TextColor="#000000" />
+                                            <Label Text="Xrays" Grid.Row="0" Grid.Column="1" TextColor="#000000" FontSize="14" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="20,0,0,0" />
+                                            <Label Text="Assessment/Plan" Grid.Row="1" Grid.Column="1" TextColor="#000000" FontSize="14" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="20,0,0,0" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Margin="0,10" x:Name="NoteStackLayout" BackgroundColor="#F8F5FA">
+                                <StackLayout Orientation="Horizontal" Padding="5,10">
+                                    <Frame Padding="15" BackgroundColor="#FFF" HorizontalOptions="FillAndExpand" CornerRadius="30" BorderColor="#54F854">
+                                        <Label x:Name="Note" LineBreakMode="WordWrap" TextColor="#000" FontSize="18" HorizontalOptions="FillAndExpand" ></Label>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Padding="15,10" VerticalOptions="End">
+                <Button x:Name="btnEditSummary" Clicked="btnEditSummary_ClickedAsync" Text="Edit Summary" CornerRadius="25" HeightRequest="50" TextColor="White" BackgroundColor="#0F4563" FontSize="18"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

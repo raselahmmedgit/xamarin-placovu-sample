@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.PatientAttendeeListPage">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout>
+            <StackLayout>
+                <Button Text="Add New Attendee" Clicked="AddNewAttendee_OnClicked" TextColor="White"  BackgroundColor="#0F4563"></Button>
+            </StackLayout>
+            <ListView x:Name="PatientAttendeeListView" SeparatorColor="#bababa" HasUnevenRows="True"
+                  ItemSelected="PatientAttendeeListView_ItemSelected" IsPullToRefreshEnabled="True" Refreshing="PatientAttendListViewView_Refreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+                                            <Label VerticalTextAlignment="Center" Text="{Binding EmailAddress}" TextColor="#0F4563" FontSize="14"></Label>
+                                            <Label VerticalTextAlignment="Center" Text="{Binding MobilePhoneWithCountryCode}" TextColor="#0F4563" FontSize="14"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                        <Label VerticalTextAlignment="Center" Text="{Binding EmailStatus}" HorizontalOptions="EndAndExpand" TextColor="#0F4563" FontSize="14"></Label>
+                                        <Label VerticalTextAlignment="Center" Text="{Binding SmsStatus}" HorizontalOptions="EndAndExpand" TextColor="#0F4563" FontSize="14"></Label>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout x:Name="loaderView" IsVisible="False" Padding="12"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator IsRunning="True" Color ="#800000"/>
+        </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

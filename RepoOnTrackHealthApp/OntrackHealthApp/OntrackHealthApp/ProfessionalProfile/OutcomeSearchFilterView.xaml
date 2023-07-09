@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             NavigationPage.HasBackButton="True"
+             xmlns:local="clr-namespace:OntrackHealthApp"
+             x:Class="OntrackHealthApp.ProfessionalProfile.OutcomeSearchFilterView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primaryBackgroundColor">#0F4563</Color>
+            <Style x:Key="SurgicalPrimaryButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource primaryBackgroundColor}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <input:StackLayoutFormTitle Style="{StaticResource FormTitleStyle}">
+                <input:StackLayoutFormTitleLabel Text="Filter Options"></input:StackLayoutFormTitleLabel>
+            </input:StackLayoutFormTitle>
+
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="StackLayoutMainBlock" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" HeightRequest="70" Style="{ StaticResource BottomCommandPanelStyle }">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource SurgicalPrimaryButton}" MinimumHeightRequest="30" Text="Filter" x:Name="PatientSearchFilterSumbitButton" Clicked="OutcomeSearchFilterSumbitButtonClicked" TextColor="#FFF" CornerRadius="24" FontSize="16"></Button>
+                    <Button Grid.Column="1" Style="{StaticResource SurgicalPrimaryButton}" MinimumHeightRequest="30" Text="Cancel" x:Name="PatientSearchFilterCancelButton" Clicked="OutcomeSearchFilterCancelButtonClicked" TextColor="#FFF" CornerRadius="24" FontSize="16"></Button>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ProfessionalProfile.OutcomeSearchFilterView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>-->

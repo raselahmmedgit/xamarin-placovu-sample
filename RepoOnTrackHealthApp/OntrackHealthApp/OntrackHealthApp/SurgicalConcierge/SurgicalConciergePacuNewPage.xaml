@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.SurgicalConcierge.SurgicalConciergePacuNewPage"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#0F4563" HeightRequest="60" Margin="0">
+                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="56"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Padding="12">
+                        <Label  Text="PACU" FontSize="22" TextColor="#ffffff"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Padding="10">
+                        <Button x:Name="btnClear" Clicked="btnClear_Clicked" Text="Clear" CornerRadius="18" HeightRequest="36" FontSize="14" TextColor="White" BackgroundColor="#8b9dc3"></Button>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0, -6, 0, 0" BackgroundColor="#8b9dc3" Padding="12">
+                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="0" Spacing="0">
+                    <Label x:Name="PatientFullName" Text="" TextColor="#154360" FontSize="20"  />
+                    <Label x:Name="ProcedureName" Text="" TextColor="#154360" FontSize="16" />
+                    <Label x:Name="ProfessionalName" Text="" TextColor="#154360" FontSize="16" />
+                </StackLayout>
+            </StackLayout>
+            <ScrollView Margin="0,-6,0,0">
+                <StackLayout>
+                    <StackLayout Padding="12,5">
+                        <Label FontSize="16" Text="Please send every 30 minutes."></Label>
+                    </StackLayout>
+                    <StackLayout Padding="12,5">
+                        <Label FontSize="16" Text="PACU staﬀ has 2 pathways, either a Family Update or Transfer to Floor."></Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="10" x:Name="StackLayoutScgPacuQuestionFamilyType">
+                        <input:CheckBox Text="Family Update" TextFontSize="20" BoxSizeRequest="26" FontFamily="Fonts/georgia.ttf#georgia" TextColor="#222" x:Name="chkStackLayoutScgPacuQuestionFamilyType" CheckChanged="chkStackLayoutScgPacuQuestionFamilyType_CheckChanged" ></input:CheckBox>
+                    </StackLayout>
+
+                    <StackLayout x:Name="StackLayoutScgPacuQuestionFamilyTypeDetail" IsVisible="False">
+
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="1. Awake and alert"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView x:Name="RadioButtonGroupViewOne" SelectedItemChanged="RadioButtonGroupViewOne_SelectedItemChanged">
+                                    <input:RadioButton Value="1" Text="Yes" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />
+                                    <input:RadioButton Value="2" Text="Everything is going well. Still a little sleepy from anesthesia." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="3" Text="Still a little sleepy. Telling funny stories." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="4" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:AdvancedEntry x:Name="EntyOne" Placeholder="Type message" IsVisible="False"/>
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="2. Normal temperature"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView  x:Name="RadioButtonGroupViewTwo" SelectedItemChanged="RadioButtonGroupViewTwo_SelectedItemChanged">
+                                    <input:RadioButton Value="5" Text="Yes" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />
+                                    <input:RadioButton Value="6" Text="Still warming up from surgery. Has a nice warm blanket." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="7" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:AdvancedEntry x:Name="EntyTwo" Placeholder="Type message" IsVisible="False"/>
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="3. Vital signs stable"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView  x:Name="RadioButtonGroupViewThree" SelectedItemChanged="RadioButtonGroupViewThree_SelectedItemChanged">
+                                    <input:RadioButton Value="8" Text="Yes" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />
+                                    <input:RadioButton Value="9" Text="Requiring assistance as anethesia wears off. Doing well." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="10" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:AdvancedEntry x:Name="EntyThree" Placeholder="Type message" IsVisible="False"/>
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="4. Pain well controlled"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView  x:Name="RadioButtonGroupViewFour" SelectedItemChanged="RadioButtonGroupViewFour_SelectedItemChanged">
+                                    <input:RadioButton Value="11" Text="Yes" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />
+                                    <input:RadioButton Value="12" Text="Requiring pain medication. Very comfortable." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="13" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:AdvancedEntry x:Name="EntyFour" Placeholder="Type message" IsVisible="False"/>
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="5. Nausea and vomiting controlled"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView  x:Name="RadioButtonGroupViewFive" SelectedItemChanged="RadioButtonGroupViewFive_SelectedItemChanged">
+                                    <input:RadioButton Value="14" Text="Yes" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />
+                                    <input:RadioButton Value="15" Text="Requiring some assistance. Everything is going as planned." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="16" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:AdvancedEntry x:Name="EntyFive"  Placeholder="Type message" IsVisible="False"/>
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="6. Additional Comment:"></Label>
+                            </StackLayout>
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView  x:Name="RadioButtonGroupViewSix" SelectedItemChanged="RadioButtonGroupViewSix_SelectedItemChanged">
+                                    <!--<input:RadioButton Value="17" Text="Yes" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />-->
+                                    <input:RadioButton Value="18" Text="Very comfortable and progressing nicely. Plan to monitor in PACU for a little more time." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:RadioButton Value="19" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <input:AdvancedEntry x:Name="EntySix" Placeholder="Type message" IsVisible="False"/>
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout Padding="10" x:Name="StackLayoutScgPacuQuestionTransferToFloorType">
+                        <input:CheckBox Text="Transfer to Floor" TextFontSize="20" BoxSizeRequest="26" FontFamily="Fonts/georgia.ttf#georgia" TextColor="#222" x:Name="chkStackLayoutScgPacuQuestionTransferToFloorType" CheckChanged="chkStackLayoutScgPacuQuestionTransferToFloorType_CheckChanged" ></input:CheckBox>
+                    </StackLayout>
+
+                    <StackLayout x:Name="StackLayoutScgPacuQuestionTransferToFloorTypeDetail" IsVisible="False">
+
+                        <StackLayout BackgroundColor="#f0fcfe">
+                            <!--<StackLayout Padding="12" BackgroundColor="#d6f7fe">
+                                <Label Text="7. Is there a room assignment?"></Label>
+                            </StackLayout>-->
+                            <StackLayout Padding="12">
+                                <input:RadioButtonGroupView  x:Name="RadioButtonGroupViewSeven" SelectedItemChanged="RadioButtonGroupViewSeven_SelectedItemChanged">
+                                    <input:RadioButton Value="20" Text="Patient has met all PACU requirements and will be transferred to: Room #" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand" />
+                                    <input:AdvancedEntry Placeholder="Room #" x:Name="EntyRoom" IsVisible="False"/>
+                                    <input:RadioButton Value="21" Text="Everything is going well. Waiting for a room assignment." FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>
+                                    <!--<input:RadioButton Value="22" Text="Type message" FontSize="16" CircleSize="34" VerticalOptions="CenterAndExpand"/>-->
+                                    <!--<input:AdvancedEntry  x:Name="EntySeven" Placeholder="Type message" IsVisible="False"/>-->
+                                </input:RadioButtonGroupView>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Padding="15,10" VerticalOptions="End">
+                <Button x:Name="btnContinueToProgram" Clicked="btnContinueToProgram_Clicked" Text="Send" CornerRadius="25" HeightRequest="50" TextColor="White" BackgroundColor="#0F4563" FontSize="18"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

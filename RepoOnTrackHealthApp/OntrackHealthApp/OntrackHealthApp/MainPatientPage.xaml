@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:OntrackHealthApp"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.MainPatientPage" BackgroundColor="#EEF6F2">
+    <ContentPage.Content>
+        <StackLayout></StackLayout>
+    </ContentPage.Content>
+    <StackLayout BackgroundColor="Transparent">
+
+        <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+            <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+        </StackLayout>
+
+        <Grid VerticalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" x:Name="CheckinButtonStackLayout" Padding="20" VerticalOptions="Center" BackgroundColor="Transparent">
+                <Button x:Name="btnCheckin" Image="check_in.png" BackgroundColor="Transparent" VerticalOptions="Center" Clicked="OnCheckinButtonClickedAsync" CornerRadius="0"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Style="{ StaticResource MainPatientPageButtonStackLayoutStyle}" VerticalOptions="End">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnHome" Text="Home" Image="home_nav_icon_yellow.png" Style="{ StaticResource MainPatientPageButtonStyleActive}" Clicked="OnHomeButtonClickedAsync"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnResource" Text="Resources" Image="resources_nav_icon.png"  Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnResourceButtonClickedAsync"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Spacing="0">
+                        <customInput:ButtonMenuBottom x:Name="BtnSchedule" Text="Schedule" Image="schedule_nav_icon.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnScheduleButtonClickedAsync"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>

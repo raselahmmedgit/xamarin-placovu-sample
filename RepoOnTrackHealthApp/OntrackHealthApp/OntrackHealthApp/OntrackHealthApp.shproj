@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{96BFB9FC-38AB-47F3-8EB5-B91A42399847}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ApiHelper\ApiExtensions.cs" />
+    <Compile Include="ApiHelper\Client\ApiClient.cs" />
+    <Compile Include="ApiHelper\Client\ClientBase.cs" />
+    <Compile Include="ApiHelper\Client\IApiClient.cs" />
+    <Compile Include="ApiHelper\Extensions\TypeExtensions.cs" />
+    <Compile Include="ApiHelper\HttpClientInstance.cs" />
+    <Compile Include="ApiHelper\ITokenContainer.cs" />
+    <Compile Include="ApiHelper\Model\ApiModel.cs" />
+    <Compile Include="ApiHelper\Response\ApiResponse.cs" />
+    <Compile Include="ApiHelper\Response\ErrorStateResponse.cs" />
+    <Compile Include="ApiHelper\TokenContainer.cs" />
+    <Compile Include="ApiService\Client\LocationClient.cs" />
+    <Compile Include="ApiService\Client\LoginClient.cs" />
+    <Compile Include="ApiService\Client\PatientSurveyClient.cs" />
+    <Compile Include="ApiService\Client\PhysicianClient.cs" />
+    <Compile Include="ApiService\Client\ProcedureClient.cs" />
+    <Compile Include="ApiService\Client\ProstateCancerSummaryClient.cs" />
+    <Compile Include="ApiService\Client\ResourceClient.cs" />
+    <Compile Include="ApiService\Client\ScheduleClient.cs" />
+    <Compile Include="ApiService\Client\SurgicalConciergePathologyClient.cs" />
+    <Compile Include="ApiService\Model\ApplicationSettingModel.cs" />
+    <Compile Include="ApiService\Model\PatientProcedureDetailModel.cs" />
+    <Compile Include="ApiService\Model\PatientProfileWithProfessionalProcedureView.cs" />
+    <Compile Include="ApiService\Model\PatientProstateCancerSummary.cs" />
+    <Compile Include="ApiService\Model\ScgPathologyModel.cs" />
+    <Compile Include="ApiService\Model\TokenResponseModel.cs" />
+    <Compile Include="ApiService\Model\UserIdentityModel.cs" />
+    <Compile Include="ApiService\Model\UserModel.cs" />
+    <Compile Include="ApiService\Response\ApplicationSettingResponse.cs" />
+    <Compile Include="ApiService\Response\ChangePasswordResponse.cs" />
+    <Compile Include="ApiService\Response\LocationPageResponse.cs" />
+    <Compile Include="ApiService\Response\PatientEmailNotificationHistoryResponse.cs" />
+    <Compile Include="ApiService\Response\PatientProcedureDetailResponse.cs" />
+    <Compile Include="ApiService\Response\PatientSurveyResponse.cs" />
+    <Compile Include="ApiService\Response\PhysicianPageResponse.cs" />
+    <Compile Include="ApiService\Response\ProstateCancerSummaryResponse.cs" />
+    <Compile Include="ApiService\Response\ResourceDetailContentPageResponse.cs" />
+    <Compile Include="ApiService\Response\ResourceDetailPageResponse.cs" />
+    <Compile Include="ApiService\Response\ResourcePageResponse.cs" />
+    <Compile Include="ApiService\Response\SchedulePageResponse.cs" />
+    <Compile Include="ApiService\Response\SurgicalConciergePathologyResponse.cs" />
+    <Compile Include="ApiService\Response\TokenResponse.cs" />
+    <Compile Include="ApiService\Response\UserIdentityResponse.cs" />
+    <Compile Include="ApiService\Response\UserPracticeResponse.cs" />
+    <Compile Include="ApiService\ViewModel\ChangePasswordViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\LocationIndexPageViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientEmailNotificationHistoryViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientPortalResourceViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientProcedureLocationViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientProcedureResourceViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientResourceCategoryViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientScheduleHomePageViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientSurveyPatientNotificationDetailViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientSurveyPracticeLocationViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientSurveyProcedureNotificationViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientSurveyQuestionDetailViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientSurveyQuestionSetViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PatientSurveyQuestionViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\PhysicianIndexPageViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioAssociation.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioCustomSection.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioEducation.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioGenarelInfo.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioInterest.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioLicensureView.cs" />
+    <Compile Include="ApiService\ViewModel\ProfessionalBioSection.cs" />
+    <Compile Include="ApiService\ViewModel\PSProcedureNotificationDetail.cs" />
+    <Compile Include="ApiService\ViewModel\ResourceDetailContentPageViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\ResourceDetailViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\ResourceIndexPageViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\ResourceViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\ScgPatientPathologyViewModel.cs" />
+    <Compile Include="ApiService\ViewModel\UserPracticeViewModel.cs" />
+    <Compile Include="AppCore\AppConstant.cs" />
+    <Compile Include="AppCore\DecimalValidationBehavior.cs" />
+    <Compile Include="AppCore\Enums.cs" />
+    <Compile Include="AppCore\IAppPermissionChecker.cs" />
+    <Compile Include="AppCore\InternetConnectHelper.cs" />
+    <Compile Include="AppCore\IToast.cs" />
+    <Compile Include="AppCore\MessageHelper.cs" />
+    <Compile Include="AppCore\NotificationHelper.cs" />
+    <Compile Include="AppCore\ToastHelper.cs" />
+    <Compile Include="Model\PatientNotification.cs" />
+    <Compile Include="ScgPathology\ScgPacuPatientProfilePage.xaml.cs">
+      <DependentUpon>ScgPacuPatientProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScgPathology\ScgPathologyPage.xaml.cs">
+      <DependentUpon>ScgPathologyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScgPathology\ScgPathologyPatientProfilePage.xaml.cs">
+      <DependentUpon>ScgPathologyPatientProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\AdminChangePassword.xaml.cs">
+      <DependentUpon>AdminChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\AdminSignOutPage.xaml.cs">
+      <DependentUpon>AdminSignOutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\Helper\AppConstants.cs" />
+    <Compile Include="SurgicalConcierge\Helper\FontAwesomeIcon.cs" />
+    <Compile Include="SurgicalConcierge\Helper\LeonardoCommandProcessorer.cs" />
+    <Compile Include="SurgicalConcierge\Helper\PlatformImageExtension.cs" />
+    <Compile Include="SurgicalConcierge\Helper\SpeechHelper.cs" />
+    <Compile Include="SurgicalConcierge\Helper\UtilHelper.cs" />
+    <Compile Include="SurgicalConcierge\Helper\ValidationHelper.cs" />
+    <Compile Include="SurgicalConcierge\Interfaces\IMessageHelper.cs" />
+    <Compile Include="SurgicalConcierge\Interfaces\IOntrackSpeechRecognizer.cs" />
+    <Compile Include="SurgicalConcierge\Interfaces\IToast.cs" />
+    <Compile Include="SurgicalConcierge\MainPracticePage.xaml.cs">
+      <DependentUpon>MainPracticePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\MenuPracticePage.xaml.cs">
+      <DependentUpon>MenuPracticePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\Model\BaseViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\CountryViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\LeonardoSpeechText.cs" />
+    <Compile Include="SurgicalConcierge\Model\PatientAttendeeProfileViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\PracticeProcedureLocationDropDownViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\PracticeProfile.cs" />
+    <Compile Include="SurgicalConcierge\Model\PracticeProfileDropDownViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\PracticeProfileViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\ProfessionalProcedureDropDownViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\ProfessionalProfileDropDownViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\ProfessionalProfileViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\ScgStageCommentViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SelectListItem.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConceirgePatientEmailAddModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConceirgePracticeDivision.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConceirgePracticeDivisionUnit.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergeDischargeViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergeFloorViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergePacuCommentParamViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergePacuQuestionViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergePacuViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergePatientViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergeStageCommentViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergeStageViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalConciergeViewModel.cs" />
+    <Compile Include="SurgicalConcierge\Model\SurgicalPatientDataService.cs" />
+    <Compile Include="SurgicalConcierge\Model\ValidationResult.cs" />
+    <Compile Include="SurgicalConcierge\PatientAttendeeAddPage.xaml.cs">
+      <DependentUpon>PatientAttendeeAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\PatientAttendeeEditPage.xaml.cs">
+      <DependentUpon>PatientAttendeeEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\PatientAttendeeListPage.xaml.cs">
+      <DependentUpon>PatientAttendeeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\PatientSearchView.xaml.cs">
+      <DependentUpon>PatientSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\RestApiService\AdministrationPatientProfileRestApiService.cs" />
+    <Compile Include="SurgicalConcierge\RestApiService\SurgicalConciergeRestApiService.cs" />
+    <Compile Include="SurgicalConcierge\SurgicalCommentView.xaml.cs">
+      <DependentUpon>SurgicalCommentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConceirgePatientAdd.xaml.cs">
+      <DependentUpon>SurgicalConceirgePatientAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeDetail.xaml.cs">
+      <DependentUpon>SurgicalConciergeDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeDischargeAdditionalCommentPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeDischargeAdditionalCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeDischargeDetailPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeDischargeDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeDischargePage.xaml.cs">
+      <DependentUpon>SurgicalConciergeDischargePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeFloorPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeFloorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePacuNewPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePacuPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePacuRecipientAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuRecipientAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePacuRecipientPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePacuRecipientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePastWeekDates.xaml.cs">
+      <DependentUpon>SurgicalConciergePastWeekDates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePathologyPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePathologyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientAttendeeEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientAttendeeEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientAttendeePage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientAttendeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientEmailAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientEmailAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientEmailEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientEmailEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientEmailPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientEmailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientPage.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePatientView.xaml.cs">
+      <DependentUpon>SurgicalConciergePatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePracticeDivision.xaml.cs">
+      <DependentUpon>SurgicalConciergePracticeDivision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergePracticeDivisionUnit.xaml.cs">
+      <DependentUpon>SurgicalConciergePracticeDivisionUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeProfessionalAdd.xaml.cs">
+      <DependentUpon>SurgicalConciergeProfessionalAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeRecipientAddPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeRecipientAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeRecipientEditPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeRecipientEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\SurgicalConciergeRecipientPage.xaml.cs">
+      <DependentUpon>SurgicalConciergeRecipientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalConcierge\UserControls\FontAwesomeLabel.cs" />
+    <Compile Include="SurgicalConcierge\ViewModel\SurgicalConciergeDischargePageViewModel.cs" />
+    <Compile Include="SurgicalConcierge\ViewModel\SurgicalConciergeFloorPageViewModel.cs" />
+    <Compile Include="SurgicalConcierge\ViewModel\SurgicalConciergePacuPageViewModel.cs" />
+    <Compile Include="SurgicalConcierge\ViewModel\SurgicalConciergeRecipientPageViewModel.cs" />
+    <Compile Include="UserControls\CustomNavigationPage.cs" />
+    <Compile Include="UserControls\HtmlLabel.cs" />
+    <Compile Include="UserControls\RepeaterView.cs" />
+    <Compile Include="UserControls\WebViewExtented.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\LocationPageViewModel.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\NotificationDetailPageViewModel.cs" />
+    <Compile Include="ViewModel\NotificationListPageViewModel.cs" />
+    <Compile Include="ViewModel\NotificationPageViewModel.cs" />
+    <Compile Include="ViewModel\OtherProcedurePageViewModel.cs" />
+    <Compile Include="ViewModel\PatientSurveyPageViewModel.cs" />
+    <Compile Include="ViewModel\ResourceDetailPageViewModel.cs" />
+    <Compile Include="ViewModel\ResourcePageViewModel.cs" />
+    <Compile Include="ViewModel\ScgPathologyPatientProfilePageViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ScgPathology\ScgPacuPatientProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScgPathology\ScgPathologyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScgPathology\ScgPathologyPatientProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\AdminChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\AdminSignOutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\MainPracticePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\MenuPracticePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\PatientAttendeeAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\PatientAttendeeEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\PatientAttendeeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\PatientSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalCommentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConceirgePatientAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeDischargeAdditionalCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeDischargeDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeDischargePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeFloorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePacuNewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePacuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePacuRecipientAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePacuRecipientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePastWeekDates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePathologyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientAttendeeEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientAttendeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientEmailAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientEmailEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientEmailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePracticeDivision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergePracticeDivisionUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeProfessionalAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeRecipientAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeRecipientEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurgicalConcierge\SurgicalConciergeRecipientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.CSharp.targets" />
+  <Import Project="OntrackHealthApp.projitems" Label="Shared" />
+</Project>

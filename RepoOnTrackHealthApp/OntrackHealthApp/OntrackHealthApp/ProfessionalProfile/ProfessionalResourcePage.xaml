@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             xmlns:customcontrols="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             xmlns:usercontrols="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalResourcePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff">
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                        <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="1" x:Name="ContentStackLayout" Padding="6" VerticalOptions="FillAndExpand">
+                    <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+
+                            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label  Text="The sections below contain important information your doctor thinks you should know. When done with a section, click the resources button in the sidebar to return to this page." FontSize="17" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia"/>
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,10,0,0">
+
+                                <customcontrols:AccordionRepeaterView x:Name="resourceListViewCategory" KeepOnlyOneItemOpen="True" ItemsSource="{Binding ResourceViewModels}">
+                                    <customcontrols:AccordionRepeaterView.AccordionItemTemplate >
+                                        <DataTemplate>
+                                            <customcontrols:AccordionItemView Border="1" FontSize="18" FontFamily="Fonts/georgia.ttf#georgia" BorderColor="#d9edf7" ButtonBackgroundColor="#d9edf7" ButtonActiveBackgroundColor="#5ba8ce" ActiveBorderColor="#5ba8ce" Text="{Binding PatientResourceCategoryName}" TextColor="#333" ActiveTextColor="#333" TextPosition="Left" RightImage="img_righ_arrow_bw.png" RotateImages="true" InnerPadding="10,0,0,0">
+                                                <customcontrols:AccordionItemView.ItemContent>
+                                                    <StackLayout Padding="0" BackgroundColor="#f0fcfe">
+                                                        <usercontrols:RepeaterView ItemsSource="{Binding ResourceDetailViewModels}">
+                                                            <usercontrols:RepeaterView.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <ViewCell>
+                                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="0,0,0,1" BackgroundColor="#fff">
+                                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" BackgroundColor="#eeeeee">
+                                                                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Padding="10,0,0,0">
+                                                                                    <Label FontSize="16" VerticalTextAlignment="Center" TextColor="#333" FontFamily="Fonts/georgia.ttf#georgia" Text="{Binding PatientPortalResourceName}"></Label>
+                                                                                </StackLayout>
+                                                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                                                    <Button x:Name="ShowMore" ClassId="{Binding ResourceContentCombineId}" Clicked="ShowMore_ClickedAsync" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="#ffffff" BackgroundColor="#337ab7" FontSize="14" HeightRequest="36" WidthRequest="46" Image="external_link_icon.png" />
+                                                                                </StackLayout>
+                                                                            </StackLayout>
+                                                                        </StackLayout>
+                                                                    </ViewCell>
+                                                                </DataTemplate>
+                                                            </usercontrols:RepeaterView.ItemTemplate>
+                                                        </usercontrols:RepeaterView>
+                                                    </StackLayout>
+                                                </customcontrols:AccordionItemView.ItemContent>
+                                            </customcontrols:AccordionItemView>
+                                        </DataTemplate>
+                                    </customcontrols:AccordionRepeaterView.AccordionItemTemplate>
+                                </customcontrols:AccordionRepeaterView>
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

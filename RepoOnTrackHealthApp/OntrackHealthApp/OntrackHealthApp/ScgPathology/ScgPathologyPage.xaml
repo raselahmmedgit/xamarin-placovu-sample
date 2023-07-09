@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.ScgPathology.ScgPathologyPage"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit">
+    <ContentPage.Content>
+        <StackLayout Margin="0" Padding="0">
+            <StackLayout Padding="12" BackgroundColor="#0F4563" HeightRequest="52" Margin="0">
+                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Pathology" FontSize="22" TextColor="#ffffff"></Label>
+                    <Button x:Name="btnClear" Clicked="btnClear_Clicked" Grid.Column="1" Text="Clear" CornerRadius="18" HeightRequest="40" FontSize="14" TextColor="White" BackgroundColor="#8b9dc3" Margin="-4"></Button>
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"  Margin="0, -6, 0, 0" BackgroundColor="#8b9dc3" Padding="12">
+                <StackLayout Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0" Spacing="0">
+                    <Label x:Name="PatientFullName" Text="Schedule" TextColor="#154360" FontSize="20"  />
+                    <Label x:Name="ProcedureName" Text="Schedule" TextColor="#154360 " FontSize="18" />
+                    <Label x:Name="ProfessionalName" Text="Schedule" TextColor="#154360 " FontSize="18" />
+                </StackLayout>
+            </StackLayout>
+            <ScrollView Margin="0">
+                <StackLayout Margin="0">
+                    <StackLayout Spacing="0" Margin="0">
+                        <StackLayout Padding="10" BackgroundColor="#dfe3ee">
+                            <Label Grid.Column="0" Text="Preop PSA" FontSize="20"></Label>
+                        </StackLayout>
+                        <StackLayout Padding="10">
+                            <input:SelectionView x:Name="selectionViewPsa" ColumnSpacing="15" RowSpacing="10" ColumnNumber="3" SelectedItem=""/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0" Margin="0">
+                        <StackLayout Padding="10" BackgroundColor="#dfe3ee">
+                            <Label Grid.Column="0" Text="Gleason Score" FontSize="20"></Label>
+                        </StackLayout>
+                        <StackLayout Padding="10">
+                            <input:SelectionView x:Name="selectionViewGleason" ColumnSpacing="15" RowSpacing="10" ColumnNumber="3" SelectedItem="" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0" Margin="0">
+                        <StackLayout Padding="10" BackgroundColor="#dfe3ee">
+                            <Label Grid.Column="0" Text="Stage" FontSize="20"></Label>
+                        </StackLayout>
+                        <StackLayout Padding="10">
+                            <input:SelectionView x:Name="selectionViewStage" ColumnSpacing="15" RowSpacing="10" ColumnNumber="3" SelectedItem="" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0" Margin="0">
+                        <StackLayout Padding="10" BackgroundColor="#dfe3ee">
+                            <Label Grid.Column="0" Text="Margin" FontSize="20"></Label>
+                        </StackLayout>
+                        <StackLayout Padding="10">
+                            <input:SelectionView x:Name="selectionViewMargin" ColumnSpacing="15" RowSpacing="10" ColumnNumber="3"  SelectedItem=""/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0" Margin="0">
+                        <StackLayout Padding="10" BackgroundColor="#dfe3ee">
+                            <Label Grid.Column="0" Text="Node Status" FontSize="20"></Label>
+                        </StackLayout>
+                        <StackLayout Padding="15">
+                            <input:SelectionView x:Name="selectionViewNodeStatus" ColumnSpacing="15" RowSpacing="10" ColumnNumber="3"  SelectedItem=""/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Padding="5" Margin="0,20,0,0">
+                        <Button Text="Send" x:Name="btnSave" Clicked="btnSave_ClickedAsync" TextColor="White" BackgroundColor="#0F4563" CornerRadius="20" HeightRequest="60"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

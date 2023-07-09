@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.PhysicianPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+              <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+
+            <Grid ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                <Image Source="physician_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+              </StackLayout>
+              <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                <Label Text="Physician" Style="{ StaticResource PatientPageTitleTextStyle}" />
+              </StackLayout>
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" x:Name="ContentStackLayout" Padding="5">
+                    <ScrollView x:Name="contentBodyScrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid x:Name="ContentBody" Padding="20,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout x:Name="professionalBioGenarelInfoStackLayout" Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="200"/>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="600"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" Padding="5" Margin="0,0,0,0" Grid.Row="0">
+                                            <Image x:Name="professionalBioGenarelInfoProfessionalProfileImage" Source="" HeightRequest="200" WidthRequest="200"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" Padding="5" Margin="0,0,0,0" Grid.Row="1">
+                                            <Label x:Name="professionalBioGenarelInfoYearBoardCertifiedLabel" Text="" FontSize="16" />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" Padding="5" Margin="0,0,0,0" Grid.Row="2">
+                                            <Label x:Name="professionalBioGenarelInfoCurrentPracticeNameYearJoinedCurrentPracticeLabel" Text="" />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" Padding="5" Margin="0,0,0,10" Grid.Row="3">
+                                            <Label x:Name="professionalBioGenarelInfoCurrentPracticeLocationLabel" Text="" />
+                                        </StackLayout>
+
+                                        <StackLayout x:Name="professionalBioGenarelInfoCareerSummaryStackLayout" Spacing="0" Orientation="Horizontal" Padding="0" Margin="0,0,0,0" Grid.Row="4">
+                                            <WebView x:Name="professionalBioGenarelInfoCareerSummaryWebView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                                        </StackLayout>
+
+                                    </Grid>
+                                </StackLayout>
+
+                                <StackLayout x:Name="professionalBioEducationsStackLayout" Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,0">
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <ListView x:Name="professionalBioEducationsListView" HasUnevenRows="True">
+                                            <ListView.Header>
+                                                <StackLayout Padding="5" BackgroundColor="#eeeeee">
+                                                    <Label Text="Educations" FontSize="16"/>
+                                                </StackLayout>
+                                            </ListView.Header>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <StackLayout Orientation="Vertical" Padding="5">
+
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="Program: "></Label>
+                                                                </StackLayout>
+
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="{Binding ProgramName}"></Label>
+                                                                </StackLayout>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="Department: "></Label>
+                                                                </StackLayout>
+
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="{Binding DepartmentName}"></Label>
+                                                                </StackLayout>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="School: "></Label>
+                                                                </StackLayout>
+
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="{Binding SchoolName}"></Label>
+                                                                </StackLayout>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="Location: "></Label>
+                                                                </StackLayout>
+
+                                                                <StackLayout Orientation="Horizontal">
+                                                                    <Label Text="{Binding SchoolLocation}"></Label>
+                                                                </StackLayout>
+                                                            </StackLayout>
+
+                                                        </StackLayout>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout x:Name="professionalBioAssociationsStackLayout" Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,0">
+                                    <StackLayout Orientation="Vertical">
+                                        <ListView x:Name="professionalBioAssociationsListView" HasUnevenRows="True">
+                                            <ListView.Header>
+                                                <StackLayout Padding="5" BackgroundColor="#eeeeee">
+                                                    <Label Text="Directorship / Associations" FontSize="16"/>
+                                                </StackLayout>
+                                            </ListView.Header>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <StackLayout Padding="5">
+                                                            <Label Text="{Binding AssociationName}"></Label>
+                                                        </StackLayout>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout x:Name="professionalBioInterestsStackLayout" Orientation="Horizontal" Grid.Row="3" Margin="0,0,0,0">
+                                    <StackLayout Orientation="Vertical">
+                                        <ListView x:Name="professionalBioInterestsListView" HasUnevenRows="True">
+                                            <ListView.Header>
+                                                <StackLayout Padding="5" BackgroundColor="#eeeeee">
+                                                    <Label Text="Clinical Interests" FontSize="16"/>
+                                                </StackLayout>
+                                            </ListView.Header>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <StackLayout Padding="5">
+                                                            <Label Text="{Binding InterestName}"></Label>
+                                                        </StackLayout>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout x:Name="professionalBioLicensureViewsStackLayout" Orientation="Horizontal" Grid.Row="4" Margin="0,0,0,0">
+                                    <StackLayout Orientation="Vertical">
+                                        <ListView x:Name="professionalBioLicensureViewsListView" HasUnevenRows="True">
+                                            <ListView.Header>
+                                                <StackLayout Padding="5" BackgroundColor="#eeeeee">
+                                                    <Label Text="Licensures" FontSize="16"/>
+                                                </StackLayout>
+                                            </ListView.Header>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <StackLayout Padding="5">
+                                                            <Label Text="{Binding StateName}"></Label>
+                                                        </StackLayout>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout x:Name="professionalBioCustomSectionsStackLayout" Orientation="Horizontal" Grid.Row="5" Margin="0,0,0,0">
+                                    <StackLayout Orientation="Vertical">
+                                        <ListView x:Name="professionalBioCustomSectionsListView" HasUnevenRows="True">
+                                            <ListView.Header>
+                                                <StackLayout Padding="5" BackgroundColor="#eeeeee">
+                                                    <Label Text="Clinical Interests" FontSize="16"/>
+                                                </StackLayout>
+                                            </ListView.Header>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <StackLayout HeightRequest="300" Padding="5">
+                                                            <WebView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                                <WebView.Source>
+                                                                    <HtmlWebViewSource  Html="{Binding SectionContent}"></HtmlWebViewSource>
+                                                                </WebView.Source>
+                                                            </WebView>
+                                                        </StackLayout>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </Grid>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Style="{ StaticResource MainPatientPageButtonStackLayoutStyle}">
+                  <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"></ColumnDefinition>
+                      <ColumnDefinition Width="*"></ColumnDefinition>
+                      <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="0">
+                            <customInput:ButtonMenuBottom x:Name="BtnHome" Text="Home" Image="home_nav_icon_1.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnHomeButtonClickedAsync"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="0">
+                      <customInput:ButtonMenuBottom x:Name="BtnResource" Text="Resources" Image="resources_nav_icon.png"  Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnResourceButtonClickedAsync"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Spacing="0">
+                      <customInput:ButtonMenuBottom x:Name="BtnSchedule" Text="Schedule" Image="schedule_nav_icon.png" Style="{ StaticResource MainPatientPageButtonStyle}" Clicked="OnScheduleButtonClickedAsync"/>
+                    </StackLayout>
+                  </Grid>
+                </StackLayout>
+
+            </Grid>
+
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

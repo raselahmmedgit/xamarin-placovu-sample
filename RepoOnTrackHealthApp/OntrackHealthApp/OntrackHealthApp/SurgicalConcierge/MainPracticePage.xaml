@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markupExtensions="clr-namespace:OntrackHealthApp.SurgicalConcierge.Helper"
+             x:Class="OntrackHealthApp.SurgicalConcierge.MainPracticePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+            <StackLayout Padding="15">
+                <Button Text="Surgical Concierge" Clicked="BtnSurgicalConcierge_Clicked" TextColor="White" BackgroundColor="#0F4563" FontSize="26" Margin="0,10"  CornerRadius="20" HeightRequest="90"></Button>
+            </StackLayout>
+            <!--<StackLayout Padding="15">
+                <Button Text="OutCome Report" Clicked="BtnOutComeReport_Clicked" TextColor="White" BackgroundColor="#0F4563" FontSize="26" Margin="0,10"  CornerRadius="20" HeightRequest="90"></Button>
+            </StackLayout>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

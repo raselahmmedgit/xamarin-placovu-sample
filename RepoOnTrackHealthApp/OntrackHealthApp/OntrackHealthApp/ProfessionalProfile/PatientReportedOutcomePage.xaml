@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customInput="clr-namespace:OntrackHealthApp.UserControls"
+             x:Class="OntrackHealthApp.ProfessionalProfile.PatientReportedOutcomePage" BackgroundColor="#ffffff">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F1F2F7" Margin="0" Padding="0">
+
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Padding="2" Margin="0,0,20,0">
+                            <Image Source="patient_outcome_search_icon.png" Aspect="AspectFit" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="PatientOutcomeSearch_Clicked" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <Label Grid.Row="1" Grid.Column="0" FontSize="16" Margin="0,0,20,0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" TextColor="#000" Text="Search"/>
+
+                        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center" Padding="2" Margin="20,0,0,0">
+                            <Image Source="patient_outcome_filter_icon.png" Aspect="AspectFit" HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ShowOutcomeSearchFilterModal" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <Label Grid.Row="1" Grid.Column="1" FontSize="16" Margin="20,0,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="#000" Text="Filter"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#531b93" Margin="0" Padding="0">
+                            <Label Text="Patient-Reported Outcomes" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="60"></Label>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Grid.Column="0" Margin="0" Padding="0,10,0,0">
+                            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="160"></RowDefinition>
+                                        <RowDefinition Height="160"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Frame x:Name="AllRegisteredPatientFrame" Grid.Row="0" Grid.Column="0" BorderColor = "Silver" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center" HeightRequest = "120" WidthRequest = "120"
+                                                Padding = "5, 5, 5, 5"
+                                                Margin = "5, 5, 5, 25">
+                                        <StackLayout Spacing = "10" Orientation = "Vertical" >
+                                            <Image x:Name="AllRegisteredPatientImage" Aspect="AspectFit" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HeightRequest="80" WidthRequest = "60"></Image>
+                                            <Label x:Name="AllRegisteredPatientLabel" FontSize = "14" TextColor = "Black" HorizontalTextAlignment = "Center" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center"></Label>
+                                        </StackLayout>
+                                        <Frame.GestureRecognizers >
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PatientReportedOutcomeListView_ItemSelected"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <Frame x:Name="SurveyCriticalFrame" Grid.Row="0" Grid.Column="1" BorderColor = "Silver" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center" HeightRequest = "120" WidthRequest = "120"
+                                                Padding = "5, 5, 5, 5"
+                                                Margin = "5, 5, 5, 25">
+                                        <StackLayout Spacing = "10" Orientation = "Vertical">
+                                            <Image x:Name="SurveyCriticalImage" Aspect="AspectFit" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HeightRequest="80" WidthRequest = "60"></Image>
+                                            <Label x:Name="SurveyCriticalLabel" FontSize = "14" TextColor = "Black" HorizontalTextAlignment = "Center" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center"></Label>
+                                        </StackLayout>
+                                        <Frame.GestureRecognizers >
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PatientReportedOutcomeListView_ItemSelected"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <Frame x:Name="SurveyCompletedFrame" Grid.Row="1" Grid.Column="0" BorderColor = "Silver" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center" HeightRequest = "120" WidthRequest = "120"
+                                                Padding = "5, 5, 5, 5"
+                                                Margin = "5, 5, 5, 25">
+                                        <StackLayout Spacing = "10" Orientation = "Vertical">
+                                            <Image x:Name="SurveyCompletedImage" Aspect="AspectFit" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HeightRequest="80" WidthRequest = "60"></Image>
+                                            <Label x:Name="SurveyCompletedLabel" FontSize = "14" TextColor = "Black" HorizontalTextAlignment = "Center" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center"></Label>
+                                        </StackLayout>
+                                        <Frame.GestureRecognizers >
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PatientReportedOutcomeListView_ItemSelected"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <Frame x:Name="SurveyPendingFrame" Grid.Row="1" Grid.Column="1" BorderColor = "Silver" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center" HeightRequest = "120" WidthRequest = "120"
+                                                Padding = "5, 5, 5, 5"
+                                                Margin = "5, 5, 5, 25">
+                                        <StackLayout Spacing = "10" Orientation = "Vertical">
+                                            <Image x:Name="SurveyPendingImage" Aspect="AspectFit" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HeightRequest="80" WidthRequest = "60"></Image>
+                                            <Label x:Name="SurveyPendingLabel" FontSize = "14" TextColor = "Black" HorizontalTextAlignment = "Center" VerticalOptions = "EndAndExpand" HorizontalOptions = "Center"></Label>
+                                        </StackLayout>
+                                        <Frame.GestureRecognizers >
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PatientReportedOutcomeListView_ItemSelected"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                </Grid>
+                            </ScrollView>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="0" Padding="0">
+                    <StackLayout Style="{ StaticResource MainProfessionalPageButtonStackLayoutStyle}">
+                        <Grid ColumnSpacing="0" RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" Spacing="0" Padding="0" Margin="0">
+                                <customInput:ButtonMenuBottom x:Name="BtnHome" Image="home_nav_icon.png" Style="{ StaticResource MainProfessionalPageButtonStyle}" Clicked="BtnHome_ClickedAsync"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

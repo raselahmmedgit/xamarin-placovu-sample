@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.NotificationDetailPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="ProcedureStackLayout" Style="{ StaticResource PatientProcedureNameTitleStyle}">
+                <Label x:Name="ProcedureName" Text="" Style="{ StaticResource PatientProcedureNameTitleTextStyle}" />
+            </StackLayout>
+            <Grid ColumnSpacing="0" RowSpacing="0" Style="{ StaticResource PatientPageTitleGridStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Style="{ StaticResource PatientPageTitleIconStyle}">
+                    <Image Source="resources_nav_icon.png" Aspect="AspectFit" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Style="{ StaticResource PatientPageTitleStyle}">
+                    <Label x:Name="NotificationTitle" Text="{Binding NotificationTitle}" Style="{ StaticResource PatientPageTitleTextStyle}" />
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="0,12">
+                    <Label x:Name="NotificationDetailHeaderLabel" Text="{Binding NotificationDetailHeader}" Font="Bold" FontSize="18"  />
+                </StackLayout>
+                <WebView x:Name="NotificationDetailWebView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Navigated="OnNavigated">
+                    <WebView.Source>
+                        <HtmlWebViewSource Html="{Binding NotificationDetailCustom}" />
+                    </WebView.Source>
+                </WebView>
+            </StackLayout>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

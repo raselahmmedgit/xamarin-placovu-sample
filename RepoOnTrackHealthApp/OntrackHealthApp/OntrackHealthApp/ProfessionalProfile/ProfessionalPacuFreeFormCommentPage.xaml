@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+             x:Class="OntrackHealthApp.ProfessionalProfile.ProfessionalPacuFreeFormCommentPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#426276" VerticalOptions="StartAndExpand">
+                <StackLayout  Padding="12">
+                    <Label x:Name="lblPracticeTitle" FontSize="20" TextColor="#ffffff"></Label>
+                </StackLayout>
+                <StackLayout Padding="12" BackgroundColor="#004463">
+                    <Label x:Name="lblPateTitle" FontSize="20" Text="Free Form Comment" TextColor="#ffffff"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Padding="2" Margin="4,4" BackgroundColor="#004D80">
+                <StackLayout Padding="10" BackgroundColor="#e8edf1" HorizontalOptions="FillAndExpand">
+                    <StackLayout BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                        <Label Text="Type Message" TextColor="#000" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"></Label>
+                        <Entry FontSize="20" Text="" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand" x:Name="FreeFormComment"></Entry>
+                        <Label FontSize="20" TextColor="Red" x:Name="ErrorFreeFormComment" Text=""/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" x:Name="ModalCloseButton" Text="Cancel" Clicked="ModalCloseButton_ClickedAsync" BackgroundColor="#0F4563" TextColor="White" FontSize="18" CornerRadius="5"></Button>
+                            <Button Grid.Column="1" x:Name="AddFreeFormCommentButton" Text="Send" Clicked="AddFreeFormCommentButton_ClickedAsync"  BackgroundColor="#0F4563" TextColor="White" FontSize="18" CornerRadius="5"></Button>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>

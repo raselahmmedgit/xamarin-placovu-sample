@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OntrackHealthApp.PatientOutComeReport.PatientOutComeChartPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#fff">
+            <StackLayout x:Name="outComeReportButtonStackLayout" Orientation="Horizontal" Padding="10,15,10,15">
+            </StackLayout>
+            <StackLayout x:Name="OutComeReportTypeButtonStackLayout" Orientation="Horizontal" Padding="10,0,10,15">
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
+                <Label x:Name="reportHeaderLabel" TextColor="#000"></Label>
+            </StackLayout>
+            <StackLayout x:Name="outComeReportStackLayout" Margin="0,0,0,0">
+                <ScrollView Orientation="Both">
+                    <Grid ColumnSpacing="0" RowSpacing="0" Margin="0" Padding="0" x:Name="outComeReportGrid">
+                    </Grid>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout x:Name="OutComeGraphStackLayout" BackgroundColor="#FFFFFF" Padding="5">
+            </StackLayout>
+            <StackLayout x:Name="noDataFoundStackLayout" Margin="0,0,0,0">
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

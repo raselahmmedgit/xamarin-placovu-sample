@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ontrackHealthApp:CustomModalContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:ontrackHealthApp="clr-namespace:OntrackHealthApp;assembly=OntrackHealthApp.iOS"
+                        x:Class="OntrackHealthApp.ProfessionalProfile.PatientCalendarSearchModal">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primaryBackgroundColor">#0F4563</Color>
+            <Style x:Key="SurgicalPrimaryButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource primaryBackgroundColor}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#0F4563">
+                <StackLayout Padding="12">
+                    <Label Text="Search Patient" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="White"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Padding="10,15,10,15">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" BackgroundColor="#004D80" TextColor="#FFF" Text="Prev" x:Name="PatientSearchCalendarPrev" Clicked="PatientSearchCalendarPrevButton_Clicked" FontSize="14" CornerRadius="24"></Button>
+                    <Label Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="Center" x:Name="MonthName" FontSize="18"></Label>
+                    <Button Grid.Column="2" BackgroundColor="#004D80" TextColor="#FFF" Text="Next" x:Name="PatientSearchCalendarNext" Clicked="PatientSearchCalendarNextButton_Clicked" FontSize="14" CornerRadius="24"></Button>
+                </Grid>
+            </StackLayout>
+            <StackLayout x:Name="CalendarDateListView" Orientation="Horizontal" Padding="0,15,0,15" HorizontalOptions="FillAndExpand" BackgroundColor="#46b8da">
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Style="{ StaticResource BottomCommandPanelStyle }">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource SurgicalPrimaryButton}" Text="Cancel" x:Name="PatientCalendarSearchCancelButton" Clicked="PatientCalendarSearchCancelButtonClicked" TextColor="#FFF" CornerRadius="24" FontSize="16"></Button>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ontrackHealthApp:CustomModalContentPage>
